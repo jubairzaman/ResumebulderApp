@@ -1,12 +1,12 @@
 import React from 'react';
-
+//
 const Navbar = () => {
 
     const [open, toggle] = React.useState();
 
-     function handleToggle (){
+    function handleToggle() {
         toggle(!open)
-      }
+    }
 
     return (
         <div>
