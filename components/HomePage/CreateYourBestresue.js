@@ -8,9 +8,9 @@ const CreateYourBestresue = () => {
 
             <h1 className='font-semibold text-3xl text-center py-20 '>Create your best resume yet and<br></br> download in minutes</h1>
 
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
                 <div>
-                    <div class="grid grid-rows-2 grid-flow-col gap-4">
+                    <div class="grid grid-rows-2 grid-flow-col gap-4 mt-20">
                         <div><div class="flex ">
 
                             <i class=" mx-5 las la-file-alt la-3x"></i>
@@ -35,12 +35,12 @@ const CreateYourBestresue = () => {
                     </div>
                 </div>
 
-                <div><SlidingView></SlidingView></div>
+                <div className=''><SlidingView></SlidingView></div>
 
 
 
                 <div>
-                    <div class="grid grid-rows-2 grid-flow-col gap-4">
+                    <div class="grid grid-rows-2 grid-flow-col gap-4 mt-20">
                         <div><div class="flex ">
 
                             <i class=" mx-5 lab la-autoprefixer la-3x"></i>

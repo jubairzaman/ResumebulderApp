@@ -16,9 +16,9 @@ const SlidingView = () => {
 
     return (
         <div>
-            <div className='parent relative sliding-parent overflow-hidden' onMouseMove={handelMouseMove}>
-                <img src='image 2.png ' className='view-1 w-full '></img>
-                <img src='image 3.png' className='view-2  w-full absolute h-full top-0 left-0'></img>
+            <div className='parent relative sliding-parent overflow-hidden drop-shadow-2xl' onMouseMove={handelMouseMove}>
+                <img src='img-1.jpg ' className='view-1 w-full '></img>
+                <img src='img-2.jpg ' className='view-2  w-full absolute h-full top-0 left-0'></img>
                 <div className='slider-bar bg-blue-700  absolute h-full top-0' style={{ width: 5 + "px" }}>
                     <div className='slider rounded-full bg-blue-600 absolute' style={{ width: 15 + "px", height: 15 + "px", top: "calc(50% - 7px)", left: "calc(50% - 7px)" }}>
 
