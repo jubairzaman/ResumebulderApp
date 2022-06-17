@@ -2,11 +2,11 @@ import React from 'react';
 
 const Itssoeasy = () => {
     return (
-        <div>
+        <div className='pb-32'>
             <h2 className='text-4xl text-center font-semibold text-dark pt-28'>It’s so easy, you don’t even need to think</h2>
 
-            <div className='mx-20 mt-20'>
-                <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-4 justify-items-center ">
+            <div className='mx-20 pt-20 '>
+                <div class="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 gap-5 justify-items-center ">
                     <div class="...">
                         <div class="grid grid-rows-2 ">
                             <div className=' flex justify-center'>
@@ -28,8 +28,8 @@ const Itssoeasy = () => {
                         </div>
 
                         <div>
-                            <p className='text-center text-2xl font-semibold' >Add your info</p>
-                            <p className='text-center mt-3'>Use pre-written phrases and interactive layouts to create a winning resume</p>
+                            <p className='text-center text-2xl font-semibold' >Pick a template</p>
+                            <p className='text-center mt-3'>Select our template from a range of field-tested styles and resume formats</p>
                         </div> </div>
                     <div class="grid grid-rows-2 ">
                         <div className=' flex justify-center'>
@@ -38,7 +38,7 @@ const Itssoeasy = () => {
 
                         <div>
                             <p className='text-center text-2xl font-semibold' >Add your info</p>
-                            <p className='text-center mt-3'>Use pre-written phrases and interactive layouts to create a winning resume</p>
+                            <p className='text-center mt-3'>Download your resume or share an online link directly with your future employer </p>
                         </div> </div>
 
                 </div>
