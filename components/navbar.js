@@ -1,4 +1,5 @@
 import React from 'react';
+import LoginBtn from './auth/login-btn';
 
 const Navbar = () => {
 
@@ -23,6 +24,7 @@ const Navbar = () => {
 
 
                             <div className="hidden sm:flex sm:items-center">
+                                <LoginBtn/>
                                 <a href="#" className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">About</a>
                                 <a href="#" className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">Contact</a>
                                 <a href="#" className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">Deshboad</a>
