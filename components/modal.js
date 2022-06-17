@@ -5,7 +5,7 @@ export default function Modal() {
   return (
     <>
       <button
-        className='rounded-lg bg-indigo-700 text-white px-10 py-6 m-5'
+        className='rounded-lg bg-indigo-700 text-white px-10 py-6 '
         type="button"
         onClick={() => setShowModal(true)}
       >Create Resume
