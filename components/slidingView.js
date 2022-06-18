@@ -24,7 +24,7 @@ const SlidingView = () => {
 
                     </div>
 
-                    <div class="bg-violet-electric-indigo w-34px h-34px rounded-full flex items-center justify-center space-x-2.5px text-violet-electric-indigo"><div class="absolute top-0 left-5 text-xs font-medium">AFTER</div><div class="w-1.67px h-3 rounded-5px bg-white"></div><div class="w-1.67px h-3 rounded-5px bg-white"></div><div class="w-1.67px h-3 rounded-5px bg-white"></div><div class="absolute top-0 right-5 text-xs font-medium">BEFORE</div></div>
+                    <div className="bg-violet-electric-indigo w-34px h-34px rounded-full flex items-center justify-center space-x-2.5px text-violet-electric-indigo"><div className="absolute top-0 left-5 text-xs font-medium">AFTER</div><div className="w-1.67px h-3 rounded-5px bg-white"></div><div className="w-1.67px h-3 rounded-5px bg-white"></div><div className="w-1.67px h-3 rounded-5px bg-white"></div><div className="absolute top-0 right-5 text-xs font-medium">BEFORE</div></div>
 
                 </div>
             </div>

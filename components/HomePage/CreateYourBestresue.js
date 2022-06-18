@@ -10,10 +10,10 @@ const CreateYourBestresue = () => {
 
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 ">
                 <div>
-                    <div class="grid grid-rows-2 grid-flow-col gap-4 mt-20">
-                        <div><div class="flex ">
+                    <div className="grid grid-rows-2 grid-flow-col gap-4 mt-20">
+                        <div><div className="flex ">
 
-                            <i class=" mx-5 las la-file-alt la-3x"></i>
+                            <i className=" mx-5 las la-file-alt la-3x"></i>
 
                             <div >
                                 <p className=' text-2xl font-semibold' >Easily created online</p>
@@ -22,9 +22,9 @@ const CreateYourBestresue = () => {
 
                         </div></div>
 
-                        <div><div class="flex ">
+                        <div><div className="flex ">
 
-                            <i class=" mx-5 las la-pencil-ruler la-3x"></i>
+                            <i className=" mx-5 las la-pencil-ruler la-3x"></i>
 
                             <div >
                                 <p className=' text-2xl font-semibold' >Pre-written phrases</p>
@@ -40,10 +40,10 @@ const CreateYourBestresue = () => {
 
 
                 <div>
-                    <div class="grid grid-rows-2 grid-flow-col gap-4 mt-20">
-                        <div><div class="flex ">
+                    <div className="grid grid-rows-2 grid-flow-col gap-4 mt-20">
+                        <div><div className="flex ">
 
-                            <i class=" mx-5 lab la-autoprefixer la-3x"></i>
+                            <i className=" mx-5 lab la-autoprefixer la-3x"></i>
 
                             <div >
                                 <p className=' text-2xl font-semibold' >Automatic spell-checker</p>
@@ -52,9 +52,9 @@ const CreateYourBestresue = () => {
 
                         </div></div>
 
-                        <div><div class="flex ">
+                        <div><div className="flex ">
 
-                            <i class=" mx-5 las la-file-upload la-3x"></i>
+                            <i className=" mx-5 las la-file-upload la-3x"></i>
 
                             <div >
                                 <p className=' text-2xl font-semibold' >Templates that stand out</p>

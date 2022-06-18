@@ -21,7 +21,7 @@ const BannerPart = () => {
                 <div className='flex justify-center py-10 '>
                     <Modal />
                 </div>
-                <div className='flex justify-center  '> <div class="w-3 h-3 mr-2 bg-green-500 rounded-full flex my-auto  "></div>
+                <div className='flex justify-center  '> <div className="w-3 h-3 mr-2 bg-green-500 rounded-full flex my-auto  "></div>
 
                     <p>Join over 12,423<span className='text-blue-700 underline'>
                         successful jobseekers</span></p>
