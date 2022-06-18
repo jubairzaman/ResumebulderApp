@@ -16,7 +16,7 @@ const SlidingView = () => {
 
     return (
         <div>
-            <div className='parent relative sliding-parent overflow-hidden drop-shadow-2xl' onMouseMove={handelMouseMove}>
+            <div className='parent relative sliding-parent overflow-hidden drop-shadow-2xl rounded-md' onMouseMove={handelMouseMove}>
                 <img src='img-1.jpg ' className='view-1 w-full '></img>
                 <img src='img-2.jpg ' className='view-2  w-full absolute h-full top-0 left-0'></img>
                 <div className='slider-bar bg-blue-700  absolute h-full top-0' style={{ width: 5 + "px" }}>

@@ -19,8 +19,8 @@ a {
   box-sizing: border-box;
 }
 
-.hero-title-gradiant{
-  background: linear-gradient(92.15deg,#bc41f5 7.05%,#4a00e0 95.59%);
+.hero-title-gradiant {
+  background: linear-gradient(92.15deg, #bc41f5 7.05%, #4a00e0 95.59%);
   background-clip: border-box;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
