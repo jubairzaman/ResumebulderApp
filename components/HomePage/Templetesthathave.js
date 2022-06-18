@@ -14,7 +14,6 @@ const Templetesthathave = () => {
             <div className='bg-indigo-900 py-20'>
                 <h1 className='text-3xl text-white font-3xl font-semibold text-center'>Templates that have proven to work</h1>
                 <p className='text-white text-center'>Use one of our field-tested resume templates, designed by a team of HR experts and typographers.</p>
-
             </div>
 
 

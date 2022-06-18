@@ -3,15 +3,15 @@ import { getProviders, signIn, getCsrfToken } from "next-auth/react"
 export default function SignIn({ providers, csrfToken }) {
     return (
         <>
-            {Object.values(providers).map(function (provider){
-                if(provider.id != 'credentials'){
+            {Object.values(providers).map(function (provider) {
+                if (provider.id != 'credentials') {
                     return <div key={provider.name}>
-                    <button className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4" onClick={() => signIn(provider.id)}>
-                        {provider.name}
-                    </button>
-                </div>
+                        <button className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4" onClick={() => signIn(provider.id)}>
+                            {provider.name}
+                        </button>
+                    </div>
                 }
-                return <></>
+                return <span key={provider.name}></span>
             })}
 
             <div className="mt-5">
@@ -28,7 +28,7 @@ export default function SignIn({ providers, csrfToken }) {
                         <input name="password" id="input-password-for-credentials-provider" type="password" placeholder="" label="Password" />
                     </div>
                     <button type="submit">Sign in with SignIn With Credentials</button></form>
-                
+
             </div>
         </>
     )
