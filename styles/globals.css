@@ -25,3 +25,15 @@ a {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+.templete-slide .swiper-wrapper{
+  align-items: center;
+}
+.templete-slide .swiper-slide img{
+  height: 500px;
+}
+
+.templete-slide .swiper-slide.swiper-slide-active img{
+  
+  height: 600px;
+}

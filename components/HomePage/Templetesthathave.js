@@ -17,18 +17,24 @@ const Templetesthathave = () => {
             </div>
 
 
-            <div>
+            <div className='bg-indigo-900 py-10 templete-slide'>
                 <Swiper
+                
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     navigation
-                    spaceBetween={50}
-                    slidesPerView={1}
+                    centeredSlides={true}
+                    
+                    loop={true}
+                    spaceBetween={20}
+                    slidesPerView={3}
+
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log("on Swiper")}
                 >
-                    <SwiperSlide > <img className='mx-2' src='img-1.jpg'></img>  </SwiperSlide>
-                    <SwiperSlide > <img className='mx-2' src='img-2.jpg'></img>  </SwiperSlide>
-                    <SwiperSlide > <img className='mx-2' src='img-1.jpg'></img> </SwiperSlide>
+                    <SwiperSlide > <div><img className='mx-2 w-full' src='img-1.jpg'></img></div>  </SwiperSlide>
+                    <SwiperSlide > <div><img className='mx-2 w-full' src='img-2.jpg'></img></div>  </SwiperSlide>
+                    <SwiperSlide > <div><img className='mx-2 w-full' src='img-1.jpg'></img> </div></SwiperSlide>
+                    <SwiperSlide > <div><img className='mx-2 w-full' src='img-2.jpg'></img></div>  </SwiperSlide>
 
 
                 </Swiper>
