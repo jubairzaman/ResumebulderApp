@@ -147,6 +147,95 @@ const Resumeform = ({ handelCvData }) => {
                                 <input onChange={(e) => handelCvData(e.target['value'], 'businessobjective')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                             </label>
                         </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    business Objective
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'skill-1')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    skill-1
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'skill-1')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    skill-2
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'skill-2')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    skill-3
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'skill-3')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    skill-4
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'skill-4')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    skill-5
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'skill-5')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    Job title name 1
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'jobtitle')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    Companey Name 1
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'cname')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    jobdetails
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'jobdetails')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    jobLocation
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'jobLocation')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+                        <div>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
+                                    jobDetails
+                                </span>
+                                <input onChange={(e) => handelCvData(e.target['value'], 'jobdetails')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                            </label>
+                        </div>
+
 
                         <div>
 
