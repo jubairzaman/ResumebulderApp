@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Resumeform from '../components/ResumeBulder/Resumeform';
 
 const resumeinfo = () => {
     const [firstname, setfirstname] = useState();
@@ -25,6 +26,12 @@ const resumeinfo = () => {
 
     return (
         <div>
+            <Resumeform></Resumeform>
+
+
+
+
+
             <div class="grid grid-cols-2">
                 <div className='bg-white'>
                     <label>
