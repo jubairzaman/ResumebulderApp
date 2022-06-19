@@ -19,14 +19,21 @@ const Templetesthathave = () => {
 
             <div className='bg-indigo-900 py-10 templete-slide'>
                 <Swiper
-                
+                    breakpoints={{
+                        // when window width is >= 640px
+                        
+                        // when window width is >= 768px
+                        768: {
+                        slidesPerView: 3,
+                        },
+                    }}
                     modules={[Navigation, Pagination, Scrollbar, A11y]}
                     navigation
                     centeredSlides={true}
                     
                     loop={true}
                     spaceBetween={20}
-                    slidesPerView={3}
+                    slidesPerView={1}
 
                     onSlideChange={() => console.log('slide change')}
                     onSwiper={(swiper) => console.log("on Swiper")}
