@@ -100,11 +100,21 @@ const Cv1 = ({ cv }) => {
                                     <div>
 
                                         <div className='flex justify-between'>
-                                            <h1 className='text-md font-semibold'>{cv.jobtitle}</h1> <span className='text-xs mt-2'><i className="las la-map-marker-alt"></i>{cv.jobLocation} </span>
+                                            <h1 className='text-md font-semibold'>{cv.jobtitle1}</h1> <span className='text-xs mt-2'><i className="las la-map-marker-alt"></i>{cv.jobLocation1} </span>
                                         </div>
-                                        <span className='text-xs'>at {cv.cname} </span>
+                                        <span className='text-xs'>at {cv.cname1} </span>
 
-                                        <p className='text-sm'>{cv.jobdetails}</p>
+                                        <p className='text-sm'>{cv.jobdetails1}</p>
+
+                                    </div>
+                                    <div>
+
+                                        <div className='flex justify-between'>
+                                            <h1 className='text-md font-semibold'>{cv.jobtitle2}</h1> <span className='text-xs mt-2'><i className="las la-map-marker-alt"></i>{cv.jobLocation2} </span>
+                                        </div>
+                                        <span className='text-xs'>at {cv.cname2} </span>
+
+                                        <p className='text-sm'>{cv.jobdetails2}</p>
 
                                     </div>
                                 </div>
@@ -113,6 +123,34 @@ const Cv1 = ({ cv }) => {
                             </div>
 
 
+
+
+
+
+
+
+                        </div>
+
+
+                    </div>
+                    {/* Social Media Part  */}
+
+                    <div className='container bg-slate-100'>
+                        <div class="grid grid-cols-4 gap-4">
+                            <div className='flex justify-center '>
+                                <i class="lab la-facebook-square"></i>
+
+                                <h1>facebook.com/{cv.linkedin}</h1>
+                            </div>
+                            <div className='flex justify-center '>
+                                <i class="lab la-facebook-square"></i>
+                            </div>
+                            <div className='flex justify-center '>
+                                <i class="lab la-facebook-square"></i>
+                            </div>
+                            <div className='flex justify-center '>
+                                <i class="lab la-facebook-square"></i>
+                            </div>
                         </div>
                     </div>
                 </div>
