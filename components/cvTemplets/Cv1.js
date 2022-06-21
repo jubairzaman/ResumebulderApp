@@ -23,7 +23,7 @@ const Cv1 = ({ cv }) => {
     return (
         <>
 
-            <div className=' mx-auto bg-slate-50 rounded-lg my-10 p-5 drop-shadow-2xl  '>
+            <div className=' mx-auto bg-slate-50 rounded-lg drop-shadow-2xl  '>
 
 
                 {/* Personal Information Part  */}
