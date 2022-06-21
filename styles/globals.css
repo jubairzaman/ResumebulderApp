@@ -40,7 +40,6 @@ a {
 }
 
 .aspect-ratio-a4 {
-  aspect-ratio: 1/1.41421356237;
-
-
+  aspect-ratio: 70/99;
+  max-height: 100%;
 }

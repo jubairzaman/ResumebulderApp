@@ -6,8 +6,8 @@ import Resumeform from '../../components/ResumeBulder/Resumeform';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import { useRouter } from 'next/router'
-
-const resumeinfo = () => {
+import Navbar from '../../components/navbar';
+const CvBuilder = () => {
     const cvId = useRouter().query.cv
     const printRef = React.useRef();
 
@@ -65,17 +65,31 @@ const resumeinfo = () => {
             <button type="button" onClick={handleDownloadPdf}>
                 Download as PDF
             </button>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4  ' style={{ height: '800px' }}>
-                <div className='h-full overflow-y-auto overflow-x-hidden'><Resumeform handelCvData={handelCvData}></Resumeform></div>
-                <div className='h-full' ref={printRef}>
-                    <div className=' aspect-ratio-a4 '>
-                        {getCvTemplate()}
-                    </div>
+
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 relative px-5 mt-12'>
+                <div className=''><Resumeform handelCvData={handelCvData}></Resumeform></div>
+                <div className='relative'>
+                    
                 </div>
 
+            </div>
+
+            <div className='h-screen fixed w-1/2 right-0 p-5 flex justify-center' style={{height:"calc(100vh - 73px)", top:"73px"}} ref={printRef}>
+                <div className='aspect-ratio-a4 bg-blue-600'>
+                    {getCvTemplate()}
+                </div>
             </div>
         </div>
     );
 };
 
-export default resumeinfo;
+CvBuilder.getLayout = function getLayout(page) {
+    return (
+        <>
+            <div className='fixed z-50 w-full'> <Navbar /> </div>
+            {page}
+        </>
+    )
+}
+
+export default CvBuilder;
