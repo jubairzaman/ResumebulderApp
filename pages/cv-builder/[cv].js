@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import Cv1 from '../../components/cvTemplets/Cv1';
 import Cv2 from '../../components/cvTemplets/Cv2';
 import Resumeform from '../../components/ResumeBulder/Resumeform';
@@ -10,20 +10,24 @@ import Navbar from '../../components/navbar';
 const CvBuilder = () => {
     const cvId = useRouter().query.cv
     const printRef = React.useRef();
+    const preview = React.useRef();
 
     const handleDownloadPdf = async () => {
 
         const element = printRef.current;
         const canvas = await html2canvas(element);
+        
+        preview.current.append(canvas)
         const data = canvas.toDataURL('image/png');
         const pdf = new jsPDF();
         const imgProperties = pdf.getImageProperties(data);
         const pdfWidth = pdf.internal.pageSize.getWidth();
         const pdfHeight =
             (imgProperties.height * pdfWidth) / imgProperties.width;
+        //preview.current.innerHTML = canvas
 
-        pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        pdf.save(getCurrentDateAndTime() + '.pdf');
+        //pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
+        //pdf.save(getCurrentDateAndTime() + '.pdf');
 
     };
 
@@ -59,26 +63,36 @@ const CvBuilder = () => {
         }
     }
 
-
     return (
         <div>
-            <button type="button" onClick={handleDownloadPdf}>
-                Download as PDF
-            </button>
+
 
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 relative px-5 mt-12'>
-                <div className=''><Resumeform handelCvData={handelCvData}></Resumeform></div>
+                <div className='mt-12'>
+                    <button type="button" onClick={handleDownloadPdf}>
+                        Download as PDF
+                    </button>
+
+                    <Resumeform handelCvData={handelCvData}></Resumeform>
+                </div>
                 <div className='relative'>
-                    
+                    <div className=' '>
+                        <div ref={printRef}>
+                            {getCvTemplate()}
+                        </div>
+                    </div>
+                    <div className='absolute top-0 left-0 w-full' style={{height: "calc(100vh - 40px)"}}>
+                        <div className='bg-red-500 p-20 w-full h-full flex justify-center'>
+                            <div className='aspect-ratio-a4'  ref={preview}>
+
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
             </div>
 
-            <div className='h-screen fixed w-1/2 right-0 p-5 flex justify-center' style={{height:"calc(100vh - 73px)", top:"73px"}} ref={printRef}>
-                <div className='aspect-ratio-a4 bg-blue-600'>
-                    {getCvTemplate()}
-                </div>
-            </div>
+
         </div>
     );
 };
@@ -86,7 +100,7 @@ const CvBuilder = () => {
 CvBuilder.getLayout = function getLayout(page) {
     return (
         <>
-            <div className='fixed z-50 w-full'> <Navbar /> </div>
+            <div className='fixed z-50 w-full top-0'> <Navbar /> </div>
             {page}
         </>
     )

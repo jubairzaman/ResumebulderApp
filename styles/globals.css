@@ -42,4 +42,11 @@ a {
 .aspect-ratio-a4 {
   aspect-ratio: 70/99;
   max-height: 100%;
+  max-width: 100%;
+}
+
+.aspect-ratio-a4 canvas{
+  max-width: 100% !important;
+  max-height: 100% !important;
+
 }
