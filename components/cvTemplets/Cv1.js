@@ -140,16 +140,19 @@ const Cv1 = ({ cv }) => {
                             <div className='flex justify-center '>
                                 <i class="lab la-facebook-square"></i>
 
-                                <h1>facebook.com/{cv.linkedin}</h1>
+                                <h1>linkedin.com/{cv.linkedin}</h1>
                             </div>
                             <div className='flex justify-center '>
                                 <i class="lab la-facebook-square"></i>
+                                <h1>facebook.com/{cv.facebook}</h1>
                             </div>
                             <div className='flex justify-center '>
                                 <i class="lab la-facebook-square"></i>
+                                <h1>skype.com/{cv.skype}</h1>
                             </div>
                             <div className='flex justify-center '>
                                 <i class="lab la-facebook-square"></i>
+                                <h1>{cv.website}</h1>
                             </div>
                         </div>
                     </div>
