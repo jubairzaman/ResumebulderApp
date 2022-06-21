@@ -21,9 +21,9 @@ const Cv1 = ({ cv }) => {
 
 
     return (
-        <div>
+        <>
 
-            <div className=' mx-auto bg-slate-50 rounded-lg my-10 p-5'>
+            <div className=' mx-auto bg-slate-50 rounded-lg my-10 p-5 drop-shadow-2xl  '>
 
 
                 {/* Personal Information Part  */}
@@ -124,7 +124,7 @@ const Cv1 = ({ cv }) => {
 
             </div>
 
-        </div>
+        </>
     );
 };
 

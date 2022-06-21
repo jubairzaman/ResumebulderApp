@@ -23,8 +23,8 @@ const resumeinfo = () => {
             (imgProperties.height * pdfWidth) / imgProperties.width;
 
         pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
-        pdf.save(getCurrentDateAndTime()+'.pdf');
-        
+        pdf.save(getCurrentDateAndTime() + '.pdf');
+
     };
 
     const getCurrentDateAndTime = () => {
@@ -65,10 +65,12 @@ const resumeinfo = () => {
             <button type="button" onClick={handleDownloadPdf}>
                 Download as PDF
             </button>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4  '>
-                <Resumeform handelCvData={handelCvData}></Resumeform>
-                <div ref={printRef}>
-                    {getCvTemplate()}
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4  ' style={{ height: '800px' }}>
+                <div className='h-full overflow-y-auto overflow-x-hidden'><Resumeform handelCvData={handelCvData}></Resumeform></div>
+                <div className='h-full' ref={printRef}>
+                    <div className=' aspect-ratio-a4 '>
+                        {getCvTemplate()}
+                    </div>
                 </div>
 
             </div>
