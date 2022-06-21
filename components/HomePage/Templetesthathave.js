@@ -1,14 +1,64 @@
-import React from 'react';
 
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
+import React, { useEffect, useState, useCallback } from "react";
+
+import { Navigation, Pagination, Scrollbar, A11y, Virtual } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Whytakethelong from './Whytakethelong';
 
 const Templetesthathave = () => {
+
+    const [swiper, setSwiper] = useState(null);
+
+    const goNext = () => {
+        if (swiper !== null) {
+            swiper.slideNext();
+        }
+    };
+
+    const goPrev = () => {
+        if (swiper !== null) {
+            swiper.slidePrev();
+        }
+    };
+
+    useEffect(() => {
+        let timeout;
+        if (swiper !== null) {
+            console.log(swiper);
+            timeout = setTimeout(() => {
+                swiper.update();
+            }, 1000);
+        }
+
+        return function cleanup() {
+            if (swiper !== null) {
+                clearTimeout(timeout);
+                swiper.destroy();
+                console.log("Swiper destroied");
+            }
+        };
+    }, [swiper]);
+
+
+    const params = {
+        centeredSlides: true,
+        loop: true,
+        onSwiper: setSwiper,
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+            },
+        },
+        loopedSlides: 2,
+        modules: [Navigation, Pagination, Scrollbar, A11y, Virtual],
+        navigation: true,
+        spaceBetween: 20,
+        slidesPerView: 1,
+    };
+
     return (
         <div>
             <div className='bg-indigo-900 py-20'>
@@ -18,32 +68,14 @@ const Templetesthathave = () => {
 
 
             <div className='bg-indigo-900 py-10 templete-slide'>
-                <Swiper
-                    breakpoints={{
-                        // when window width is >= 640px
-                        
-                        // when window width is >= 768px
-                        768: {
-                        slidesPerView: 3,
-                        },
-                    }}
-                    modules={[Navigation, Pagination, Scrollbar, A11y]}
-                    navigation
-                    centeredSlides={true}
-                    
-                    loop={true}
-                    spaceBetween={20}
-                    slidesPerView={1}
 
-                    onSlideChange={() => console.log('slide change')}
-                    onSwiper={(swiper) => console.log("on Swiper")}
+                <Swiper {...params}
+
                 >
-                    <SwiperSlide > <div><img className='mx-2 w-full' src='img-1.jpg'></img></div>  </SwiperSlide>
-                    <SwiperSlide > <div><img className='mx-2 w-full' src='img-2.jpg'></img></div>  </SwiperSlide>
-                    <SwiperSlide > <div><img className='mx-2 w-full' src='img-1.jpg'></img> </div></SwiperSlide>
-                    <SwiperSlide > <div><img className='mx-2 w-full' src='img-2.jpg'></img></div>  </SwiperSlide>
-
-
+                    <SwiperSlide key={1 + 's'} > <div><img className='mx-2 w-full' src='img-1.jpg'></img></div>  </SwiperSlide>
+                    <SwiperSlide key={2 + 's'}> <div><img className='mx-2 w-full' src='img-2.jpg'></img></div>  </SwiperSlide>
+                    <SwiperSlide key={3 + 's'}> <div><img className='mx-2 w-full' src='mk1.png'></img> </div></SwiperSlide>
+                    <SwiperSlide key={4 + 's'}> <div><img className='mx-2 w-full' src='mk2.png'></img></div>  </SwiperSlide>
                 </Swiper>
             </div>
 

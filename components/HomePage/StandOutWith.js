@@ -4,7 +4,7 @@ import Modal from '../modal';
 const StandOutWith = () => {
     return (
         <div>
-            <div class="w-5/6 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10">
+            <div className="w-5/6 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-10">
 
 
                 <div >
