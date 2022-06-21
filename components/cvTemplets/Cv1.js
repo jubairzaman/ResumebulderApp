@@ -74,9 +74,9 @@ const Cv1 = ({ cv }) => {
                 {/* Expertise and work experiance part */}
 
                 <div className='mx-2 my-5'>
-                    <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-10 px-3 py-5">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-10 px-3 py-5">
                         <div>
-                            <div class="grid grid-rows-4 grid-flow-col gap-4">
+                            <div className="grid grid-rows-4 grid-flow-col gap-4">
                                 <div>
                                     <h1 className='text-md font-semibold text-sky-500'>Expertise</h1>
                                     <SkillBar skills={skills} height={14} colors={colors} />
@@ -93,14 +93,14 @@ const Cv1 = ({ cv }) => {
 
                         </div>
                         <div>
-                            <div class="grid grid-rows-4 grid-flow-col gap-4">
+                            <div className="grid grid-rows-4 grid-flow-col gap-4">
                                 <div>
                                     <h1 className='text-md font-semibold text-sky-500'>Work Experiance</h1>
 
                                     <div>
 
                                         <div className='flex justify-between'>
-                                            <h1 className='text-md font-semibold'>{cv.jobtitle}</h1> <span className='text-xs mt-2'><i class="las la-map-marker-alt"></i>{cv.jobLocation} </span>
+                                            <h1 className='text-md font-semibold'>{cv.jobtitle}</h1> <span className='text-xs mt-2'><i className="las la-map-marker-alt"></i>{cv.jobLocation} </span>
                                         </div>
                                         <span className='text-xs'>at {cv.cname} </span>
 
