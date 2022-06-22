@@ -1,4 +1,6 @@
+import Link from "next/link";
 import React from "react";
+import Carousel from "./carousel";
 
 export default function Modal() {
   const [showModal, setShowModal] = React.useState(false);
@@ -42,6 +44,16 @@ export default function Modal() {
                     themselves. If you're taught you can’t do anything, you
                     won’t do anything. I was taught I could do everything.
                   </p>
+                  <Carousel slidesPerView={3}  childs= {
+                    [
+                      <Link href={"cv-builder/1"}>Hello1</Link>,
+                      <Link href={"cv-builder/2"}>Hello2</Link>,
+                      <Link href={"cv-builder/1"}>Hello1</Link>,
+                      <Link href={"cv-builder/1"}>Hello1</Link>,
+                      <Link href={"cv-builder/1"}>Hello1</Link>,
+                      <Link href={"cv-builder/1"}>Hello1</Link>,
+                    ]
+                  }/>
                 </div>
                 {/*footer*/}
                 <div className="flex items-center justify-end p-6 border-t border-solid border-slate-200 rounded-b">

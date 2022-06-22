@@ -13,9 +13,6 @@ const Carousel = (props) => {
 
     return (
         <>
-
-        
-
             <Swiper
                 autoplay={{
                     delay: 2500,
@@ -25,6 +22,7 @@ const Carousel = (props) => {
                 navigation
                 spaceBetween={50}
                 slidesPerView={props.slidesPerView??1}
+                loopedSlides= {props.slidesPerView??1}
                 onSlideChange={() => console.log('slide change')}
                 onSwiper={(swiper) => console.log("on Swiper")}
             >
