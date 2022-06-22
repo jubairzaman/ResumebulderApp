@@ -2,11 +2,11 @@ import React from 'react';
 
 const WhyItPay = () => {
     return (
-        <div>
-            <div className=' py-30'>
-                <h1 className='text-3xl  font-3xl font-semibold text-center'>Why it pays to join with us</h1>
+        <div className=''>
+            <div className=' py-32'>
+                <h1 className=' text-4xl font-semibold text-center'>Why it pays to join with us</h1>
                 <div className='bg-white w-5/6 mx-auto my-20 rounded-lg drop-shadow-2xl'>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 ">
                         <div className='m-10'>
                             <h1 className='text-center text-5xl font-semibold'> + 57%</h1>
                             <p className='text-center text-md my-2'>Better chance of getting an interview</p>

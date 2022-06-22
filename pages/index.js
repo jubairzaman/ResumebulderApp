@@ -1,7 +1,9 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Ajobworthy from '../components/HomePage/Ajobworthy'
 import BannerPart from '../components/HomePage/BannerPart'
 import CreateYourBestresue from '../components/HomePage/CreateYourBestresue'
+import FAQ from '../components/HomePage/FAQ'
 import Itssoeasy from '../components/HomePage/Itssoeasy'
 import Removetheheadache from '../components/HomePage/Removetheheadache'
 import StandOutWith from '../components/HomePage/StandOutWith'
@@ -12,7 +14,7 @@ import Whytakethelong from '../components/HomePage/Whytakethelong'
 
 export default function Home() {
   return (
-    <div>
+    <div >
       <BannerPart></BannerPart>
       <CreateYourBestresue></CreateYourBestresue>
       <Templetesthathave></Templetesthathave>
@@ -20,7 +22,8 @@ export default function Home() {
       <WhyItPay></WhyItPay>
       <Removetheheadache></Removetheheadache>
       <StandOutWith></StandOutWith>
-
+      <Ajobworthy></Ajobworthy>
+      <FAQ></FAQ>
       <Whytakethelong></Whytakethelong>
 
 
