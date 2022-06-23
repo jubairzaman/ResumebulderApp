@@ -7,6 +7,7 @@ import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
 import { useRouter } from 'next/router'
 import Navbar from '../../components/navbar';
+import { getProviders, signIn, getCsrfToken } from "next-auth/react"
 const CvBuilder = () => {
     const cvId = useRouter().query.cv
     const printRef = React.useRef();
@@ -106,4 +107,12 @@ CvBuilder.getLayout = function getLayout(page) {
     )
 }
 
+
+export async function getServerSideProps(context) {
+    const providers = await getProviders()
+    const csrfToken = await getCsrfToken(context)
+    return {
+        props: { providers, csrfToken },
+    }
+}
 export default CvBuilder;

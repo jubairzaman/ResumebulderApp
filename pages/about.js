@@ -1,8 +1,8 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from '../styles/Home.module.css'
-
-export default function Home() {
+import { getProviders, signIn, getCsrfToken } from "next-auth/react"
+export default function About() {
   return (
     <div className={styles.container}>
       <Head>
@@ -66,4 +66,12 @@ export default function Home() {
       </footer>
     </div>
   )
+}
+
+export async function getServerSideProps(context) {
+  const providers = await getProviders()
+  const csrfToken = await getCsrfToken(context)
+  return {
+      props: { providers, csrfToken },
+  }
 }
