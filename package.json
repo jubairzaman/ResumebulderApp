@@ -21,7 +21,8 @@
     "react-dom": "18.1.0",
     "react-faq-component": "^1.3.4",
     "react-skillbars": "^2.0.1",
-    "swiper": "^8.2.4"
+    "swiper": "^8.2.4",
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@netlify/plugin-nextjs": "^4.9.1",
