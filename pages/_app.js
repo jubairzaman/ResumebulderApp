@@ -2,23 +2,29 @@ import '../styles/globals.css'
 import Layout from '../components/layout'
 import Head from 'next/head'
 import { SessionProvider } from "next-auth/react"
+import { AuthDataProvider } from '../components/common/AuthDataProvider'
 
-function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
 
+function MyApp({ Component, pageProps: { session, providers,csrfToken, ...pageProps },}) {
+  
 
   const getLayout =
     Component.getLayout || ((page) => page)
   const temp = function (page) {
     if (Component.getLayout != null) {
-      return <SessionProvider session={session}>
-        {Component.getLayout(page)}
-      </SessionProvider>
+      return <AuthDataProvider providers=
+      {providers} csrfToken={csrfToken}>
+        <SessionProvider session={session}>
+          {Component.getLayout(page)}
+        </SessionProvider>
+      </AuthDataProvider>
     } else {
-      return <SessionProvider session={session}>
+      return <AuthDataProvider providers=
+      {providers} csrfToken={csrfToken}><SessionProvider session={session}>
         <Layout>
           {page}
         </Layout>
-      </SessionProvider>;
+      </SessionProvider></AuthDataProvider>;
     }
   }
 
@@ -26,5 +32,7 @@ function MyApp({ Component, pageProps: { session, ...pageProps }, }) {
     <Component {...pageProps} />
   )
 }
+
+
 
 export default MyApp

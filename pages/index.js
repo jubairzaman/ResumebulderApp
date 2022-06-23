@@ -10,7 +10,7 @@ import Templetesthathave from '../components/HomePage/Templetesthathave'
 
 import WhyItPay from '../components/HomePage/whyItPay'
 import Whytakethelong from '../components/HomePage/Whytakethelong'
-
+import { getProviders, signIn, getCsrfToken } from "next-auth/react"
 
 export default function Home() {
   return (
@@ -25,12 +25,13 @@ export default function Home() {
       <Ajobworthy></Ajobworthy>
       <FAQ></FAQ>
       <Whytakethelong></Whytakethelong>
-
-
-
-
-
-
     </div>
   )
+}
+export async function getServerSideProps(context) {
+  const providers = await getProviders()
+  const csrfToken = await getCsrfToken(context)
+  return {
+      props: { providers, csrfToken },
+  }
 }
