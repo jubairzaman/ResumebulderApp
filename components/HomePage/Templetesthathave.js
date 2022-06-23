@@ -27,7 +27,6 @@ const Templetesthathave = () => {
     useEffect(() => {
         let timeout;
         if (swiper !== null) {
-            console.log(swiper);
             timeout = setTimeout(() => {
                 swiper.update();
             }, 1000);
@@ -37,7 +36,6 @@ const Templetesthathave = () => {
             if (swiper !== null) {
                 clearTimeout(timeout);
                 swiper.destroy();
-                console.log("Swiper destroied");
             }
         };
     }, [swiper]);
