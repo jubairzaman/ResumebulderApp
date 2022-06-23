@@ -1,5 +1,5 @@
 import { useSession, signIn, signOut } from "next-auth/react"
-import AuthModal from "../Authmodal"
+import AuthModal from "../authModal"
 
 
 
