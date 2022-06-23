@@ -3,6 +3,10 @@ import { getProviders, signIn, getCsrfToken } from "next-auth/react"
 export default function SignIn({ providers, csrfToken }) {
     return (
         <>
+
+
+
+
             {Object.values(providers).map(function (provider) {
                 if (provider.id != 'credentials') {
                     return <div key={provider.name}>
