@@ -20,7 +20,6 @@ const Resumeinfo = () => {
 
         pdf.addImage(data, 'PNG', 0, 0, pdfWidth, pdfHeight);
         pdf.save('print.pdf');
-        console.log(pdf);
     };
     const [cv, setCvData] = useState({
         firstName: "",

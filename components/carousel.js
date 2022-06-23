@@ -23,8 +23,8 @@ const Carousel = (props) => {
                 spaceBetween={50}
                 slidesPerView={props.slidesPerView??1}
                 loopedSlides= {props.slidesPerView??1}
-                onSlideChange={() => console.log('slide change')}
-                onSwiper={(swiper) => console.log("on Swiper")}
+                onSlideChange={() => }
+                onSwiper={(swiper) => }
             >
                 {props.childs.map((number, index) => <SwiperSlide key={index}>{number}</SwiperSlide>)}
                
