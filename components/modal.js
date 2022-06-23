@@ -41,7 +41,7 @@ export default function Modal() {
 
 
 
-                  <div class="grid grid-cols-3 gap-4">
+                  <div className="grid grid-cols-3 gap-4">
                     <div className="drop-shadow-2xl">
                       <Link href={"cv-builder/1"}>
                         <img className='' src='img-1.jpg'></img>

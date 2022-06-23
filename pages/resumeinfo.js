@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import Cv1 from '../components/cvTemplets/Cv1';
 import Resumeform from '../components/ResumeBulder/Resumeform';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
-const resumeinfo = () => {
-    const printRef = React.useRef();
+const Resumeinfo = () => {
+    const printRef = useRef();
     const handleDownloadPdf = async () => {
 
         const element = printRef.current;
@@ -53,4 +53,4 @@ const resumeinfo = () => {
     );
 };
 
-export default resumeinfo;
+export default Resumeinfo;
