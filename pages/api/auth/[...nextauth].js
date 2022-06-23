@@ -1,8 +1,8 @@
 import NextAuth from "next-auth"
 import GithubProvider from "next-auth/providers/github"
 import CredentialsProvider from "next-auth/providers/credentials";
-import { PrismaAdapter } from "@next-auth/prisma-adapter"
-import { PrismaClient } from "@prisma/client"
+// import { PrismaAdapter } from "@next-auth/prisma-adapter"
+// import { PrismaClient } from "@prisma/client"
 const bcrypt = require('bcrypt');
 
 const prisma = new PrismaClient()
