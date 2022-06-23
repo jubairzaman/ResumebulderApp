@@ -16,7 +16,7 @@ const CvBuilder = () => {
 
         const element = printRef.current;
         const canvas = await html2canvas(element);
-        
+
         preview.current.append(canvas)
         const data = canvas.toDataURL('image/png');
         const pdf = new jsPDF();
@@ -69,25 +69,25 @@ const CvBuilder = () => {
 
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 relative px-5 mt-12'>
                 <div className='mt-12'>
-                    <button type="button" onClick={handleDownloadPdf}>
+                    {/* <button type="button" onClick={handleDownloadPdf}>
                         Download as PDF
-                    </button>
+                    </button> */}
 
                     <Resumeform handelCvData={handelCvData}></Resumeform>
                 </div>
                 <div className='relative'>
-                    <div className=' '>
+                    <div className='absolute top-0 left-0 w-full my-32' style={{ height: "calc(100vh - 40px)" }}>
                         <div ref={printRef}>
                             {getCvTemplate()}
                         </div>
                     </div>
-                    <div className='absolute top-0 left-0 w-full' style={{height: "calc(100vh - 40px)"}}>
+                    {/* <div className='absolute top-0 left-0 w-full' style={{height: "calc(100vh - 40px)"}}>
                         <div className='bg-red-500 p-20 w-full h-full flex justify-center'>
                             <div className='aspect-ratio-a4'  ref={preview}>
 
                             </div>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
 
             </div>

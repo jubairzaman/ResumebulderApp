@@ -27,9 +27,9 @@ const Cv1 = ({ cv }) => {
 
 
                 {/* Personal Information Part  */}
-                <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 ">
+                <div className="grid grid-cols-3 sm:grid-cols-3 md:grid-cols-3 w-10/12 mx-auto ">
                     <div>
-                        <img src={propic} ></img>
+                        <img className='w-1/2' src='https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png'></img>
                     </div>
 
                     <div>
@@ -51,7 +51,7 @@ const Cv1 = ({ cv }) => {
                 {/* Profile And Business Objective Part  */}
 
                 <div className='bg-sky-100 mt-5'>
-                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-10 px-3 py-5">
+                    <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 gap-10 px-5 py-5">
                         <div>
 
                             <h1 className='text-sky-500 text-md font-semibold'>Profile</h1>

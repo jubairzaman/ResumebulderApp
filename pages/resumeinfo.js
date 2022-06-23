@@ -8,7 +8,7 @@ const resumeinfo = () => {
     const handleDownloadPdf = async () => {
 
         const element = printRef.current;
-        
+
         const canvas = await html2canvas(element);
         const data = canvas.toDataURL('image/png');
 
@@ -38,9 +38,9 @@ const resumeinfo = () => {
 
     return (
         <div>
-            <button type="button" onClick={handleDownloadPdf}>
+            {/* <button type="button" onClick={handleDownloadPdf}>
                 Download as PDF
-            </button>
+            </button> */}
             <pre>{JSON.stringify(cv, null, 2)}</pre>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4  '>
                 <Resumeform handelCvData={handelCvData}></Resumeform>
