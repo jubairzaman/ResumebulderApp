@@ -18,16 +18,16 @@ const Carousel = (props) => {
                     delay: 2500,
                     disableOnInteraction: false,
                 }}
-                modules={[Autoplay,Navigation, Pagination, Scrollbar, A11y]}
+                modules={[Autoplay, Navigation, Pagination, Scrollbar, A11y]}
                 navigation
                 spaceBetween={50}
-                slidesPerView={props.slidesPerView??1}
-                loopedSlides= {props.slidesPerView??1}
-                onSlideChange={() => }
-                onSwiper={(swiper) => }
+                slidesPerView={props.slidesPerView ?? 1}
+                loopedSlides={props.slidesPerView ?? 1}
+            // onSlideChange={() =>  }
+            // onSwiper={(swiper) => }
             >
                 {props.childs.map((number, index) => <SwiperSlide key={index}>{number}</SwiperSlide>)}
-               
+
 
             </Swiper>
 
