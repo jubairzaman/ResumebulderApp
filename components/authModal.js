@@ -23,7 +23,7 @@ export default function AuthModal() {
     <>
       <ClickAwayListener onClickAway={handleClickAway}>
         <button
-          className='rounded-lg bg-indigo-700 text-white px-10 py-6 '
+          className='rounded-lg bg-indigo-700 text-white '
           type="button"
           onClick={show}
         >Sing In
