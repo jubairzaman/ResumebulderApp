@@ -1,6 +1,7 @@
 import { useSession, signIn, signOut } from "next-auth/react"
-import Link from "next/link"
 import AuthModal from "../Authmodal"
+
+
 
 export default function LoginBtn() {
   const { data: session } = useSession()
