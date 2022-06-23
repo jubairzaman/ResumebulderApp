@@ -136,22 +136,22 @@ const Cv1 = ({ cv }) => {
                     {/* Social Media Part  */}
 
                     <div className='container bg-slate-100'>
-                        <div class="grid grid-cols-4 gap-4">
+                        <div className="grid grid-cols-4 gap-4">
                             <div className='flex justify-center '>
-                                <i class="lab la-facebook-square"></i>
+                                <i className="lab la-facebook-square"></i>
 
                                 <h1>linkedin.com/{cv.linkedin}</h1>
                             </div>
                             <div className='flex justify-center '>
-                                <i class="lab la-facebook-square"></i>
+                                <i className="lab la-facebook-square"></i>
                                 <h1>facebook.com/{cv.facebook}</h1>
                             </div>
                             <div className='flex justify-center '>
-                                <i class="lab la-facebook-square"></i>
+                                <i className="lab la-facebook-square"></i>
                                 <h1>skype.com/{cv.skype}</h1>
                             </div>
                             <div className='flex justify-center '>
-                                <i class="lab la-facebook-square"></i>
+                                <i className="lab la-facebook-square"></i>
                                 <h1>{cv.website}</h1>
                             </div>
                         </div>

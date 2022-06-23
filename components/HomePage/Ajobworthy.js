@@ -13,19 +13,19 @@ const Ajobworthy = () => {
                             <h1 className='font-semibold text-5xl '>A job-worthy resume that gets you hired</h1>
 
                             <div className='flex mt-5 '>
-                                <i class="las la-check my-5 mx-5"></i>
+                                <i className="las la-check my-5 mx-5"></i>
                                 <p className='my-3'> Create a professional resume with our online builder without ever leaving your web browser.</p>
                             </div>
                             <div className='flex my-1 '>
-                                <i class="las la-check my-5 mx-5"></i>
+                                <i className="las la-check my-5 mx-5"></i>
                                 <p className='my-3'>Stop worrying about the formatting with field-tested templates, proven to work.</p>
                             </div>
                             <div className='flex my-1 '>
-                                <i class="las la-check my-5 mx-5"></i>
+                                <i className="las la-check my-5 mx-5"></i>
                                 <p className='my-3'>Get access to our powerful cover letters and match them with your new resume.</p>
                             </div>
                             <div className='flex my-1 '>
-                                <i class="las la-check my-5 mx-5"></i>
+                                <i className="las la-check my-5 mx-5"></i>
                                 <p className='my-3'>Access all functionalities for 7 days for $1.99, then increasing to only $29.95/mo.</p>
                             </div>
 
