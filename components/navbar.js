@@ -23,10 +23,12 @@ const Navbar = () => {
 
 
                             <div className="hidden sm:flex sm:items-center">
+
+                                <a href="#" className="text-gray-800 text-md font-semibold hover:text-purple-600 mr-4">About</a>
+                                <a href="#" className="text-gray-800 text-md font-semibold hover:text-purple-600 mr-4">Contact us</a>
+                                {/* <a href="#" className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">Deshboad</a> */}
+
                                 <LoginBtn />
-                                <a href="#" className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">About</a>
-                                <a href="#" className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4">Contact</a>
-                                <a href="#" className="text-gray-800 text-sm font-semibold border px-4 py-2 rounded-lg hover:text-purple-600 hover:border-purple-600">Deshboad</a>
                             </div>
 
                             <div className="sm:hidden cursor-pointer" onClick={handleToggle}>

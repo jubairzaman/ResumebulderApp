@@ -1,5 +1,6 @@
 import { useSession, signIn, signOut } from "next-auth/react"
 import AuthModal from "../authModal"
+import Singupmodal from "../singupmodal"
 
 
 
@@ -15,6 +16,8 @@ export default function LoginBtn() {
   return (
     <>
       <AuthModal></AuthModal>
+
+      <Singupmodal></Singupmodal>
 
     </>
   )
