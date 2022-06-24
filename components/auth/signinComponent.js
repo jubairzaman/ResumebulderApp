@@ -30,8 +30,22 @@ export default function SigninComponent() {
                                 <input name="password" id="input-password-for-credentials-provider" type="password" placeholder="Create A Strong Password" label="Password" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" />
                             </label>
                         </div>
+                        <div className="flex justify-between mb-2">
+                            <div class="form-check">
+                                <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" />
+                                <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault">
+                                    Remember Password
+                                </label>
+                            </div>
+                            <div>
+                                <a><span className="text-violet-700 ">Create An Account</span></a>
+                            </div>
+
+
+                        </div>
 
                         <button className="rounded-lg mx-auto bg-indigo-700 w-full mt-3 text-white py-2 " type="submit">Log In</button>
+
                     </form>
 
                     {Object.values(providers).map(function (provider) {
@@ -47,7 +61,7 @@ export default function SigninComponent() {
                     {Object.values(providers).map(function (provider) {
                         if (provider.id != 'credentials') {
                             return <div key={provider.name}>
-                                <button className="rounded-lg mx-auto bg-white shadow-xl w-full my-2 text-black py-2" onClick={() => signIn(provider.id)}>
+                                <button className="rounded-lg mx-auto bg-white shadow-2xl w-full my-2 text-black py-2" onClick={() => signIn(provider.id)}>
 
                                     <img className="h-5 mx-auto" src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-sva-scholarship-20.png"></img>
                                 </button>
@@ -55,6 +69,10 @@ export default function SigninComponent() {
                         }
                         return <span key={provider.name}></span>
                     })}
+
+
+
+
                 </div>
             </div>
         </div>

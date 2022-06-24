@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ClickAwayListener from '@mui/base/ClickAwayListener';
 import SigninComponent from "./auth/signinComponent";
+import SingupComponent from "./auth/singupComponent";
 
 const Singupmodal = () => {
     const [showModal, setShowModal] = useState(false);
@@ -36,7 +37,8 @@ const Singupmodal = () => {
                             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none" >
                                 <ClickAwayListener onClickAway={hide}>
                                     <div className="relative w-auto  overflow-y-auto w-3/4 ">
-                                        <SigninComponent></SigninComponent>
+
+                                        <SingupComponent></SingupComponent>
                                     </div>
                                 </ClickAwayListener>
 
