@@ -1,13 +1,10 @@
 import { getProviders, signIn, getCsrfToken } from "next-auth/react"
 
-export default function SignIn({ providers, csrfToken }) {
+export default function SignIn({ providerso, csrfTokeno }) {
+    
     return (
         <>
-
-
-
-
-            {Object.values(providers).map(function (provider) {
+            {Object.values(providerso).map(function (provider) {
                 if (provider.id != 'credentials') {
                     return <div key={provider.name}>
                         <button className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4" onClick={() => signIn(provider.id)}>
@@ -22,7 +19,7 @@ export default function SignIn({ providers, csrfToken }) {
 
 
                 <form action="/api/auth/callback/credentials" method="POST">
-                    <input name="csrfToken" type="hidden" defaultValue={csrfToken} />
+                    <input name="csrfToken" type="hidden" defaultValue={csrfTokeno} />
                     <div>
                         <label className="section-header" htmlFor="input-username-for-credentials-provider">Email</label>
                         <input name="username" id="input-username-for-credentials-provider" type="email" placeholder="Enter your Email" label="Email" />
@@ -39,9 +36,10 @@ export default function SignIn({ providers, csrfToken }) {
 }
 
 export async function getServerSideProps(context) {
-    const providers = await getProviders()
-    const csrfToken = await getCsrfToken(context)
+    
+    const providerso = await getProviders()
+    const csrfTokeno = await getCsrfToken(context)
     return {
-        props: { providers, csrfToken },
+        props: { providerso, csrfTokeno },
     }
 }

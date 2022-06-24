@@ -31,9 +31,6 @@ export default function SigninComponent() {
                             </label>
                         </div>
 
-
-
-
                         <button className="rounded-lg mx-auto bg-indigo-700 w-full mt-3 text-white py-2 " type="submit">Log In</button>
                     </form>
 
