@@ -31,7 +31,12 @@ const Ajobworthy = () => {
 
 
 
-                            <div className='my-10 '><Modal></Modal></div>
+                            <div className='my-10 '><button
+                                className='rounded-lg bg-indigo-700 text-white px-10 py-5 '
+                                type="button"
+
+                            ><Modal></Modal>
+                            </button></div>
 
                         </div>
 

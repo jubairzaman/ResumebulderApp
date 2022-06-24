@@ -12,7 +12,12 @@ const StandOutWith = () => {
                         <h1 className='font-semibold text-4xl '>Stand out with a personalized Online Resume Website</h1>
                         <p className='my-3'>There is no better first impression than having your own online resume website. After you created your resume, all it takes is one click to create your own website!</p>
 
-                        <div className='my-10 '><Modal></Modal></div>
+                        <div className='my-10 '><button
+                            className='rounded-lg bg-indigo-700 text-white px-10 py-5 '
+                            type="button"
+
+                        ><Modal></Modal>
+                        </button></div>
 
                     </div>
 

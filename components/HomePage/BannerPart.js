@@ -19,7 +19,12 @@ const BannerPart = () => {
                     </div>
                 </section>
                 <div className='flex justify-center py-10 '>
-                    <Modal />
+                    <button
+                        className='rounded-lg bg-indigo-700 text-white px-10 py-5 '
+                        type="button"
+
+                    ><Modal></Modal>
+                    </button>
                 </div>
                 <div className='flex justify-center  '> <div className="w-3 h-3 mr-2 bg-green-500 rounded-full flex my-auto  "></div>
 

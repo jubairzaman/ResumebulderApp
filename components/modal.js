@@ -6,7 +6,7 @@ import ClickAwayListener from '@mui/base/ClickAwayListener';
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
   const handleClickAway = () => {
-    
+
     setShowModal(false);
   };
 
@@ -18,12 +18,8 @@ export default function Modal() {
 
     <>
       <ClickAwayListener onClickAway={handleClickAway}>
-        <button
-          className='rounded-lg bg-indigo-700 text-white px-10 py-6 '
-          type="button"
-          onClick={show}
-        >Create Resume
-        </button>
+        <h1 onClick={show}>Create Resume</h1>
+
       </ClickAwayListener>
 
       {showModal ? (
@@ -31,7 +27,7 @@ export default function Modal() {
 
 
           <>
-          
+
             <div className="justify-center items-center flex overflow-x-hidden overflow-y-auto fixed inset-0 z-50 outline-none focus:outline-none" >
               <div className="relative w-auto my-6 mx-auto  overflow-y-auto h-3/4 w-3/4  ">
                 {/*content*/}
@@ -81,7 +77,7 @@ export default function Modal() {
                 </div>
               </div>
             </div>
-            
+
             <div className="opacity-25 fixed inset-0 z-40 bg-black"></div>
           </>
         </>

@@ -14,7 +14,12 @@ const Removetheheadache = () => {
                         <h1 className='font-semibold text-4xl '>Remove the headache from creating a resume</h1>
                         <p className='my-3'>We take care of the formatting, spell-check your content & even provide you with pre-written phrases to use. What could be easier?</p>
 
-                        <div className='my-10 '><Modal></Modal></div>
+                        <div className='my-10 '><button
+                            className='rounded-lg bg-indigo-700 text-white px-10 py-5 '
+                            type="button"
+
+                        ><Modal></Modal>
+                        </button></div>
 
                     </div>
 
