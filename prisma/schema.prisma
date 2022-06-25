@@ -11,18 +11,18 @@ datasource db {
 }
 
 model Account {
-  id                 String  @id @default(cuid())
-  userId             String
-  type               String
-  provider           String
-  providerAccountId  String
-  refresh_token      String?  @db.Text
-  access_token       String?  @db.Text
-  expires_at         Int?
-  token_type         String?
-  scope              String?
-  id_token           String?  @db.Text
-  session_state      String?
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
@@ -46,6 +46,30 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  cvs           Cv[]
+}
+
+model Cv {
+  id             String  @id @default(cuid())
+  userId         String
+  templateId     String
+  firstName      String?
+  lastName       String?
+  email          String?
+  phone          String?
+  jobTitle       String?
+  country        String?
+  city           String?
+  address        String?
+  zipCode        String?
+  nationality    String?
+  drivingLicense String?
+  placeOfBirth   String?
+  dateOfBirth    String?
+  linkedIn       String?
+  website        String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model VerificationToken {

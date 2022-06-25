@@ -1,8 +1,20 @@
-import { useAuthDataContext } from "../common/AuthDataProvider";
 
-import { signIn } from "next-auth/react"
+import { useEffect, useState } from "react"
+import { getProviders, signIn, getCsrfToken } from "next-auth/react"
 export default function SigninComponent() {
-    const { providers, csrfToken } = useAuthDataContext()
+    const [providers, setProviders] = useState([])
+    const [csrfToken, setcsrfToken] = useState("")
+    
+    useEffect( () => {
+        const setAuthData = async () =>{
+            const providers = await getProviders()
+            const csrfToken = await getCsrfToken()
+            setProviders(providers);
+            setcsrfToken(csrfToken);
+        }
+        setAuthData();
+     }, []);
+    
     return (
         <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-1/2 mx-auto bg-white outline-none focus:outline-none">
             <div className="p-10">
@@ -51,27 +63,15 @@ export default function SigninComponent() {
                     {Object.values(providers).map(function (provider) {
                         if (provider.id != 'credentials') {
                             return <div key={provider.name}>
-                                <button className="rounded-lg mx-auto bg-black w-full my-2 text-white py-2" onClick={() => signIn(provider.id)}>
+                                <button className="rounded-lg mx-auto bg-black w-full my-2 text-white py-2" onClick={() => signIn(provider.id, {
+                                    callbackUrl: `${window.location.origin}/dashboard`,
+                                })}>
                                     {provider.name}
                                 </button>
                             </div>
                         }
                         return <span key={provider.name}></span>
                     })}
-                    {Object.values(providers).map(function (provider) {
-                        if (provider.id != 'credentials') {
-                            return <div key={provider.name}>
-                                <button className="rounded-lg mx-auto bg-white shadow-2xl w-full my-2 text-black py-2" onClick={() => signIn(provider.id)}>
-
-                                    <img className="h-5 mx-auto" src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-sva-scholarship-20.png"></img>
-                                </button>
-                            </div>
-                        }
-                        return <span key={provider.name}></span>
-                    })}
-
-
-
 
                 </div>
             </div>
