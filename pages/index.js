@@ -10,7 +10,7 @@ import Templetesthathave from '../components/HomePage/Templetesthathave'
 
 import WhyItPay from '../components/HomePage/whyItPay'
 import Whytakethelong from '../components/HomePage/Whytakethelong'
-import { getProviders, signIn, getCsrfToken } from "next-auth/react"
+import { getProviders, getCsrfToken } from "next-auth/react"
 
 export default function Home() {
   return (

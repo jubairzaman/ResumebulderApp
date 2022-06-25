@@ -50,14 +50,26 @@ export default NextAuth({
   session: {
     // Set to jwt in order to CredentialsProvider works properly
     strategy: 'jwt'
-  },
-
-  callbacks: {
+  }, callbacks: {
     async signIn({ user, account, profile, email, credentials }) {
+      return true
+    },
+    async redirect({ url, baseUrl }) {
       return '/dashboard'
     },
-    
+    async session({ session, user, token }) {
+      if(session?.user && token.sub){
+        session.user = {...session.user, id: token.sub}
+      }
+      
+      return session
+    },
+    async jwt({ token, user, account, profile, isNewUser }) {
+      return token
+    }
   },
+
+
   pages: {
     signIn: '/auth/signin',
     //signOut: '/auth/signout',

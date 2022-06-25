@@ -1,10 +1,20 @@
-import React from 'react';
-import { useAuthDataContext } from "../common/AuthDataProvider";
 
-import { signIn } from "next-auth/react"
+import React, { useEffect, useState } from "react"
+import { getProviders, signIn, getCsrfToken } from "next-auth/react"
 
 const SingupComponent = () => {
-    const { providers, csrfToken } = useAuthDataContext()
+    const [providers, setProviders] = useState([])
+    const [csrfToken, setcsrfToken] = useState("")
+    
+    useEffect( () => {
+        const setAuthData = async () =>{
+            const providers = await getProviders()
+            const csrfToken = await getCsrfToken()
+            setProviders(providers);
+            setcsrfToken(csrfToken);
+        }
+        setAuthData();
+     }, []);
     return (
         <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-1/2 mx-auto bg-white outline-none focus:outline-none">
             <div className="p-10">
