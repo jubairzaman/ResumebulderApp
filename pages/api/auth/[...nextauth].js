@@ -8,6 +8,8 @@ const bcrypt = require('bcrypt');
 const prisma = new PrismaClient()
 
 export default NextAuth({
+
+
   // Configure one or more authentication providers
   // adapter: PrismaAdapter(prisma),
   providers: [
@@ -49,12 +51,19 @@ export default NextAuth({
     // Set to jwt in order to CredentialsProvider works properly
     strategy: 'jwt'
   },
+
+  callbacks: {
+    async signIn({ user, account, profile, email, credentials }) {
+      return '/dashboard'
+    },
+    
+  },
   pages: {
     signIn: '/auth/signin',
     //signOut: '/auth/signout',
     //error: '/auth/error', // Error code passed in query string as ?error=
     //verifyRequest: '/auth/verify-request', // (used for check email message)
-    //newUser: '/auth/new-user' // New users will be directed here on first sign in (leave the property out if not of interest)
+    //newUser: '/dashboard' // New users will be directed here on first sign in (leave the property out if not of interest)
   },
   // database: process.env.DATABASE_URL,
 })
