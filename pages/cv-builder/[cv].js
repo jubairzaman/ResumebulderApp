@@ -58,7 +58,7 @@ const CvBuilder = () => {
     }
     const getCvTemplate = () => {
         if (cvId == '2') {
-            return <Cv2 cv={cvData} />
+            return <Cv3 cv={cvData} />
         } else {
             return <Cv1 cv={cvData} />
         }
