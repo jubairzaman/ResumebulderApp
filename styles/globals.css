@@ -52,5 +52,17 @@ a {
 }
 
 .react-pdf__Page__canvas{
-  max-width: 100%;;
+  max-width: 100%;
+  
+  max-height: 100% !important;
+ 
+}
+
+.react-pdf__Page{
+  max-width: 100%;
+  aspect-ratio: 70/99 !important;
+  max-height: 100% !important;
+}
+.react-pdf__Document{
+  height: 80vh;
 }

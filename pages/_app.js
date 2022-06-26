@@ -8,10 +8,10 @@ function MyApp({ Component, pageProps: { session, providers, csrfToken, ...pageP
   
 
 const temp = function (page) {
-  if (Component.getLayout != null) {
+  if (Component.shoudSkipDefaultLayout != null && Component.shoudSkipDefaultLayout == true) {
     return <>
       <SessionProvider session={session}>
-        {Component.getLayout(page)}
+       {page}
       </SessionProvider>
     </>
   } else {
