@@ -5,16 +5,16 @@ import { getProviders, signIn, getCsrfToken } from "next-auth/react"
 const SingupComponent = () => {
     const [providers, setProviders] = useState([])
     const [csrfToken, setcsrfToken] = useState("")
-    
-    useEffect( () => {
-        const setAuthData = async () =>{
+
+    useEffect(() => {
+        const setAuthData = async () => {
             const providers = await getProviders()
             const csrfToken = await getCsrfToken()
             setProviders(providers);
             setcsrfToken(csrfToken);
         }
         setAuthData();
-     }, []);
+    }, []);
     return (
         <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-1/2 mx-auto bg-white outline-none focus:outline-none">
             <div className="p-10">
@@ -72,8 +72,8 @@ const SingupComponent = () => {
 
 
                     <div className="mt-3 flex">
-                        <div class="form-check mx-2">
-                            <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left cursor-pointer" type="checkbox" value="" id="flexCheckChecked3" checked />
+                        <div className="form-check mx-2">
+                            <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 my-1 align-top bg-no-repeat bg-center bg-contain float-left cursor-pointer" type="checkbox" value="" id="flexCheckChecked3" checked />
                         </div>
 
                         <h1 className="text-sm">FreshResume may send me special offers and product updates via email. It is possible to opt-out at any time</h1>
