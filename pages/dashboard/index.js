@@ -2,13 +2,14 @@ import React, { useState, useEffect } from 'react';
 import DashNav from '../../components/Deshboard/DashNav';
 import Innerpart1 from '../../components/Deshboard/innerpart1';
 import { getProviders, getCsrfToken, useSession, getSession } from "next-auth/react"
+import Mycvs from '../../components/Deshboard/mycvs';
 const Dashboard = () => {
   const { data: session } = useSession()
   const [cvData, setData] = useState([])
   const [isLoading, setLoading] = useState(false)
 
-  useEffect( () => {
-     fetchData();
+  useEffect(() => {
+    fetchData();
   }, []);
 
 
@@ -20,20 +21,34 @@ const Dashboard = () => {
         setLoading(false)
       })
   };
+  if (cvData.length >= 1) {
+    return (
+      <>
+        <Mycvs></Mycvs>
+      </>
+    )
+  }
 
 
 
 
 
   return (
+
+
     <div>
       <DashNav></DashNav>
-      <Innerpart1></Innerpart1>
-
-
+      <Innerpart1 ></Innerpart1>
     </div>
   );
 };
+
+
+
+
+
+
+
 export async function getServerSideProps(context) {
   const providers = await getProviders()
   const csrfToken = await getCsrfToken(context)
@@ -47,6 +62,9 @@ export async function getServerSideProps(context) {
       },
     }
   }
+
+
+
 
   return {
     props: { providers, csrfToken },
