@@ -11,8 +11,15 @@ export default function LoginBtn() {
   if (session) {
     return (
       <>
-       {session.user.name}
-        <button className="text-gray-800 text-sm font-semibold hover:text-purple-600 mr-4" onClick={() => signOut()}>Sign out</button>
+        <div className="mx-2 my-1">
+          {session.user.name}
+        </div>
+
+        <button className="text-gray-800 text-sm font-semibold text-purple-600 mr-4 mt-1" onClick={() => signOut()}>Sign out</button>
+
+        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+          Dashboard
+        </button>
       </>
     )
   }
