@@ -1,16 +1,10 @@
 
-import React, { useState, useRef, useEffect } from 'react';
-import Cv1 from '../../components/cvTemplets/Cv1';
-import Cv2 from '../../components/cvTemplets/Cv2';
-import Resumeform from '../../components/ResumeBulder/Resumeform';
-import html2canvas from 'html2canvas';
-import { jsPDF } from 'jspdf';
+import React, { useState, useRef, useEffect } from 'react'
+import Resumeform from '../../components/ResumeBulder/Resumeform'
 import { useRouter } from 'next/router'
-import Navbar from '../../components/navbar';
+import Navbar from '../../components/navbar'
 import { getProviders, signIn, getCsrfToken } from "next-auth/react"
-
-
-import PdfPreview from '../../components/memos/PdfPreview';
+import PdfPreview from '../../components/memos/PdfPreview'
 
 
 
@@ -23,15 +17,7 @@ const CvBuilder = () => {
         firstName: "",
         lastName: "",
     });
-
-    const [cvDataOld, setOldCvData] = useState({
-        firstName: "",
-        lastName: "",
-    });
-
-    function sleep(ms) {
-        return new Promise(resolve => setTimeout(resolve, ms));
-    }
+    
     const handelCvData = async (value, name) => {
 
         setCvData((prevState) => ({
@@ -39,29 +25,17 @@ const CvBuilder = () => {
             [name]: value,
         }));
     }
-
-
-
-
-    const preview1 = <PdfPreview cvData={cvData} templateId={1} onLoading={null} onLoaded={null} update={false} />;
-    const preview2 = <PdfPreview cvData={cvDataOld} templateId={3} onLoading={null} onLoaded={null} update={true} />;
-
-
-
+    const preview1 = <PdfPreview cvData={cvData} templateId={cvId} onLoading={null} onLoaded={null} update={false} />;
     return (
         <div>
-
             <div className='fixed z-50 w-full top-0' ref={navBar}> <Navbar /> </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 relative px-5' style={{ "marginTop": navBar.current.scrollHeight + "px" }}>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 relative px-5' style={{ "marginTop": navBar.current.scrollHeight??71 + "px" }}>
                 <div className=''>
                     <Resumeform handelCvData={handelCvData}></Resumeform>
                 </div>
-
-
                 <div className='relative flex justify-center p-10 bg-gray-300'  >
                     <div className='block lg:fixed '>
                         {preview1}
-
                     </div>
                 </div>
             </div>
