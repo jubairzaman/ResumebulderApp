@@ -8,11 +8,28 @@ import { jsPDF } from 'jspdf';
 import { useRouter } from 'next/router'
 import Navbar from '../../components/navbar';
 import { getProviders, signIn, getCsrfToken } from "next-auth/react"
+
+
+
+import { BlobProvider } from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
+import { Document, Page, pdfjs } from 'react-pdf';
+import Pdfc from '../../components/pdfc';
+pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
+
+
+
 const CvBuilder = () => {
     const cvId = useRouter().query.cv
     const printRef = React.useRef();
     const preview = React.useRef();
 
+    const [numPages, setNumPages] = useState(null);
+    const [pageNumber, setPageNumber] = useState(1);
+    const [url, setUrl] = useState("no url now");
+
+    function onDocumentLoadSuccess({ numPages }) {
+        setNumPages(numPages);
+      }
     const handleDownloadPdf = async () => {
 
         const element = printRef.current;
@@ -58,9 +75,9 @@ const CvBuilder = () => {
     }
     const getCvTemplate = () => {
         if (cvId == '2') {
-            return <Cv3 cv={cvData} />
+            return <Pdfc cv={cvData} />
         } else {
-            return <Cv1 cv={cvData} />
+            return <Pdfc cv={cvData} />
         }
     }
 
@@ -76,12 +93,28 @@ const CvBuilder = () => {
 
                     <Resumeform handelCvData={handelCvData}></Resumeform>
                 </div>
-                <div className='relative'>
-                    <div className='absolute top-0 left-0 w-full my-32' style={{ height: "calc(100vh - 40px)" }}>
+
+
+                <div className='relative pt-20' >
+
+                    <div>
+                        <BlobProvider document={getCvTemplate()} fileName="somename.pdf">
+                            {({ blob, url, loading, error }) => {
+                                setUrl(url)
+                            }}
+                        </BlobProvider>
+                        <Document file={url} onLoadSuccess={onDocumentLoadSuccess}>
+                            <Page pageNumber={pageNumber} />
+                        </Document>
+                        <p>
+                            Page {pageNumber} of {numPages}
+                        </p>
+                    </div>
+                    {/* <div className='absolute top-0 left-0 w-full my-32' style={{ height: "calc(100vh - 40px)" }}>
                         <div ref={printRef}>
                             {getCvTemplate()}
                         </div>
-                    </div>
+                    </div> */}
                     {/* <div className='absolute top-0 left-0 w-full' style={{height: "calc(100vh - 40px)"}}>
                         <div className='bg-red-500 p-20 w-full h-full flex justify-center'>
                             <div className='aspect-ratio-a4'  ref={preview}>

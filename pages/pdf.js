@@ -1,8 +1,9 @@
-import { BlobProvider} from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
+
 import Pdfc from "../components/pdfc"
 import React, { useState } from 'react';
-import { Document, Page } from 'react-pdf';
-import { pdfjs } from 'react-pdf';
+
+import { BlobProvider} from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
+import { Document, Page,pdfjs } from 'react-pdf';
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 

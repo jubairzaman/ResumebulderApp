@@ -7,21 +7,21 @@ import { SessionProvider } from "next-auth/react"
 function MyApp({ Component, pageProps: { session, providers, csrfToken, ...pageProps }, }) {
   
 
-  const getLayout = Component.getLayout || ((page) => page)
-  const temp = function (page) {
-    if (Component.getLayout != null) {
-      return 
-        <SessionProvider session={session}>
-          {Component.getLayout(page)}
-        </SessionProvider>;
-    } else {
-      return <SessionProvider session={session}>
-          <Layout>
-            {page}
-          </Layout>
-        </SessionProvider>;
-    }
+const temp = function (page) {
+  if (Component.getLayout != null) {
+    return <>
+      <SessionProvider session={session}>
+        {Component.getLayout(page)}
+      </SessionProvider>
+    </>
+  } else {
+    return <><SessionProvider session={session}>
+      <Layout>
+        {page}
+      </Layout>
+    </SessionProvider></>;
   }
+}
 
   return temp(
     <Component {...pageProps} />
