@@ -40,11 +40,11 @@ const CvBuilder = () => {
         }));
     }
 
-    
 
 
-    const preview1 = <PdfPreview cvData={cvData} templateId={1} onLoading={null} onLoaded={null} update={false}/>;
-    const preview2 = <PdfPreview cvData={cvDataOld} templateId={3} onLoading={null} onLoaded={null} update={true}/>;
+
+    const preview1 = <PdfPreview cvData={cvData} templateId={1} onLoading={null} onLoaded={null} update={false} />;
+    const preview2 = <PdfPreview cvData={cvDataOld} templateId={3} onLoading={null} onLoaded={null} update={true} />;
 
 
 
@@ -60,7 +60,7 @@ const CvBuilder = () => {
 
                 <div className='relative flex justify-center p-10 bg-gray-300'  >
                     <div className='block lg:fixed '>
-                    {preview1}
+                        {preview1}
 
                     </div>
                 </div>
@@ -70,7 +70,7 @@ const CvBuilder = () => {
 };
 
 
-CvBuilder.shoudSkipDefaultLayout = true;
+CvBuilder.shouldSkipDefaultLayout = true;
 
 
 export async function getServerSideProps(context) {

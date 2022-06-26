@@ -4,17 +4,17 @@ import { getProviders, signIn, getCsrfToken } from "next-auth/react"
 export default function SigninComponent() {
     const [providers, setProviders] = useState([])
     const [csrfToken, setcsrfToken] = useState("")
-    
-    useEffect( () => {
-        const setAuthData = async () =>{
+
+    useEffect(() => {
+        const setAuthData = async () => {
             const providers = await getProviders()
             const csrfToken = await getCsrfToken()
             setProviders(providers);
             setcsrfToken(csrfToken);
         }
         setAuthData();
-     }, []);
-    
+    }, []);
+
     return (
         <div className="border-0 rounded-lg shadow-lg relative flex flex-col w-1/2 mx-auto bg-white outline-none focus:outline-none">
             <div className="p-10">
@@ -43,9 +43,9 @@ export default function SigninComponent() {
                             </label>
                         </div>
                         <div className="flex justify-between mb-2">
-                            <div class="form-check">
-                                <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" />
-                                <label class="form-check-label inline-block text-gray-800" for="flexCheckDefault">
+                            <div className="form-check">
+                                <input className="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-blue-600 checked:border-blue-600 focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" value="" id="flexCheckDefault" />
+                                <label className="form-check-label inline-block text-gray-800" for="flexCheckDefault">
                                     Remember Password
                                 </label>
                             </div>

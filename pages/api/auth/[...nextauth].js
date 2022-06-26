@@ -58,10 +58,10 @@ export default NextAuth({
       return '/dashboard'
     },
     async session({ session, user, token }) {
-      if(session?.user && token.sub){
-        session.user = {...session.user, id: token.sub}
+      if (session?.user && token.sub) {
+        session.user = { ...session.user, id: token.sub }
       }
-      
+
       return session
     },
     async jwt({ token, user, account, profile, isNewUser }) {
@@ -71,7 +71,7 @@ export default NextAuth({
 
 
   pages: {
-    signIn: '/auth/signin',
+    signIn: '/?action=open-login',
     //signOut: '/auth/signout',
     //error: '/auth/error', // Error code passed in query string as ?error=
     //verifyRequest: '/auth/verify-request', // (used for check email message)

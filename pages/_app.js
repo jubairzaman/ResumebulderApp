@@ -5,23 +5,23 @@ import { SessionProvider } from "next-auth/react"
 
 
 function MyApp({ Component, pageProps: { session, providers, csrfToken, ...pageProps }, }) {
-  
 
-const temp = function (page) {
-  if (Component.shoudSkipDefaultLayout != null && Component.shoudSkipDefaultLayout == true) {
-    return <>
-      <SessionProvider session={session}>
-       {page}
-      </SessionProvider>
-    </>
-  } else {
-    return <><SessionProvider session={session}>
-      <Layout>
-        {page}
-      </Layout>
-    </SessionProvider></>;
+
+  const temp = function (page) {
+    if (Component.shouldSkipDefaultLayout != null && Component.shouldSkipDefaultLayout == true) {
+      return <>
+        <SessionProvider session={session}>
+          {page}
+        </SessionProvider>
+      </>
+    } else {
+      return <><SessionProvider session={session}>
+        <Layout>
+          {page}
+        </Layout>
+      </SessionProvider></>;
+    }
   }
-}
 
   return temp(
     <Component {...pageProps} />
