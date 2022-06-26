@@ -17,7 +17,7 @@ export default function LoginBtn() {
 
         <button className="text-gray-800 text-sm font-semibold text-purple-600 mr-4 mt-1" onClick={() => signOut()}>Sign out</button>
 
-        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
+        <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">
           Dashboard
         </button>
       </>
