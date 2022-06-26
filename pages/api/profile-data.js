@@ -7,7 +7,7 @@ export default async function handler(req, res) {
   const session = await getSession({ req });
 
 
-  
+
 
 
   if (session && session.user) {
@@ -22,11 +22,12 @@ export default async function handler(req, res) {
     // console.log(getUser);
 
     const cvs = await prisma.cv.findMany({
-      where:{
+      where: {
         userId: session.user.id
       }
     })
-    
+
+
     await prisma.$disconnect;
     res.status(200).json(cvs)
     // try {
@@ -42,8 +43,8 @@ export default async function handler(req, res) {
     // }finally{
     //   await prisma.$disconnect()
     // }
-  }else{
-    res.status(200).json({  })
+  } else {
+    res.status(200).json({})
   }
-  
+
 }
