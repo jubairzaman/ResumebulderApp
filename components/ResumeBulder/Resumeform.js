@@ -3,14 +3,9 @@ import Experiance from './experiance';
 import Personalinfo from './Personalinfo';
 import ProfessonalSummary from './professonalSummary';
 import Skillrepeater from './Skills/skillRepeater';
-import SocialMedias from './socialMedias';
 
 
 const Resumeform = ({ handelCvData, updateSkillData,updateExperiencesData }) => {
-
-
-
-
     return (
         <div className=' mx-auto '>
             {/* from part  */}
@@ -28,7 +23,6 @@ const Resumeform = ({ handelCvData, updateSkillData,updateExperiencesData }) => 
                     <ProfessonalSummary handelCvData={handelCvData}></ProfessonalSummary>
                     <Experiance updateExperiencesData={updateExperiencesData}></Experiance>
                     <Skillrepeater updateSkillData={updateSkillData} />
-                    <SocialMedias handelCvData={handelCvData}></SocialMedias>
                 </div>
 
 
