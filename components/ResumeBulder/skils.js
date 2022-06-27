@@ -1,6 +1,14 @@
 import React from 'react';
 
+import Box from '@mui/material/Box';
+import Slider from '@mui/material/Slider';
+
+
+
 const Skils = () => {
+    function valuetext(value) {
+        return `${value}°C`;
+    }
     return (
         <div>
 
@@ -9,9 +17,32 @@ const Skils = () => {
                 <div>
                     <label className="block">
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                            skill-1
+                            Skill
                         </span>
-                        <input onChange={(e) => handelCvData(e.target['value'], 'skill-1')} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+
+                        <div className='grid grid-cols-2 gap-2'>
+                            <div>
+
+                            </div>
+
+                            <div>
+                                <Box sx={{ width: 200 }}>
+                                    <Slider
+                                        aria-label="Temperature"
+                                        defaultValue={30}
+                                        getAriaValueText={valuetext}
+                                        valueLabelDisplay="auto"
+                                        step={10}
+                                        marks
+                                        min={10}
+                                        max={110}
+                                    />
+
+                                </Box>
+                            </div>
+
+                        </div>
+
                     </label>
                 </div>
 
