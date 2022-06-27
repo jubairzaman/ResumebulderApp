@@ -14,8 +14,14 @@ const CvBuilder = () => {
     const navBar = useRef('navBar');
 
     const [cvData, setCvData] = useState({
-        firstName: "",
-        lastName: "",
+        firstName: "James",
+        lastName: "Mary",
+        email:"james@cv.com",
+        skills: {
+            'Html': 99,
+            'css': 90
+
+        }
     });
     
     const handelCvData = async (value, name) => {

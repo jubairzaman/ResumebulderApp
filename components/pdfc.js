@@ -1,6 +1,7 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet } from '@react-pdf/renderer';
 import CvProgressBar from './cvTemplets/cvProgressbar';
+import Jumbotron from './cvTemplets/jumbotron';
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -25,6 +26,7 @@ const styles = StyleSheet.create({
 
   section2: {
     width: "70%",
+    padding: "15px",
   },
 
   textName: {
@@ -86,12 +88,19 @@ const Pdfc = ({ cv }) => {
             <Text style={{ color: "white" }}>Skills</Text>
           </View>
 
-          <CvProgressBar/>
+          {
+
+            Object.keys(cv.skills ?? []).map((key) => {
+              return <CvProgressBar skillName={key} value={cv.skills[key]} />
+            })
+          }
+
+
 
         </View>
 
         <View style={styles.section2}>
-          <Text>{cv.lastName ?? ""}</Text>
+          <Jumbotron />
         </View>
 
 
