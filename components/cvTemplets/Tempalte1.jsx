@@ -1,7 +1,10 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, Image } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect } from '@react-pdf/renderer';
 import CvProgressBar from './cvProgressbar';
 import Jumbotron from './jumbotron';
+import { Mobile } from './icons/mobile';
+import { Call } from './icons/call';
+import { Mail } from './icons/mail';
 // Create styles
 const styles = StyleSheet.create({
 
@@ -111,9 +114,34 @@ const Tempalte1 = ({ cv }) => {
           </View>
 
         </View>
-        <View style={styles.col4}>
-          <Text>Hello</Text>
+
+        <View style={{ ...styles.col4, ...styles.justifyCenter, ...{ paddingLeft: '24px' } }}>
+
+        <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fRow }}>
+            <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter,}}>
+              <Mobile/>
+              <Text style={{fontSize:"10px"}}>Phone Number</Text>
+            </View>
+          </View>
+
+          <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fRow }}>
+            <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter,}}>
+              <Call/>
+              <Text style={{fontSize:"10px"}}>Phone Number</Text>
+            </View>
+          </View>
+
+          <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fRow }}>
+            <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter,}}>
+              <Mail/>
+              <Text style={{fontSize:"10px"}}>Phone Number</Text>
+            </View>
+          </View>
+
+
         </View>
+
+
       </View>
     </Page>
   </Document>
