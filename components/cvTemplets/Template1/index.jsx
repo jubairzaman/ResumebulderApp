@@ -101,6 +101,8 @@ const styles = StyleSheet.create({
 // Create Document Component
 const Tempalte1 = ({ cv }) => {
 
+  console.log(cv.skills)
+
   return <Document>
     <Page size="A4" style={styles.page}>
       <View style={styles.row}>
@@ -111,34 +113,34 @@ const Tempalte1 = ({ cv }) => {
               <Image style={{ width: "120px", height: "120px" }} src="/mk1.png"></Image>
             </View>
             <View style={{ ...styles.col6, ...styles.justifyCenter, ...{ paddingLeft: '24px' } }}>
-              <Text >Hello</Text>
-              <Text>Hello</Text>
-              <Text>Hello</Text>
+              <Text >{cv.firstName}</Text>
+              <Text >{cv.lastName}</Text>
+              <Text>{cv.profession ?? "Job Title"}</Text>
             </View>
           </View>
 
         </View>
 
-        <View style={{ ...styles.col4, ...styles.justifyCenter, ...{ paddingLeft: '24px' } }}>
+        <View style={{ ...styles.col4, ...styles.justifyCenter, ...{ paddingLeft: '24px', } }}>
 
-          <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fRow }}>
+          <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "6px" } }}>
             <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
               <Mobile />
-              <Text style={{ fontSize: "10px" }}>Phone Number</Text>
+              <Text style={{ fontSize: "10px", paddingLeft: "12px" }}>{cv.phone ?? "Phone Number"}</Text>
             </View>
           </View>
 
-          <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fRow }}>
+          <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "6px" } }}>
             <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
               <Call />
-              <Text style={{ fontSize: "10px" }}>Phone Number</Text>
+              <Text style={{ fontSize: "10px", paddingLeft: "12px" }}>{cv.email ?? "Email"}</Text>
             </View>
           </View>
 
-          <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fRow }}>
+          <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "6px" } }}>
             <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
               <Mail />
-              <Text style={{ fontSize: "10px" }}>Phone Number</Text>
+              <Text style={{ fontSize: "10px", paddingLeft: "12px" }}>{cv.city ?? "Address"}</Text>
             </View>
           </View>
         </View>
@@ -148,7 +150,7 @@ const Tempalte1 = ({ cv }) => {
       {/* Secound Part */}
 
 
-      <View style={{ ...styles.row, ...{ backgroundColor: "#C1DCFF", padding: "12px", margin:"12px" } }}>
+      <View style={{ ...styles.row, ...{ backgroundColor: "#C1DCFF", padding: "12px", margin: "12px" } }}>
 
         <SectionLayout>
           <SectionLayout.TitleLeft>Title LLL</SectionLayout.TitleLeft>
@@ -202,7 +204,68 @@ const Tempalte1 = ({ cv }) => {
               </View>
             </View>
           </SectionLayout.ViewRight>
-          
+
+
+        </SectionLayout>
+
+
+
+      </View>
+
+      <View style={{ ...styles.row, ...{ padding: "12px", margin: "12px" } }}>
+
+        <SectionLayout>
+          <SectionLayout.TitleLeft>Expertise</SectionLayout.TitleLeft>
+          <SectionLayout.TitleRight>Work Experiences</SectionLayout.TitleRight>
+
+          <SectionLayout.ViewLeft>
+            <View >
+              {
+
+                Object.keys(cv.skills ?? []).map((key) => {
+                  console.log("N")
+                  console.log(cv.skills[key].skillName)
+                  return <CvProgressBar skillName={cv.skills[key].skillName} value={cv.skills[key].expartise??0} />
+                })
+              }
+            </View>
+          </SectionLayout.ViewLeft>
+          <SectionLayout.ViewRight>
+            <View >
+              <Text style={{ fontSize: "20px" }}>Business Objective
+              </Text>
+              <Text style={{ fontSize: "10px" }}>A confident and creative designer
+                who is self-motivated, selfsufficient and comes to you with
+                a strong background in both
+                print and digital media. Amanda
+                has worked extensively in the
+                automotive and travel industries
+                producing high end business to
+                business designs.</Text>
+
+              <View style={{ ...styles.row, ...{ margin: "5px" } }}>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+              </View>
+            </View>
+          </SectionLayout.ViewRight>
+
 
         </SectionLayout>
 
