@@ -5,6 +5,7 @@ import Jumbotron from './jumbotron';
 import { Mobile } from './icons/mobile';
 import { Call } from './icons/call';
 import { Mail } from './icons/mail';
+import { fontSize, style } from '@mui/system';
 // Create styles
 const styles = StyleSheet.create({
 
@@ -107,7 +108,7 @@ const Tempalte1 = ({ cv }) => {
               <Image style={{ width: "120px", height: "120px" }} src="/mk1.png"></Image>
             </View>
             <View style={{ ...styles.col6, ...styles.justifyCenter, ...{ paddingLeft: '24px' } }}>
-              <Text>Hello</Text>
+              <Text >Hello</Text>
               <Text>Hello</Text>
               <Text>Hello</Text>
             </View>
@@ -142,7 +143,115 @@ const Tempalte1 = ({ cv }) => {
         </View>
 
 
+
+
       </View>
+
+
+      {/* Secound Part */}
+
+
+      <View style={{ ...styles.row, ...{ backgroundColor: "#C1DCFF", margin: "10px" } }}>
+        <View style={{ ...styles.col12, ...styles.alignCenter }}>
+
+          <View style={{ ...styles.row }}>
+            <View style={{ ...styles.col4, ...styles.flex, ...styles.justifyCenter, ...styles.fColumn, ...{ padding: "10px" } }}>
+              <Text style={{ fontSize: "20px" }}>Profile</Text>
+              <Text style={{ fontSize: "10px" }}>A confident and creative designer
+                who is self-motivated, selfsufficient and comes to you with
+                a strong background in both
+                print and digital media. Amanda
+                has worked extensively in the
+                automotive and travel industries
+                producing high end business to
+                business designs.</Text>
+            </View>
+            <View style={{ ...styles.col8, ...styles.flex, ...styles.justifyCenter, ...styles.fColumn, ...{ padding: "10px" } }}>
+              <Text style={{ fontSize: "20px" }}>Business Objective
+              </Text>
+              <Text style={{ fontSize: "10px" }}>A confident and creative designer
+                who is self-motivated, selfsufficient and comes to you with
+                a strong background in both
+                print and digital media. Amanda
+                has worked extensively in the
+                automotive and travel industries
+                producing high end business to
+                business designs.</Text>
+
+              <View style={{ ...styles.row, ...{ margin: "5px" } }}>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
+                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                </View>
+
+
+
+
+
+
+
+              </View>
+
+
+            </View>
+          </View>
+        </View>
+      </View>
+
+
+      {/* Third Part  */}
+
+
+
+      <View style={{ ...styles.row, ...{ backgroundColor: "#C1DCFF", margin: "10px" } }}>
+        <View style={{ ...styles.col12, ...styles.alignCenter }}>
+
+          <View style={{ ...styles.row }}>
+            <View style={{ ...styles.col6, ...styles.flex, ...styles.justifyCenter, ...styles.fColumn, ...{ padding: "10px" } }}>
+              <Text style={{ fontSize: "25px" }}>Profile</Text>
+              <Text style={{ fontSize: "15px" }}>A confident and creative designer
+                who is self-motivated, selfsufficient and comes to you with
+                a strong background in both
+                print and digital media. Amanda
+                has worked extensively in the
+                automotive and travel industries
+                producing high end business to
+                business designs.</Text>
+            </View>
+            <View style={{ ...styles.col6, ...styles.flex, ...styles.justifyCenter, ...styles.fColumn, ...{ padding: "10px" } }}>
+              <Text style={{ fontSize: "25px" }}>Business Objective
+              </Text>
+              <Text style={{ fontSize: "15px" }}>A confident and creative designer
+                who is self-motivated, selfsufficient and comes to you with
+                a strong background in both
+                print and digital media. Amanda
+                has worked extensively in the
+                automotive and travel industries
+                producing high end business to
+                business designs.</Text>
+
+
+            </View>
+          </View>
+        </View>
+      </View>
+
+
+
     </Page>
   </Document>
 };
