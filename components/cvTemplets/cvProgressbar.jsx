@@ -18,5 +18,4 @@ const CvProgressBar = ({ skillName, value }) => {
         </>
     )
 };
-
 export default CvProgressBar;

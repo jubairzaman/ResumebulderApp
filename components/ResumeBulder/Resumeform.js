@@ -6,7 +6,7 @@ import Skillrepeater from './Skills/skillRepeater';
 import SocialMedias from './socialMedias';
 
 
-const Resumeform = ({ handelCvData, updateSkillData, }) => {
+const Resumeform = ({ handelCvData, updateSkillData,updateExperiencesData }) => {
 
 
 
@@ -26,7 +26,7 @@ const Resumeform = ({ handelCvData, updateSkillData, }) => {
 
                     <Personalinfo handelCvData={handelCvData}></Personalinfo>
                     <ProfessonalSummary handelCvData={handelCvData}></ProfessonalSummary>
-                    <Experiance></Experiance>
+                    <Experiance updateExperiencesData={updateExperiencesData}></Experiance>
                     <Skillrepeater updateSkillData={updateSkillData} />
                     <SocialMedias handelCvData={handelCvData}></SocialMedias>
                 </div>

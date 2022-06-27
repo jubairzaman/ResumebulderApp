@@ -9,6 +9,7 @@ import { fontSize, style } from '@mui/system';
 import SectionHeading from './sectionHeading';
 import SectionComponent from './sectionComponent';
 import SectionLayout from './sectionLayout';
+import Styles from '../styles';
 // Create styles
 const styles = StyleSheet.create({
 
@@ -101,7 +102,6 @@ const styles = StyleSheet.create({
 // Create Document Component
 const Tempalte1 = ({ cv }) => {
 
-  console.log(cv.skills)
 
   return <Document>
     <Page size="A4" style={styles.page}>
@@ -223,46 +223,36 @@ const Tempalte1 = ({ cv }) => {
               {
 
                 Object.keys(cv.skills ?? []).map((key) => {
-                  console.log("N")
-                  console.log(cv.skills[key].skillName)
-                  return <CvProgressBar skillName={cv.skills[key].skillName} value={cv.skills[key].expartise??0} />
+                  return <CvProgressBar skillName={cv.skills[key].skillName} value={cv.skills[key].expartise ?? 0} />
                 })
               }
             </View>
           </SectionLayout.ViewLeft>
           <SectionLayout.ViewRight>
             <View >
-              <Text style={{ fontSize: "20px" }}>Business Objective
-              </Text>
-              <Text style={{ fontSize: "10px" }}>A confident and creative designer
-                who is self-motivated, selfsufficient and comes to you with
-                a strong background in both
-                print and digital media. Amanda
-                has worked extensively in the
-                automotive and travel industries
-                producing high end business to
-                business designs.</Text>
+              {
 
-              <View style={{ ...styles.row, ...{ margin: "5px" } }}>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
-                </View>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
-                </View>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
-                </View>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
-                </View>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
-                </View>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
-                </View>
-              </View>
+                Object.keys(cv.experiences ?? []).map((key) => {
+                  let exp = cv.experiences[key];
+                  return <>
+                    <View style={{...Styles.flex,...Styles.fRow}}>
+                      <Text>{exp.jobTitle}</Text>
+                      <Text style={{paddingLeft:"6px", paddingRight:"6px"}}>|</Text>
+                      <Text>{exp.employer}</Text>
+                    </View>
+
+                    <View style={{...Styles.flex,...Styles.fRow}}>
+                      <Text>{exp.startdate}</Text>
+                      <Text style={{paddingLeft:"6px", paddingRight:"6px"}}>-</Text>
+                      <Text>{exp.enddate}</Text>
+                    </View>
+
+                    <View style={{...Styles.flex,...Styles.fRow}}>
+                      <Text>{exp.address}</Text>
+                    </View>
+                  </>
+                })
+              }
             </View>
           </SectionLayout.ViewRight>
 

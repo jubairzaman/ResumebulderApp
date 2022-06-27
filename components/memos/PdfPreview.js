@@ -45,7 +45,7 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
   }
 
   const handelOnloading2 = () => {
-    console.log("loading Sec")
+    
     if (onLoading != null) {
       onLoading();
     }
@@ -53,7 +53,7 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
 
 
   const getCvTemplate = () => {
-    console.log("called" + cvId);
+    
     if (cvId == '2') {
       return <Pdfc cv={cvData} />
     } else {

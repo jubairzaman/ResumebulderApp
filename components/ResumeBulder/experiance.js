@@ -1,55 +1,53 @@
 import React, { useState } from 'react'
 
-const Experiance = () => {
-    const [skillValues, setskillValues] = useState([{ skillName: "", expartise: "" }])
+const Experiance = ({updateExperiencesData}) => {
+    const [skillValues, setskillValues] = useState([{ jobTitle: "", employer: "",startdate:"",enddate:"",address:"" }])
 
     let handleNameChange = (i, value) => {
         let newFormValues = [...skillValues];
-        newFormValues[i]["skillName"] = value;
+        newFormValues[i]["jobTitle"] = value;
         setskillValues(newFormValues);
-
+        updateExperiencesData(newFormValues);
 
     }
     let handleEmployerChange = (i, value) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["employer"] = value;
         setskillValues(newFormValues);
-
+        updateExperiencesData(newFormValues);
 
     }
     let handleStartDateChange = (i, value) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["startdate"] = value;
         setskillValues(newFormValues);
-
-
+        updateExperiencesData(newFormValues);
     }
     let handleEndDateChange = (i, value) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["enddate"] = value;
         setskillValues(newFormValues);
-
-
+        updateExperiencesData(newFormValues);
     }
     let handleAddressChange = (i, value) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["address"] = value;
         setskillValues(newFormValues);
-
+        updateExperiencesData(newFormValues);
 
     }
 
     let addFormFields = () => {
-        let newFormValues = [...skillValues, { skillName: "", expartise: "0" }];
+        let newFormValues = [...skillValues, { jobTitle: "", employer: "",startdate:"",enddate:"",address:"" }];
         setskillValues(newFormValues)
-
+        updateExperiencesData(newFormValues);
     }
 
     let removeFormFields = (i) => {
         let newFormValues = [...skillValues];
         newFormValues.splice(i, 1);
         setskillValues(newFormValues)
-
+        updateExperiencesData(newFormValues);
     }
     return (
         <div className='border rounded-lg p-5 m-4'>
@@ -66,7 +64,7 @@ const Experiance = () => {
 
                             <div>
                                 <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
-                                    {element.skillName === "" ? "Not Specified" : element.skillName},
+                                    {element.jobTitle === "" ? "Not Specified" : element.jobTitle},
                                     {element.employer === "" ? "Not Specified" : element.employer}
                                 </span>
                                 <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Start From
@@ -93,9 +91,9 @@ const Experiance = () => {
                                     <input onChange={
                                         (e) => {
                                             handleNameChange(index, e.target.value);
-                                            //setSkillName(e.target['value']);
+                                            //setjobTitle(e.target['value']);
                                         }
-                                    } value={element.skillName} type="text" name="" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                                    } value={element.jobTitle} type="text" name="" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                                 </label>
                             </div>
                             <div>
@@ -104,7 +102,7 @@ const Experiance = () => {
                                     <input onChange={
                                         (e) => {
                                             handleEmployerChange(index, e.target.value);
-                                            //setSkillName(e.target['value']);
+                                            //setjobTitle(e.target['value']);
                                         }
                                     } value={element.employer} type="text" name="website" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                                 </label>
@@ -116,13 +114,13 @@ const Experiance = () => {
                                         <input onChange={
                                             (e) => {
                                                 handleStartDateChange(index, e.target.value);
-                                                //setSkillName(e.target['value']);
+                                                //setjobTitle(e.target['value']);
                                             }
                                         } value={element.startdate} type="date" name="website" class="mt-1 mx-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                                         <input onChange={
                                             (e) => {
                                                 handleEndDateChange(index, e.target.value);
-                                                //setSkillName(e.target['value']);
+                                                //setjobTitle(e.target['value']);
                                             }
                                         } value={element.enddate} type="date" name="website" class="mt-1  mx-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                                     </div>
@@ -135,7 +133,7 @@ const Experiance = () => {
                                     <input onChange={
                                         (e) => {
                                             handleAddressChange(index, e.target.value);
-                                            //setSkillName(e.target['value']);
+                                            //setjobTitle(e.target['value']);
                                         }
                                     } value={element.address} type="text" name="website" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                                 </label>
