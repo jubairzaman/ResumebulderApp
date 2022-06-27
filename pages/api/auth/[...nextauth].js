@@ -11,7 +11,7 @@ export default NextAuth({
 
 
   // Configure one or more authentication providers
-  // adapter: PrismaAdapter(prisma),
+  adapter: PrismaAdapter(prisma),
   providers: [
     GithubProvider({
       clientId: process.env.GITHUB_ID,
@@ -77,5 +77,5 @@ export default NextAuth({
     //verifyRequest: '/auth/verify-request', // (used for check email message)
     //newUser: '/dashboard' // New users will be directed here on first sign in (leave the property out if not of interest)
   },
-  // database: process.env.DATABASE_URL,
+  database: process.env.DATABASE_URL,
 })
