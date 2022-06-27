@@ -117,24 +117,24 @@ const Tempalte1 = ({ cv }) => {
 
         <View style={{ ...styles.col4, ...styles.justifyCenter, ...{ paddingLeft: '24px' } }}>
 
-        <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fRow }}>
-            <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter,}}>
-              <Mobile/>
-              <Text style={{fontSize:"10px"}}>Phone Number</Text>
+          <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fRow }}>
+            <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
+              <Mobile />
+              <Text style={{ fontSize: "10px" }}>Phone Number</Text>
             </View>
           </View>
 
           <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fRow }}>
-            <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter,}}>
-              <Call/>
-              <Text style={{fontSize:"10px"}}>Phone Number</Text>
+            <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
+              <Call />
+              <Text style={{ fontSize: "10px" }}>Phone Number</Text>
             </View>
           </View>
 
           <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fRow }}>
-            <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter,}}>
-              <Mail/>
-              <Text style={{fontSize:"10px"}}>Phone Number</Text>
+            <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
+              <Mail />
+              <Text style={{ fontSize: "10px" }}>Phone Number</Text>
             </View>
           </View>
 
@@ -148,3 +148,5 @@ const Tempalte1 = ({ cv }) => {
 };
 
 export default Tempalte1;
+
+
