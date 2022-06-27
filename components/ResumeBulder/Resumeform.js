@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import Education from './Education';
 import Experiance from './experiance';
 import Personalinfo from './Personalinfo';
 import ProfessonalSummary from './professonalSummary';
+import Reference from './Refarencs';
 import Skillrepeater from './Skills/skillRepeater';
-import SocialMedias from './socialMedias';
+import SocialMedia from './SocialMedia';
+
 
 
 const Resumeform = ({ handelCvData, updateSkillData, }) => {
@@ -20,15 +23,16 @@ const Resumeform = ({ handelCvData, updateSkillData, }) => {
                 <h1 className=' pt-10 text-center text-xl font-semibold'>Add your personal details to your resume</h1>
                 <p className='text-center '>It allows employers to see how they can contact you</p>
 
-                <div className=' mt-10 mx-4 mx-auto bg-white rounded-lg py-10'>
-
-                    <h1 className='font-semibold mx-5 my-5'> Personal Information</h1>
+                <div className=' mt-10 mx-4 mx-auto bg-white rounded-lg py-5'>
 
                     <Personalinfo handelCvData={handelCvData}></Personalinfo>
                     <ProfessonalSummary handelCvData={handelCvData}></ProfessonalSummary>
+                    <Education></Education>
                     <Experiance></Experiance>
                     <Skillrepeater updateSkillData={updateSkillData} />
-                    <SocialMedias handelCvData={handelCvData}></SocialMedias>
+                    <SocialMedia></SocialMedia>
+                    <Reference></Reference>
+
                 </div>
 
 
