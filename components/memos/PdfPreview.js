@@ -1,6 +1,6 @@
 import React, { useState, memo, useEffect, useRef } from "react";
 
-import { BlobProvider } from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
+import { BlobProvider,PDFDownloadLink } from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
 import { Document, Page, pdfjs } from 'react-pdf';
 import Pdfc from '../../components/pdfc';
 
@@ -18,7 +18,7 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
   const p2 = useRef('p2')
 
   const handelOnloaded = ({ numPages }) => {
-    
+
     setNumPages(numPages);
     if (onLoaded != null) {
       onLoaded();
@@ -83,7 +83,7 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
         {({ blob, url, loading, error }) => {
           if (!loading) {
             setUrl(url)
-            if(!url2) {
+            if (!url2) {
               setUrl2(url)
             }
           }
@@ -106,9 +106,13 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
 
 
 
-        <p className='text-center'>
-          Page {pageNumber} of {numPages}
+        <p className='text-center text-xs'>
+          {pageNumber} of {numPages}
         </p>
+
+        <PDFDownloadLink document={template} fileName="somename.pdf">
+          {({ blob, url, loading, error }) => (loading ? 'Loading document...' : 'Download now!')}
+        </PDFDownloadLink>
       </div>
     </>
   )

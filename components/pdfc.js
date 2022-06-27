@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
 
   section2: {
     width: "70%",
-    padding: "15px",
+    
   },
 
   textName: {
@@ -100,6 +100,8 @@ const Pdfc = ({ cv }) => {
         </View>
 
         <View style={styles.section2}>
+          <Jumbotron />
+          <Jumbotron />
           <Jumbotron />
         </View>
 
