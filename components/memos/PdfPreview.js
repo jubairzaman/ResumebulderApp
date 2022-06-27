@@ -3,6 +3,7 @@ import React, { useState, memo, useEffect, useRef } from "react";
 import { BlobProvider,PDFDownloadLink } from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
 import { Document, Page, pdfjs } from 'react-pdf';
 import Pdfc from '../../components/pdfc';
+import Tempalte1 from "../cvTemplets/Tempalte1";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -56,7 +57,7 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
     if (cvId == '2') {
       return <Pdfc cv={cvData} />
     } else {
-      return <Pdfc cv={cvData} />
+      return <Tempalte1 cv={cvData} />
     }
   }
   const [template, setTemplate] = useState(
