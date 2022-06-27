@@ -30,7 +30,7 @@ const CvBuilder = () => {
     const updateSkillData = async (value) => {
         let newCvData = {...cvData};
         newCvData.skills = value;
-        console.log(newCvData)
+        setCvData(newCvData)
     }
 
 

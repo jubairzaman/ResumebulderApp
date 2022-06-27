@@ -15,7 +15,7 @@ const Skillrepeater = ({ updateSkillData }) => {
             return "Novice"
         }
     }
-    const [skillValues, setskillValues] = useState([{ skillName: "", expartise: "" }])
+    const [skillValues, setskillValues] = useState([{ skillName: "", expartise: "0" }])
 
     let handleNameChange = (i, value) => {
         let newFormValues = [...skillValues];

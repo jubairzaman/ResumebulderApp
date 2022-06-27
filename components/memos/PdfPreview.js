@@ -62,10 +62,6 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
   }
   const [template, setTemplate] = useState(getCvTemplate());
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
-
   useEffect(() => {
     setTemplate(
       getCvTemplate()
