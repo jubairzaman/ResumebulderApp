@@ -19,7 +19,7 @@ const Resumeform = ({ handelCvData }) => {
 
                     <h1 className='font-semibold mx-5 my-5'> Personal Information</h1>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 px-5 py-5">
+                    <div >
                         <div>
                             <label className="block">
                                 <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
