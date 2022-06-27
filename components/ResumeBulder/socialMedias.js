@@ -1,6 +1,6 @@
 import React from 'react';
 
-const SocialMedias = () => {
+const SocialMedias = ({handelCvData}) => {
     return (
         <div>
 

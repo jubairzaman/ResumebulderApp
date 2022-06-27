@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import Personalinfo from './Personalinfo';
 import ProfessonalSummary from './professonalSummary';
-import Skils from './skils';
+import Skillrepeater from './Skills/skillRepeater';
 import SocialMedias from './socialMedias';
 
 
-const Resumeform = ({ handelCvData }) => {
+const Resumeform = ({ handelCvData, updateSkillData, }) => {
 
 
 
@@ -23,21 +23,10 @@ const Resumeform = ({ handelCvData }) => {
 
                     <h1 className='font-semibold mx-5 my-5'> Personal Information</h1>
 
-                    <Personalinfo></Personalinfo>
-                    <ProfessonalSummary></ProfessonalSummary>
-                    <Skils></Skils>
-                    <SocialMedias></SocialMedias>
-
-
-
-
-
-
-
-
-
-
-
+                    <Personalinfo handelCvData={handelCvData}></Personalinfo>
+                    <ProfessonalSummary handelCvData={handelCvData}></ProfessonalSummary>
+                    <Skillrepeater updateSkillData={updateSkillData}/>
+                    <SocialMedias handelCvData={handelCvData}></SocialMedias>
                 </div>
 
 
