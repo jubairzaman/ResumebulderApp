@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Experiance from './experiance';
 import Personalinfo from './Personalinfo';
 import ProfessonalSummary from './professonalSummary';
 import Skillrepeater from './Skills/skillRepeater';
@@ -25,7 +26,8 @@ const Resumeform = ({ handelCvData, updateSkillData, }) => {
 
                     <Personalinfo handelCvData={handelCvData}></Personalinfo>
                     <ProfessonalSummary handelCvData={handelCvData}></ProfessonalSummary>
-                    <Skillrepeater updateSkillData={updateSkillData}/>
+                    <Experiance></Experiance>
+                    <Skillrepeater updateSkillData={updateSkillData} />
                     <SocialMedias handelCvData={handelCvData}></SocialMedias>
                 </div>
 
