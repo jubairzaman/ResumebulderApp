@@ -12,7 +12,7 @@ const CvProgressBar = ({ skillName, value }) => {
             </View>
             <View style={{ height: "12px", width: "100%", }}></View>
             <View style={{ height: "6px", width: "100%", backgroundColor: "rgb(148 163 184)", }}>
-                <View style={{ height: "6px", width: (value ?? 10) + "%", backgroundColor: "rgb(256 256 256)" }}>
+                <View style={{ height: "6px", width: (value ?? 10) + "%", backgroundColor: "rgb(30 64 175)" }}>
                 </View>
             </View>
         </>

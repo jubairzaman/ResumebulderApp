@@ -231,23 +231,22 @@ const Tempalte1 = ({ cv }) => {
           <SectionLayout.ViewRight>
             <View >
               {
-
                 Object.keys(cv.experiences ?? []).map((key) => {
                   let exp = cv.experiences[key];
                   return <>
-                    <View style={{...Styles.flex,...Styles.fRow}}>
+                    <View style={{ ...Styles.flex, ...Styles.fRow }}>
                       <Text>{exp.jobTitle}</Text>
-                      <Text style={{paddingLeft:"6px", paddingRight:"6px"}}>|</Text>
+                      <Text style={{ paddingLeft: "6px", paddingRight: "6px" }}>|</Text>
                       <Text>{exp.employer}</Text>
                     </View>
 
-                    <View style={{...Styles.flex,...Styles.fRow}}>
+                    <View style={{ ...Styles.flex, ...Styles.fRow }}>
                       <Text>{exp.startdate}</Text>
-                      <Text style={{paddingLeft:"6px", paddingRight:"6px"}}>-</Text>
+                      <Text style={{ paddingLeft: "6px", paddingRight: "6px" }}>-</Text>
                       <Text>{exp.enddate}</Text>
                     </View>
 
-                    <View style={{...Styles.flex,...Styles.fRow}}>
+                    <View style={{ ...Styles.flex, ...Styles.fRow }}>
                       <Text>{exp.address}</Text>
                     </View>
                   </>
