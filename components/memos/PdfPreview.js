@@ -3,7 +3,7 @@ import React, { useState, memo, useEffect, useRef } from "react";
 import { BlobProvider,PDFDownloadLink } from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
 import { Document, Page, pdfjs } from 'react-pdf';
 import Pdfc from '../../components/pdfc';
-import Tempalte1 from "../cvTemplets/Tempalte1";
+import Tempalte1 from "../cvTemplets/Template1";
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -24,7 +24,7 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
     if (onLoaded != null) {
       onLoaded();
     }
-    console.log("First com loded");
+    //console.log("First com loded");
     setTimeout(() => {
       p1.current?.classList?.remove('hidden')
       p2.current?.classList?.add('hidden')
@@ -32,13 +32,13 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
     }, 500)
   }
   const handelOnloaded2 = () => {
-    console.log("Sec com loded");
+    //console.log("Sec com loded");
   }
 
   const handelOnloading = () => {
     p1.current?.classList?.add('hidden')
     p2.current?.classList?.remove('hidden')
-    console.log("loading first")
+    //console.log("loading first")
     if (onLoading != null) {
       onLoading();
     }
@@ -60,10 +60,7 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
       return <Tempalte1 cv={cvData} />
     }
   }
-  const [template, setTemplate] = useState(
-    // getCvTemplate()
-    null
-  );
+  const [template, setTemplate] = useState(getCvTemplate());
 
   function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
@@ -73,7 +70,6 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
     setTemplate(
       getCvTemplate()
     )
-    // console.log("called", cvId)
   }, [cvData])
 
 

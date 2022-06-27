@@ -1,11 +1,14 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect } from '@react-pdf/renderer';
-import CvProgressBar from './cvProgressbar';
-import Jumbotron from './jumbotron';
-import { Mobile } from './icons/mobile';
-import { Call } from './icons/call';
-import { Mail } from './icons/mail';
+import CvProgressBar from '../cvProgressbar';
+import Jumbotron from '../jumbotron';
+import { Mobile } from '../icons/mobile';
+import { Call } from '../icons/call';
+import { Mail } from '../icons/mail';
 import { fontSize, style } from '@mui/system';
+import SectionHeading from './sectionHeading';
+import SectionComponent from './sectionComponent';
+import SectionLayout from './sectionLayout';
 // Create styles
 const styles = StyleSheet.create({
 
@@ -138,24 +141,21 @@ const Tempalte1 = ({ cv }) => {
               <Text style={{ fontSize: "10px" }}>Phone Number</Text>
             </View>
           </View>
-
-
         </View>
-
-
-
-
       </View>
 
 
       {/* Secound Part */}
 
 
-      <View style={{ ...styles.row, ...{ backgroundColor: "#C1DCFF", margin: "10px" } }}>
-        <View style={{ ...styles.col12, ...styles.alignCenter }}>
+      <View style={{ ...styles.row, ...{ backgroundColor: "#C1DCFF", padding: "12px", margin:"12px" } }}>
 
-          <View style={{ ...styles.row }}>
-            <View style={{ ...styles.col4, ...styles.flex, ...styles.justifyCenter, ...styles.fColumn, ...{ padding: "10px" } }}>
+        <SectionLayout>
+          <SectionLayout.TitleLeft>Title LLL</SectionLayout.TitleLeft>
+          <SectionLayout.TitleRight>Title RRR</SectionLayout.TitleRight>
+
+          <SectionLayout.ViewLeft>
+            <View >
               <Text style={{ fontSize: "20px" }}>Profile</Text>
               <Text style={{ fontSize: "10px" }}>A confident and creative designer
                 who is self-motivated, selfsufficient and comes to you with
@@ -166,7 +166,9 @@ const Tempalte1 = ({ cv }) => {
                 producing high end business to
                 business designs.</Text>
             </View>
-            <View style={{ ...styles.col8, ...styles.flex, ...styles.justifyCenter, ...styles.fColumn, ...{ padding: "10px" } }}>
+          </SectionLayout.ViewLeft>
+          <SectionLayout.ViewRight>
+            <View >
               <Text style={{ fontSize: "20px" }}>Business Objective
               </Text>
               <Text style={{ fontSize: "10px" }}>A confident and creative designer
@@ -197,58 +199,19 @@ const Tempalte1 = ({ cv }) => {
                 <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
                   <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
                 </View>
-
-
-
-
-
-
-
               </View>
-
-
             </View>
-          </View>
-        </View>
+          </SectionLayout.ViewRight>
+          
+
+        </SectionLayout>
+
+
+
       </View>
 
 
-      {/* Third Part  */}
-
-
-
-      <View style={{ ...styles.row, ...{ backgroundColor: "#C1DCFF", margin: "10px" } }}>
-        <View style={{ ...styles.col12, ...styles.alignCenter }}>
-
-          <View style={{ ...styles.row }}>
-            <View style={{ ...styles.col6, ...styles.flex, ...styles.justifyCenter, ...styles.fColumn, ...{ padding: "10px" } }}>
-              <Text style={{ fontSize: "25px" }}>Profile</Text>
-              <Text style={{ fontSize: "15px" }}>A confident and creative designer
-                who is self-motivated, selfsufficient and comes to you with
-                a strong background in both
-                print and digital media. Amanda
-                has worked extensively in the
-                automotive and travel industries
-                producing high end business to
-                business designs.</Text>
-            </View>
-            <View style={{ ...styles.col6, ...styles.flex, ...styles.justifyCenter, ...styles.fColumn, ...{ padding: "10px" } }}>
-              <Text style={{ fontSize: "25px" }}>Business Objective
-              </Text>
-              <Text style={{ fontSize: "15px" }}>A confident and creative designer
-                who is self-motivated, selfsufficient and comes to you with
-                a strong background in both
-                print and digital media. Amanda
-                has worked extensively in the
-                automotive and travel industries
-                producing high end business to
-                business designs.</Text>
-
-
-            </View>
-          </View>
-        </View>
-      </View>
+      {/* Third Part */}
 
 
 
