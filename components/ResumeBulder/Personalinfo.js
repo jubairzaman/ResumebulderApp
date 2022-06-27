@@ -1,8 +1,9 @@
 import React from 'react';
 
-const Personalinfo = ({handelCvData}) => {
+const Personalinfo = ({ handelCvData }) => {
     return (
-        <div>
+        <div className='border rounded-lg p-5 m-4'>
+            <h1 className='text-md font-semibold mx-5'> <i class="lar la-user-circle la-2x"></i>  Personal Information</h1>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-4 px-5 py-5">
                 <div>
