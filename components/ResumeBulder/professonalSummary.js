@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProfessonalSummary = ({ handelCvData }) => {
+const ProfessonalSummary = ({ handelCvData,cvData }) => {
     return (
         <div className='border rounded-lg p-5 m-4'>
             <h1 className='text-md font-semibold mx-5'> <i className="las la-sitemap la-2x"></i>  Professional Information</h1>

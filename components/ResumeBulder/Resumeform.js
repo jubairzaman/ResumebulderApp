@@ -5,7 +5,7 @@ import ProfessonalSummary from './professonalSummary';
 import Skillrepeater from './Skills/skillRepeater';
 
 
-const Resumeform = ({ handelCvData, updateSkillData,updateExperiencesData }) => {
+const Resumeform = ({ handelCvData, updateSkillData,updateExperiencesData, cvData}) => {
     return (
         <div className=' mx-auto '>
             {/* from part  */}
@@ -19,10 +19,10 @@ const Resumeform = ({ handelCvData, updateSkillData,updateExperiencesData }) => 
 
                     <h1 className='font-semibold mx-5 my-5'> Personal Information</h1>
 
-                    <Personalinfo handelCvData={handelCvData}></Personalinfo>
-                    <ProfessonalSummary handelCvData={handelCvData}></ProfessonalSummary>
-                    <Experiance updateExperiencesData={updateExperiencesData}></Experiance>
-                    <Skillrepeater updateSkillData={updateSkillData} />
+                    <Personalinfo handelCvData={handelCvData} cvData={cvData}></Personalinfo>
+                    <ProfessonalSummary handelCvData={handelCvData} cvData={cvData}></ProfessonalSummary>
+                    <Experiance updateExperiencesData={updateExperiencesData} cvData={cvData}></Experiance>
+                    <Skillrepeater updateSkillData={updateSkillData} cvData={cvData}/>
                 </div>
 
 

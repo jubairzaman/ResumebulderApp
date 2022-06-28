@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Slider from '@mui/material/Slider';
-const Skillrepeater = ({ updateSkillData }) => {
+const Skillrepeater = ({ updateSkillData,cvData }) => {
 
     const valuetext = (value) => {
         if (value == 25) {

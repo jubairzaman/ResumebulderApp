@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Experiance = ({updateExperiencesData}) => {
+const Experiance = ({updateExperiencesData,cvData}) => {
     const [skillValues, setskillValues] = useState([{ jobTitle: "", employer: "",startdate:"",enddate:"",address:"" }])
 
     let handleNameChange = (i, value) => {

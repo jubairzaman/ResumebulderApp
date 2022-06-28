@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Personalinfo = ({ handelCvData }) => {
+const Personalinfo = ({ handelCvData,cvData}) => {
     return (
         <div className='border rounded-lg p-5 m-4'>
             <h1 className='text-md font-semibold mx-5'> <i className="lar la-user-circle la-2x"></i>  Personal Information</h1>
@@ -11,7 +11,7 @@ const Personalinfo = ({ handelCvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Desired Job Title
                         </span>
-                        <input onChange={(e) => handelCvData(e.target['value'], 'profession')} type="text" name="Title" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Engineer" />
+                        <input value={cvData?.profession??""} onChange={(e) => handelCvData(e.target['value'], 'profession')} type="text" name="Title" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Engineer" />
                     </label>
                 </div>
                 <div>
@@ -38,21 +38,21 @@ const Personalinfo = ({ handelCvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             First Name
                         </span>
-                        <input onChange={(e) => handelCvData(e.target['value'], 'firstName')} type="text" name="Firstname" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                        <input value={cvData?.firstName??""} onChange={(e) => handelCvData(e.target['value'], 'firstName')} type="text" name="Firstname" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                     </label>
                 </div>
                 <div><label className="block">
                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                         Last Name
                     </span>
-                    <input onChange={(e) => handelCvData(e.target['value'], 'lastName')} type="text" name="lastName" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                    <input value={cvData?.lastName??""} onChange={(e) => handelCvData(e.target['value'], 'lastName')} type="text" name="lastName" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                 </label></div>
                 <div>
                     <label className="block">
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Email
                         </span>
-                        <input onChange={(e) => handelCvData(e.target['value'], 'email')} type="email" name="email" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                        <input value={cvData?.email??""} onChange={(e) => handelCvData(e.target['value'], 'email')} type="email" name="email" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                     </label>
                 </div>
                 <div>
@@ -60,7 +60,7 @@ const Personalinfo = ({ handelCvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Phone Number
                         </span>
-                        <input onChange={(e) => handelCvData(e.target['value'], 'phone')} type="number" name="phoneNumber" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                        <input value={cvData?.phone??""} onChange={(e) => handelCvData(e.target['value'], 'phone')} type="number" name="phoneNumber" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                     </label>
                 </div>
 
@@ -69,7 +69,7 @@ const Personalinfo = ({ handelCvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             City
                         </span>
-                        <input onChange={(e) => handelCvData(e.target['value'], 'city')} type="text" name="City" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                        <input value={cvData?.city??""} onChange={(e) => handelCvData(e.target['value'], 'city')} type="text" name="City" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                     </label>
                 </div>
                 <div>
@@ -77,7 +77,7 @@ const Personalinfo = ({ handelCvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Address
                         </span>
-                        <input onChange={(e) => handelCvData(e.target['value'], 'address')} type="text" name="Address" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                        <input value={cvData?.address??""} onChange={(e) => handelCvData(e.target['value'], 'address')} type="text" name="Address" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                     </label>
                 </div>
                 <div>

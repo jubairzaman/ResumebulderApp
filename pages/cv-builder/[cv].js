@@ -47,7 +47,7 @@ const CvBuilder = () => {
             <div className='fixed z-50 w-full top-0' ref={navBar}> <Navbar /> </div>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 relative px-5' style={{ "marginTop": navBar.current.scrollHeight??71 + "px" }}>
                 <div className=''>
-                    <Resumeform handelCvData={handelCvData} updateSkillData={updateSkillData} updateExperiencesData={updateExperiencesData} ></Resumeform>
+                    <Resumeform cvData={cvData} handelCvData={handelCvData} updateSkillData={updateSkillData} updateExperiencesData={updateExperiencesData} ></Resumeform>
                 </div>
                 <div className='relative flex justify-center p-10 bg-gray-300'  >
                     <div className='block lg:fixed '>
