@@ -40,6 +40,7 @@ const Experiance = ({ handelCvData, cvData }) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["description"] = value;
         setskillValues(newFormValues);
+        handelCvData(newFormValues,'experiences');
     }
 
     let addFormFields = () => {
@@ -57,7 +58,7 @@ const Experiance = ({ handelCvData, cvData }) => {
     return (
         <div className='border rounded-lg p-5 m-4'>
 
-            <h1 className='text-md font-semibold mx-5'> <i className="las la-briefcase la-2x"></i>  Your Experiance </h1>
+            <h1 className='text-md font-semibold mx-5'> <i className="las la-briefcase la-2x"></i>  Your Experience </h1>
             {skillValues.map((element, index) => (
                 <div className='p-5' key={index}>
 
