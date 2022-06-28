@@ -13,7 +13,7 @@ const SectionComponent = ({ view1, view2, viewCenter }) => {
                 {viewCenter}
             </View> :
                 <View style={{ ...Styles.col2, ...Styles.flex, ...{ flexDirection: 'row', justifyContent: "center" } }}>
-                    <View style={{ display: "flex", width: "1px", alignSelf: "stretch", borderLeft: "2px", borderStyle: "dashed", borderColor: "black" }}>
+                    <View style={{ display: "flex", width: "1px", alignSelf: "stretch", borderLeft: "1px", borderStyle: "dashed", borderColor: "black" }}>
 
                     </View>
                 </View>}

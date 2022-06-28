@@ -10,6 +10,8 @@ import SectionHeading from './sectionHeading';
 import SectionComponent from './sectionComponent';
 import SectionLayout from './sectionLayout';
 import Styles from '../styles';
+import { Profile } from '../icons/profile';
+import LanguageProgressBar from '../LanguageProgressBar';
 // Create styles
 const styles = StyleSheet.create({
 
@@ -33,6 +35,9 @@ const styles = StyleSheet.create({
   },
   justifyCenter: {
     justifyContent: "center",
+  },
+  justifyBetween: {
+    justifyContent: "between",
   },
   justifyEnd: {
     justifyContent: "flex-end"
@@ -114,17 +119,17 @@ const Tempalte1 = ({ cv }) => {
 
   return <Document>
     <Page size="A4" style={styles.page}>
-      <View style={styles.row}>
+      <View style={{ ...styles.row, ...{ marginTop: "20px" } }}>
         <View style={styles.col8}>
 
-          <View style={styles.row}>
+          <View style={styles.row}  >
             <View style={{ ...styles.col6, ...styles.flex, ...styles.justifyEnd, ...styles.fRow }}>
-              <Image style={{ width: "120px", height: "120px" }} src="/mk1.png"></Image>
+              <Image style={{ width: "100px", height: "100px" }} src="/cvpimg.png"></Image>
             </View>
             <View style={{ ...styles.col6, ...styles.justifyCenter, ...{ paddingLeft: '24px' } }}>
-              <Text>{valueText(cv.firstName, "First Name")}</Text>
-              <Text>{valueText(cv.lastName, "Last Name")}</Text>
-              <Text>{valueText(cv.profession, "Job Title")}</Text>
+              <Text style={{ fontSize: "30px" }}>{valueText(cv.firstName, "First Name")}</Text>
+              <Text style={{ fontSize: "30px" }}>{valueText(cv.lastName, "Last Name")}</Text>
+              <Text style={{ fontSize: "10px" }}>{valueText(cv.profession, "Job Title")}</Text>
             </View>
           </View>
 
@@ -159,15 +164,16 @@ const Tempalte1 = ({ cv }) => {
       {/* Secound Part */}
 
 
-      <View style={{ ...styles.row, ...{ backgroundColor: "#C1DCFF", padding: "12px", margin: "12px" } }}>
+      <View style={{ ...styles.row, ...{ backgroundColor: "#F3F8FF", padding: "12px", margin: "12px" } }}>
 
         <SectionLayout>
-          <SectionLayout.TitleLeft>Title LLL</SectionLayout.TitleLeft>
-          <SectionLayout.TitleRight>Title RRR</SectionLayout.TitleRight>
+          <SectionLayout.TitleLeft></SectionLayout.TitleLeft>
+          <SectionLayout.TitleRight></SectionLayout.TitleRight>
 
           <SectionLayout.ViewLeft>
             <View >
-              <Text style={{ fontSize: "20px" }}>Profile</Text>
+
+              <Text style={{ fontSize: "20px", fontColor: "" }}>Profile</Text>
               <Text style={{ fontSize: "10px" }}>A confident and creative designer
                 who is self-motivated, selfsufficient and comes to you with
                 a strong background in both
@@ -221,6 +227,8 @@ const Tempalte1 = ({ cv }) => {
 
       </View>
 
+      {/* third Part */}
+
       <View style={{ ...styles.row, ...{ padding: "12px", margin: "12px" } }}>
 
         <SectionLayout>
@@ -231,7 +239,17 @@ const Tempalte1 = ({ cv }) => {
             <View >
               {
                 Object.keys(cv.skills ?? []).map((key) => {
-                  return <CvProgressBar skillName={valueText(cv.skills[key].skillName,"Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                  return <CvProgressBar skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                })
+              }
+            </View>
+            <View >
+
+              <Text>Language</Text>
+              {
+                Object.keys(cv.languages ?? []).map((key) => {
+
+                  return <LanguageProgressBar languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
                 })
               }
             </View>
@@ -242,18 +260,13 @@ const Tempalte1 = ({ cv }) => {
                 Object.keys(cv.experiences ?? []).map((key) => {
                   let exp = cv.experiences[key];
                   return <>
-                    <Text>{valueText(exp.jobTitle,"Job Title")}</Text>
-                    <Text>{valueText(exp.employer,"Employeer")}</Text>
-                    
-
-                    <View style={{ ...Styles.flex, ...Styles.fRow }}>
-                      <Text>{valueText(exp.startdate,"Start Date")}</Text>
-                      <Text style={{ paddingLeft: "6px", paddingRight: "6px" }}>-</Text>
-                      <Text>{valueText(exp.enddate,"End Date")}</Text>
+                    <View style={{ ...{ marginTop: "10px" } }}>
+                      <Text style={{ ...{ fontSize: "15px", fontStyle: "bold" } }}>{valueText(exp.jobTitle, "Job Title")} at {valueText(exp.employer, "Employeer")}</Text>
+                      <Text style={{ ...{ fontSize: "10px", } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+                      <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{exp.address}</Text>
                     </View>
-
                     <View style={{ ...Styles.flex, ...Styles.fRow }}>
-                      <Text>{exp.address}</Text>
+                      <Text style={{ ...{ fontSize: "10px" } }}>{exp.description}</Text>
                     </View>
                   </>
                 })

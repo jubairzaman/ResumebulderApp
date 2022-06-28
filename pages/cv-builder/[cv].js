@@ -16,10 +16,10 @@ const CvBuilder = () => {
     const [cvData, setCvData] = useState({
         firstName: "James",
         lastName: "Mary",
-        email:"james@cv.com",
+        email: "james@cv.com",
         skills: {}
     });
-    
+
     const handelCvData = async (value, name) => {
         setCvData((prevState) => ({
             ...prevState,
@@ -28,16 +28,23 @@ const CvBuilder = () => {
     }
 
     const updateSkillData = async (value) => {
-        let newCvData = {...cvData};
+        let newCvData = { ...cvData };
         newCvData.skills = value;
         setCvData(newCvData)
     }
 
     const updateExperiencesData = async (value) => {
-        let newCvData = {...cvData};
+        let newCvData = { ...cvData };
         newCvData.experiences = value;
         setCvData(newCvData)
-        
+
+    }
+    const updateLanguageData = async (value) => {
+        let newCvData = { ...cvData };
+        newCvData.languages = value;
+        console.log(value);
+        setCvData(newCvData)
+
     }
 
 
@@ -45,9 +52,9 @@ const CvBuilder = () => {
     return (
         <div>
             <div className='fixed z-50 w-full top-0' ref={navBar}> <Navbar /> </div>
-            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 relative px-5' style={{ "marginTop": navBar.current.scrollHeight??71 + "px" }}>
+            <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 relative px-5' style={{ "marginTop": navBar.current.scrollHeight ?? 71 + "px" }}>
                 <div className=''>
-                    <Resumeform cvData={cvData} handelCvData={handelCvData} updateSkillData={updateSkillData} updateExperiencesData={updateExperiencesData} ></Resumeform>
+                    <Resumeform cvData={cvData} handelCvData={handelCvData} updateSkillData={updateSkillData} updateExperiencesData={updateExperiencesData} updateLanguageData={updateLanguageData} ></Resumeform>
                 </div>
                 <div className='relative flex justify-center p-10 bg-gray-300'  >
                     <div className='block lg:fixed '>

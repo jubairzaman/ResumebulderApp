@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
+import Education from './Education';
 import Experiance from './experiance';
 import Personalinfo from './Personalinfo';
 import ProfessonalSummary from './professonalSummary';
+import Language from './Skills/Language';
 import Skillrepeater from './Skills/skillRepeater';
 
 
-const Resumeform = ({ handelCvData, updateSkillData,updateExperiencesData, cvData}) => {
+const Resumeform = ({ handelCvData, updateSkillData, updateExperiencesData, cvData, updateLanguageData }) => {
     return (
         <div className=' mx-auto '>
             {/* from part  */}
@@ -17,12 +19,14 @@ const Resumeform = ({ handelCvData, updateSkillData,updateExperiencesData, cvDat
 
                 <div className=' mt-10 mx-4 mx-auto bg-white rounded-lg py-10'>
 
-                    <h1 className='font-semibold mx-5 my-5'> Personal Information</h1>
+
 
                     <Personalinfo handelCvData={handelCvData} cvData={cvData}></Personalinfo>
                     <ProfessonalSummary handelCvData={handelCvData} cvData={cvData}></ProfessonalSummary>
+                    <Education></Education>
                     <Experiance updateExperiencesData={updateExperiencesData} cvData={cvData}></Experiance>
-                    <Skillrepeater updateSkillData={updateSkillData} cvData={cvData}/>
+                    <Skillrepeater updateSkillData={updateSkillData} cvData={cvData} />
+                    <Language updateLanguageData={updateLanguageData} cvData={cvData} ></Language>
                 </div>
 
 
