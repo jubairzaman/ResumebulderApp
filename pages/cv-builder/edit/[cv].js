@@ -10,17 +10,26 @@ import PdfPreview from '../../../components/memos/PdfPreview'
 
 const EditCv = () => {
     const axios = require('axios').default;
+    const [isLoaded, setLoaded] = useState(false)
     useEffect(() => {
+        if(isLoaded == false){
+            loadData();
+        }
+        
+    });
+
+    const loadData = ()=>{
         axios.post('/api/cv/cv-data', {
             id: cvId,
           })
           .then(function (response) {
+            setLoaded(true)
             setCvData(response.data)
           })
           .catch(function (error) {
-            
-          }); 
-    });
+        
+        }); 
+    }
 
     const cvId = useRouter().query.cv
 
