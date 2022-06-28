@@ -26,35 +26,13 @@ const CvBuilder = () => {
             [name]: value,
         }));
     }
-
-    const updateSkillData = async (value) => {
-        let newCvData = { ...cvData };
-        newCvData.skills = value;
-        setCvData(newCvData)
-    }
-
-    const updateExperiencesData = async (value) => {
-        let newCvData = { ...cvData };
-        newCvData.experiences = value;
-        setCvData(newCvData)
-
-    }
-    const updateLanguageData = async (value) => {
-        let newCvData = { ...cvData };
-        newCvData.languages = value;
-        console.log(value);
-        setCvData(newCvData)
-
-    }
-
-
     const preview1 = <PdfPreview cvData={cvData} templateId={cvId} onLoading={null} onLoaded={null} update={false} />;
     return (
         <div>
             <div className='fixed z-50 w-full top-0' ref={navBar}> <Navbar /> </div>
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4 relative px-5' style={{ "marginTop": navBar.current.scrollHeight ?? 71 + "px" }}>
                 <div className=''>
-                    <Resumeform cvData={cvData} handelCvData={handelCvData} updateSkillData={updateSkillData} updateExperiencesData={updateExperiencesData} updateLanguageData={updateLanguageData} ></Resumeform>
+                    <Resumeform cvData={cvData} handelCvData={handelCvData} ></Resumeform>
                 </div>
                 <div className='relative flex justify-center p-10 bg-gray-300'  >
                     <div className='block lg:fixed '>

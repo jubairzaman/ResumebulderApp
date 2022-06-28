@@ -7,7 +7,7 @@ import Language from './Skills/Language';
 import Skillrepeater from './Skills/skillRepeater';
 
 
-const Resumeform = ({ handelCvData, updateSkillData, updateExperiencesData, cvData, updateLanguageData }) => {
+const Resumeform = ({ handelCvData, cvData }) => {
     return (
         <div className=' mx-auto '>
             {/* from part  */}
@@ -17,16 +17,13 @@ const Resumeform = ({ handelCvData, updateSkillData, updateExperiencesData, cvDa
                 <h1 className=' pt-10 text-center text-xl font-semibold'>Add your personal details to your resume</h1>
                 <p className='text-center '>It allows employers to see how they can contact you</p>
 
-                <div className=' mt-10 mx-4 mx-auto bg-white rounded-lg py-10'>
-
-
-
+                <div className=' mt-10 mx-auto bg-white rounded-lg py-10'>
                     <Personalinfo handelCvData={handelCvData} cvData={cvData}></Personalinfo>
                     <ProfessonalSummary handelCvData={handelCvData} cvData={cvData}></ProfessonalSummary>
                     <Education></Education>
-                    <Experiance updateExperiencesData={updateExperiencesData} cvData={cvData}></Experiance>
-                    <Skillrepeater updateSkillData={updateSkillData} cvData={cvData} />
-                    <Language updateLanguageData={updateLanguageData} cvData={cvData} ></Language>
+                    <Experiance handelCvData={handelCvData} cvData={cvData}></Experiance>
+                    <Skillrepeater handelCvData={handelCvData} cvData={cvData} />
+                    <Language handelCvData={handelCvData} cvData={cvData} ></Language>
                 </div>
 
 

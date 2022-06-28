@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Slider from '@mui/material/Slider';
-const Skillrepeater = ({ updateSkillData,cvData }) => {
+const Skillrepeater = ({ handelCvData,cvData }) => {
 
     const valuetext = (value) => {
         if (value == 25) {
@@ -21,7 +21,7 @@ const Skillrepeater = ({ updateSkillData,cvData }) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["skillName"] = value;
         setskillValues(newFormValues);
-        updateSkillData(newFormValues);
+        handelCvData(newFormValues,'skills');
 
     }
 
@@ -29,19 +29,19 @@ const Skillrepeater = ({ updateSkillData,cvData }) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["expartise"] = value;
         setskillValues(newFormValues);
-        updateSkillData(newFormValues);
+        handelCvData(newFormValues,'skills');
     }
     let addFormFields = () => {
         let newFormValues = [...skillValues, { skillName: "", expartise: "0" }];
         setskillValues(newFormValues)
-        updateSkillData(newFormValues);
+        handelCvData(newFormValues,'skills');
     }
 
     let removeFormFields = (i) => {
         let newFormValues = [...skillValues];
         newFormValues.splice(i, 1);
         setskillValues(newFormValues)
-        updateSkillData(newFormValues);
+        handelCvData(newFormValues,'skills');
     }
 
     return (

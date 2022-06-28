@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Slider from '@mui/material/Slider';
-const Language = ({ updateLanguageData, cvData }) => {
+const Language = ({ handelCvData, cvData }) => {
 
     const valuetext = (value) => {
         if (value == 25) {
@@ -21,7 +21,7 @@ const Language = ({ updateLanguageData, cvData }) => {
         let newFormValues = [...languageValue];
         newFormValues[i]["languageName"] = value;
         setlanguageValue(newFormValues);
-        updateLanguageData(newFormValues);
+        handelCvData(newFormValues,'languages');
 
 
     }
@@ -30,13 +30,13 @@ const Language = ({ updateLanguageData, cvData }) => {
         let newFormValues = [...languageValue];
         newFormValues[i]["expartise"] = value;
         setlanguageValue(newFormValues);
-        updateLanguageData(newFormValues);
+        handelCvData(newFormValues,'languages');
 
     }
     let addFormFields = () => {
         let newFormValues = [...languageValue, { languageName: "", expartise: "0" }];
         setlanguageValue(newFormValues)
-        updateLanguageData(newFormValues);
+        handelCvData(newFormValues,'languages');
 
     }
 
@@ -44,7 +44,7 @@ const Language = ({ updateLanguageData, cvData }) => {
         let newFormValues = [...languageValue];
         newFormValues.splice(i, 1);
         setlanguageValue(newFormValues)
-        updateLanguageData(newFormValues);
+        handelCvData(newFormValues,'languages');
 
     }
 

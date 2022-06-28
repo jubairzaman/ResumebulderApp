@@ -124,7 +124,7 @@ const Tempalte1 = ({ cv }) => {
 
           <View style={styles.row}  >
             <View style={{ ...styles.col6, ...styles.flex, ...styles.justifyEnd, ...styles.fRow }}>
-              <Image style={{ width: "100px", height: "100px" }} src="/cvpimg.png"></Image>
+              <Image style={{ width: "100px", height: "100px" }} src="/cvpimg.png" alt="Profile Image"></Image>
             </View>
             <View style={{ ...styles.col6, ...styles.justifyCenter, ...{ paddingLeft: '24px' } }}>
               <Text style={{ fontSize: "30px" }}>{valueText(cv.firstName, "First Name")}</Text>
@@ -239,7 +239,7 @@ const Tempalte1 = ({ cv }) => {
             <View >
               {
                 Object.keys(cv.skills ?? []).map((key) => {
-                  return <CvProgressBar skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                  return <CvProgressBar key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
                 })
               }
             </View>
@@ -249,7 +249,7 @@ const Tempalte1 = ({ cv }) => {
               {
                 Object.keys(cv.languages ?? []).map((key) => {
 
-                  return <LanguageProgressBar languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
+                  return <LanguageProgressBar key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
                 })
               }
             </View>
