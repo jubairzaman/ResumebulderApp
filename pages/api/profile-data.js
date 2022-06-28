@@ -28,7 +28,7 @@ export default async function handler(req, res) {
     })
 
 
-    await prisma.$disconnect;
+    prisma.$disconnect;
     res.status(200).json(cvs)
     // try {
     //   const createCv = await prisma.cv.create({ data: {
