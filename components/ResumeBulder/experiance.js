@@ -52,9 +52,9 @@ const Experiance = ({updateExperiencesData}) => {
     return (
         <div className='border rounded-lg p-5 m-4'>
 
-            <h1 className='text-md font-semibold mx-5'> <i class="las la-briefcase la-2x"></i>  Your Experiance </h1>
+            <h1 className='text-md font-semibold mx-5'> <i className="las la-briefcase la-2x"></i>  Your Experiance </h1>
             {skillValues.map((element, index) => (
-                <div className='p-5'>
+                <div className='p-5' key={index}>
 
                     <div className='border p-5 rounded-lg'>
 
@@ -78,7 +78,7 @@ const Experiance = ({updateExperiencesData}) => {
                                     () => {
                                         removeFormFields(index)
                                     }
-                                }><i class="las la-trash la-2x"></i></button>
+                                }><i className="las la-trash la-2x"></i></button>
                             </div>
                         </div>
 
@@ -86,56 +86,56 @@ const Experiance = ({updateExperiencesData}) => {
 
                         <div className='grid grid-cols-2 gap-2 mt-4'>
                             <div>
-                                <label class="block">
-                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Job Title</span>
+                                <label className="block">
+                                    <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Job Title</span>
                                     <input onChange={
                                         (e) => {
                                             handleNameChange(index, e.target.value);
                                             //setjobTitle(e.target['value']);
                                         }
-                                    } value={element.jobTitle} type="text" name="" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                                    } value={element.jobTitle} type="text" name="" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                                 </label>
                             </div>
                             <div>
-                                <label class="block">
-                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Employer</span>
+                                <label className="block">
+                                    <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Employer</span>
                                     <input onChange={
                                         (e) => {
                                             handleEmployerChange(index, e.target.value);
                                             //setjobTitle(e.target['value']);
                                         }
-                                    } value={element.employer} type="text" name="website" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                                    } value={element.employer} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                                 </label>
                             </div>
                             <div>
-                                <label class="block">
-                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Start And End Date</span>
+                                <label className="block">
+                                    <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Start And End Date</span>
                                     <div className='flex'>
                                         <input onChange={
                                             (e) => {
                                                 handleStartDateChange(index, e.target.value);
                                                 //setjobTitle(e.target['value']);
                                             }
-                                        } value={element.startdate} type="date" name="website" class="mt-1 mx-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                                        } value={element.startdate} type="date" name="website" className="mt-1 mx-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                                         <input onChange={
                                             (e) => {
                                                 handleEndDateChange(index, e.target.value);
                                                 //setjobTitle(e.target['value']);
                                             }
-                                        } value={element.enddate} type="date" name="website" class="mt-1  mx-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                                        } value={element.enddate} type="date" name="website" className="mt-1  mx-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                                     </div>
                                 </label>
                             </div>
 
                             <div>
-                                <label class="block">
-                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Address</span>
+                                <label className="block">
+                                    <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Address</span>
                                     <input onChange={
                                         (e) => {
                                             handleAddressChange(index, e.target.value);
                                             //setjobTitle(e.target['value']);
                                         }
-                                    } value={element.address} type="text" name="website" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                                    } value={element.address} type="text" name="website" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                                 </label>
                             </div>
 
@@ -147,7 +147,7 @@ const Experiance = ({updateExperiencesData}) => {
             ))}
             <button className="button add mx-6" type="button" onClick={() => addFormFields()}>
                 <div className='flex my-5 ' >
-                    {skillValues.length ? <h1 className='text-indigo-600'> <i class="las la-plus-circle la-lg mt-1"></i>  Add More</h1> : <h1 className='text-indigo-600'> <i class="las la-plus-circle la-lg mt-1"></i>  Add Your Skills</h1>}
+                    {skillValues.length ? <h1 className='text-indigo-600'> <i className="las la-plus-circle la-lg mt-1"></i>  Add More</h1> : <h1 className='text-indigo-600'> <i className="las la-plus-circle la-lg mt-1"></i>  Add Your Skills</h1>}
                 </div>
             </button>
 

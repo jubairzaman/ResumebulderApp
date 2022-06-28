@@ -99,9 +99,18 @@ const styles = StyleSheet.create({
   },
 });
 
+
+
 // Create Document Component
 const Tempalte1 = ({ cv }) => {
 
+  const valueText = (value, defaultValue) => {
+    if (value != null && value !== "")
+      return value
+    if (defaultValue != null)
+      return defaultValue
+    return ""
+  }
 
   return <Document>
     <Page size="A4" style={styles.page}>
@@ -113,9 +122,9 @@ const Tempalte1 = ({ cv }) => {
               <Image style={{ width: "120px", height: "120px" }} src="/mk1.png"></Image>
             </View>
             <View style={{ ...styles.col6, ...styles.justifyCenter, ...{ paddingLeft: '24px' } }}>
-              <Text >{cv.firstName}</Text>
-              <Text >{cv.lastName}</Text>
-              <Text>{cv.profession ?? "Job Title"}</Text>
+              <Text>{valueText(cv.firstName, "First Name")}</Text>
+              <Text>{valueText(cv.lastName, "Last Name")}</Text>
+              <Text>{valueText(cv.profession, "Job Title")}</Text>
             </View>
           </View>
 
@@ -221,9 +230,8 @@ const Tempalte1 = ({ cv }) => {
           <SectionLayout.ViewLeft>
             <View >
               {
-
                 Object.keys(cv.skills ?? []).map((key) => {
-                  return <CvProgressBar skillName={cv.skills[key].skillName} value={cv.skills[key].expartise ?? 0} />
+                  return <CvProgressBar skillName={valueText(cv.skills[key].skillName,"Skill Name")} value={cv.skills[key].expartise ?? 0} />
                 })
               }
             </View>
@@ -234,16 +242,14 @@ const Tempalte1 = ({ cv }) => {
                 Object.keys(cv.experiences ?? []).map((key) => {
                   let exp = cv.experiences[key];
                   return <>
-                    <View style={{ ...Styles.flex, ...Styles.fRow }}>
-                      <Text>{exp.jobTitle}</Text>
-                      <Text style={{ paddingLeft: "6px", paddingRight: "6px" }}>|</Text>
-                      <Text>{exp.employer}</Text>
-                    </View>
+                    <Text>{valueText(exp.jobTitle,"Job Title")}</Text>
+                    <Text>{valueText(exp.employer,"Employeer")}</Text>
+                    
 
                     <View style={{ ...Styles.flex, ...Styles.fRow }}>
-                      <Text>{exp.startdate}</Text>
+                      <Text>{valueText(exp.startdate,"Start Date")}</Text>
                       <Text style={{ paddingLeft: "6px", paddingRight: "6px" }}>-</Text>
-                      <Text>{exp.enddate}</Text>
+                      <Text>{valueText(exp.enddate,"End Date")}</Text>
                     </View>
 
                     <View style={{ ...Styles.flex, ...Styles.fRow }}>
