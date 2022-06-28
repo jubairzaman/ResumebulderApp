@@ -1,24 +1,29 @@
 import React, { useRef } from 'react';
 import Modal from '@mui/material/Modal';
+import BasicModal from '../BasicModal';
 
 
-class Upload extends React.Component {
+class ImageUpload extends React.Component {
 
 
     constructor(props) {
+        
         super(props)
         this.state = {
-            file: null,
+            file: "",
             open: false,
             errorMessage: ""
-
         }
         this.handleChange = this.handleChange.bind(this)
-        this.inputRef = React.createRef();;
+        this.clearImage = this.clearImage.bind(this)
+        this.inputRef = React.createRef();
+        this.modalRef = React.createRef();
     }
 
-    handleChange(event) {
+    async handleChange(event) {
+
         let url = "";
+        let errorMessage = ""
         const name = event?.target?.files[0]?.name;
         if (name != null && name !== "") {
             const lastDot = name.lastIndexOf('.');
@@ -27,45 +32,58 @@ class Upload extends React.Component {
             if (ext == "jpg" || ext == "jpeg" || ext == "png") {
                 url = URL.createObjectURL(event.target.files[0])
             } else {
-                console.log("File type not Supported")
                 this.inputRef.current.value = ""
-                this.setState({
-                    open: true,
-                    errorMessage: "File Is Not An Valid Image"
-                })
+                errorMessage = "File Is Not An Valid Image"
+
             }
         } else {
-            this.setState({
-                open: true,
-                errorMessage: "Invalid File Type"
-            })
+            errorMessage = "Invalid File Type"
             this.inputRef.current.value = ""
         }
 
-        this.setState({
-            file: url
-        })
-    }
+        if(this.props.onChange){
+            this.props.onChange(url)
+        }
 
+         this.setState({
+            file: url,
+            errorMessage: errorMessage
+        })
+
+        if (errorMessage !== "") {
+            this.modalRef.current.childMethod()
+        }
+    }
+    clearImage(){
+        this.setState({
+            file: "",
+            errorMessage: ""
+        })
+        if(this.props.onChange){
+            this.props.onChange("")
+        }
+    }
 
     render() {
         return (
             <div>
-                <input type="file" onChange={this.handleChange} ref={this.inputRef} />
-                <img className='' src={this.state.file} />
-
-                {/* Modal */}
-
-                <Modal
-                    open={this.open}
-
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                >
-                    <div>
-                        File Is Not An Valid Image
+                {this.state.file === "" ?
+                    <div className='flex'>
+                        <label className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" htmlFor="file_input">Upload file</label>
+                        <input className="hidden" id="file_input" type="file" onChange={this.handleChange} ref={this.inputRef} />
+                    </div> :
+                    <div className='relative'>
+                        <img className='aspect-square' src={this.state.file} />
+                        <span className='absolute top-0 right-0 p-2 bg-red-100' onClick={this.clearImage}>x</span>
                     </div>
-                </Modal>
+                }
+                <BasicModal ref={this.modalRef} small={true}>
+                    <div className='w-full'>
+                        <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative" role="alert">
+                            <span className="block sm:inline">{this.state.errorMessage}</span>
+                        </div>
+                    </div>
+                </BasicModal>
 
             </div>
         );
@@ -73,5 +91,5 @@ class Upload extends React.Component {
 }
 
 
-export default Upload;
+export default ImageUpload;
 

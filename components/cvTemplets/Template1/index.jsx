@@ -124,7 +124,7 @@ const Tempalte1 = ({ cv }) => {
 
           <View style={styles.row}  >
             <View style={{ ...styles.col6, ...styles.flex, ...styles.justifyEnd, ...styles.fRow }}>
-              <Image style={{ width: "100px", height: "100px" }} src="/cvpimg.png" alt="Profile Image"></Image>
+              <Image style={{ width: "100px", height: "100px" }} src={(cv.profileImage != null && cv.profileImage!=="")?cv.profileImage:"/cvpimg.png"} alt="Profile Image"></Image>
             </View>
             <View style={{ ...styles.col6, ...styles.justifyCenter, ...{ paddingLeft: '24px' } }}>
               <Text style={{ fontSize: "30px" }}>{valueText(cv.firstName, "First Name")}</Text>

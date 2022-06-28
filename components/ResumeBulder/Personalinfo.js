@@ -1,5 +1,5 @@
 import React from 'react';
-import Upload from './ImageUpload';
+import ImageUpload from './ImageUpload';
 
 const Personalinfo = ({ handelCvData, cvData }) => {
     return (
@@ -34,7 +34,9 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                     </form>
                 </div> */}
 
-                <Upload></Upload>
+                <ImageUpload onChange = { (value)=>{
+                    handelCvData(value, 'profileImage')
+                }}></ImageUpload>
 
                 <div>
                     <label className="block">
