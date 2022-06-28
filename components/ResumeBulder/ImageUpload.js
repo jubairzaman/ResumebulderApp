@@ -7,7 +7,7 @@ class ImageUpload extends React.Component {
 
 
     constructor(props) {
-        
+
         super(props)
         this.state = {
             file: "",
@@ -41,11 +41,11 @@ class ImageUpload extends React.Component {
             this.inputRef.current.value = ""
         }
 
-        if(this.props.onChange){
+        if (this.props.onChange) {
             this.props.onChange(url)
         }
 
-         this.setState({
+        this.setState({
             file: url,
             errorMessage: errorMessage
         })
@@ -54,12 +54,12 @@ class ImageUpload extends React.Component {
             this.modalRef.current.childMethod()
         }
     }
-    clearImage(){
+    clearImage() {
         this.setState({
             file: "",
             errorMessage: ""
         })
-        if(this.props.onChange){
+        if (this.props.onChange) {
             this.props.onChange("")
         }
     }
@@ -73,7 +73,7 @@ class ImageUpload extends React.Component {
                         <input className="hidden" id="file_input" type="file" onChange={this.handleChange} ref={this.inputRef} />
                     </div> :
                     <div className='relative'>
-                        <img className='aspect-square' src={this.state.file} />
+                        <img className='aspect-square w-32 ' src={this.state.file} />
                         <span className='absolute top-0 right-0 p-2 bg-red-100' onClick={this.clearImage}>x</span>
                     </div>
                 }
