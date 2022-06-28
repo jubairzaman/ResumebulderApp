@@ -124,7 +124,7 @@ const Tempalte1 = ({ cv }) => {
 
           <View style={styles.row}  >
             <View style={{ ...styles.col6, ...styles.flex, ...styles.justifyEnd, ...styles.fRow }}>
-              <Image style={{ width: "100px", height: "100px" }} src={(cv.profileImage != null && cv.profileImage!=="")?cv.profileImage:"/cvpimg.png"} alt="Profile Image"></Image>
+              <Image style={{ width: "100px", height: "100px" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
             </View>
             <View style={{ ...styles.col6, ...styles.justifyCenter, ...{ paddingLeft: '24px' } }}>
               <Text style={{ fontSize: "30px" }}>{valueText(cv.firstName, "First Name")}</Text>
@@ -173,48 +173,34 @@ const Tempalte1 = ({ cv }) => {
           <SectionLayout.ViewLeft>
             <View >
 
-              <Text style={{ fontSize: "20px", fontColor: "" }}>Profile</Text>
-              <Text style={{ fontSize: "10px" }}>A confident and creative designer
-                who is self-motivated, selfsufficient and comes to you with
-                a strong background in both
-                print and digital media. Amanda
-                has worked extensively in the
-                automotive and travel industries
-                producing high end business to
-                business designs.</Text>
+              <Text style={{ fontSize: "13px", fontColor: "" }}>Profile</Text>
+              <Text style={{ fontSize: "10px" }}>{valueText(cv.phistory, "phistory")}.</Text>
             </View>
           </SectionLayout.ViewLeft>
           <SectionLayout.ViewRight>
             <View >
-              <Text style={{ fontSize: "20px" }}>Business Objective
+              <Text style={{ fontSize: "13px" }}>Business Objective
               </Text>
-              <Text style={{ fontSize: "10px" }}>A confident and creative designer
-                who is self-motivated, selfsufficient and comes to you with
-                a strong background in both
-                print and digital media. Amanda
-                has worked extensively in the
-                automotive and travel industries
-                producing high end business to
-                business designs.</Text>
+              <Text style={{ fontSize: "10px" }}>{valueText(cv.businessObjective, "businessObjective")}.</Text>
 
-              <View style={{ ...styles.row, ...{ margin: "5px" } }}>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+              <View style={{ ...styles.row, ...{ margin: "5px", width: "70%" } }}>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "15px" } }}>
+                  <Text style={{ fontSize: "8px" }} >#KeyWord</Text>
                 </View>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "15px" } }}>
+                  <Text style={{ fontSize: "8px" }} >#KeyWord</Text>
                 </View>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "15px" } }}>
+                  <Text style={{ fontSize: "8px" }} >#KeyWord</Text>
                 </View>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "15px" } }}>
+                  <Text style={{ fontSize: "8px" }} >#KeyWord</Text>
                 </View>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "15px" } }}>
+                  <Text style={{ fontSize: "8px" }} >#KeyWord</Text>
                 </View>
-                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "20px" } }}>
-                  <Text style={{ fontSize: "15px" }} >#KeyWord</Text>
+                <View style={{ ...{ backgroundColor: '#fff', margin: '5px', height: "15px" } }}>
+                  <Text style={{ fontSize: "8px" }} >#KeyWord</Text>
                 </View>
               </View>
             </View>
@@ -245,7 +231,7 @@ const Tempalte1 = ({ cv }) => {
             </View>
             <View >
 
-              <Text>Language</Text>
+              <Text style={{ ...{ fontSize: "13px", fontWeight: "500px" } }}>Language</Text>
               {
                 Object.keys(cv.languages ?? []).map((key) => {
 
@@ -261,7 +247,7 @@ const Tempalte1 = ({ cv }) => {
                   let exp = cv.experiences[key];
                   return <>
                     <View style={{ ...{ marginTop: "10px" } }}>
-                      <Text style={{ ...{ fontSize: "15px", fontStyle: "bold" } }}>{valueText(exp.jobTitle, "Job Title")} at {valueText(exp.employer, "Employeer")}</Text>
+                      <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(exp.jobTitle, "Job Title")} at {valueText(exp.employer, "Employeer")}</Text>
                       <Text style={{ ...{ fontSize: "10px", } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
                       <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{exp.address}</Text>
                     </View>
