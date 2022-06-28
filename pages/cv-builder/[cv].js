@@ -13,6 +13,7 @@ const CvBuilder = () => {
 
     const navBar = useRef('navBar');
 
+
     const [cvData, setCvData] = useState({
         firstName: "James",
         lastName: "Mary",
@@ -34,9 +35,15 @@ const CvBuilder = () => {
                 <div className=''>
                     <Resumeform cvData={cvData} handelCvData={handelCvData} ></Resumeform>
                 </div>
-                <div className='relative flex justify-center p-10 bg-gray-300'  >
-                    <div className='block lg:fixed '>
-                        {preview1}
+                {/* <div className='relative flex justify-center p-10 bg-gray-300' >
+                    {preview1}
+                </div> */}
+
+                <div className='w-full relative flex justify-center bg-gray-50'>
+                    <div className="fixed">
+                        <div className="flex flex-col justify-center items-center pt-2 md:pt-5 mb-2 relative  py-4">
+                            {preview1}
+                        </div>
                     </div>
                 </div>
             </div>
@@ -46,8 +53,6 @@ const CvBuilder = () => {
 
 
 CvBuilder.shouldSkipDefaultLayout = true;
-
-
 export async function getServerSideProps(context) {
     const providers = await getProviders()
     const csrfToken = await getCsrfToken(context)
