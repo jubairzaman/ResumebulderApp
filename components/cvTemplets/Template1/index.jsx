@@ -167,20 +167,18 @@ const Tempalte1 = ({ cv }) => {
       <View style={{ ...styles.row, ...{ backgroundColor: "#F3F8FF", padding: "12px", margin: "12px" } }}>
 
         <SectionLayout>
-          <SectionLayout.TitleLeft></SectionLayout.TitleLeft>
-          <SectionLayout.TitleRight></SectionLayout.TitleRight>
+          <SectionLayout.TitleLeft >Profile</SectionLayout.TitleLeft>
+          <SectionLayout.TitleRight>Business Objective</SectionLayout.TitleRight>
 
           <SectionLayout.ViewLeft>
             <View >
 
-              <Text style={{ fontSize: "13px", fontColor: "" }}>Profile</Text>
+
               <Text style={{ fontSize: "10px" }}>{valueText(cv.phistory, "phistory")}.</Text>
             </View>
           </SectionLayout.ViewLeft>
           <SectionLayout.ViewRight>
             <View >
-              <Text style={{ fontSize: "13px" }}>Business Objective
-              </Text>
               <Text style={{ fontSize: "10px" }}>{valueText(cv.businessObjective, "businessObjective")}.</Text>
 
               <View style={{ ...styles.row, ...{ margin: "5px", width: "70%" } }}>
@@ -231,7 +229,7 @@ const Tempalte1 = ({ cv }) => {
             </View>
             <View >
 
-              <Text style={{ ...{ fontSize: "13px", fontWeight: "500px" } }}>Language</Text>
+              <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "rgb(14 165 233)" } }}>Language</Text>
               {
                 Object.keys(cv.languages ?? []).map((key) => {
 
@@ -263,6 +261,55 @@ const Tempalte1 = ({ cv }) => {
 
         </SectionLayout>
 
+        <View>
+
+          <View style={{ ...Styles.row, ...{ backgroundColor: "#D0CDCD", padding: "5px" } }}>
+            <View style={{ ...Styles.col3 }}>
+              <View style={{ ...Styles.row }}>
+                <Call></Call>
+                <View style={{ ...{ marginLeft: "3px", marginTop: "2px" } }}>
+                  <Text style={{ fontSize: "8px" }}>Facebook.com/</Text>
+                  <Text style={{ fontSize: "8px" }}>{valueText(cv.facebook, "facebook")}</Text>
+                </View>
+              </View>
+            </View>
+            <View style={{ ...Styles.col3 }}>
+              <View style={{ ...Styles.row }}>
+                <Call></Call>
+                <View style={{ ...{ marginLeft: "3px", marginTop: "2px" } }}>
+                  <Text style={{ fontSize: "8px" }}>linkedin.com/</Text>
+                  <Text style={{ fontSize: "8px" }}>{valueText(cv.linkedin, "linkedin")}</Text>
+                </View>
+              </View>
+            </View>
+            <View style={{ ...Styles.col3 }}>
+              <View style={{ ...Styles.row }}>
+                <Call></Call>
+                <View style={{ ...{ marginLeft: "3px", marginTop: "2px" } }}>
+                  <Text style={{ fontSize: "8px" }}>Skype.com/</Text>
+                  <Text style={{ fontSize: "8px" }}>{valueText(cv.skype, "skype")}</Text>
+                </View>
+              </View>
+            </View>
+            <View style={{ ...Styles.col3 }}>
+              <View style={{ ...Styles.row }}>
+                <Call></Call>
+                <View style={{ ...{ marginLeft: "3px", marginTop: "2px" } }} s>
+                  <Text style={{ fontSize: "8px" }}>Website</Text>
+                  <Text style={{ fontSize: "8px" }}>{valueText(cv.website, "website")}</Text>
+                </View>
+              </View>
+            </View>
+
+
+
+
+          </View>
+
+
+
+
+        </View>
 
 
       </View>
