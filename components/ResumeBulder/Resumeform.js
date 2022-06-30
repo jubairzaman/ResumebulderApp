@@ -21,11 +21,11 @@ const Resumeform = ({ handelCvData, cvData }) => {
                 <div className=' mt-10 mx-auto bg-white rounded-lg py-10'>
                     <Personalinfo handelCvData={handelCvData} cvData={cvData}></Personalinfo>
                     <ProfessonalSummary handelCvData={handelCvData} cvData={cvData}></ProfessonalSummary>
-                    <Education></Education>
+                    <Education handelCvData={handelCvData} cvData={cvData}></Education>
                     <Experiance handelCvData={handelCvData} cvData={cvData}></Experiance>
                     <Skillrepeater handelCvData={handelCvData} cvData={cvData} />
                     <Language handelCvData={handelCvData} cvData={cvData} ></Language>
-                    <SocialMedia handelCvData={handelCvData} cvData={cvData}></SocialMedia>
+                    {/* <SocialMedia handelCvData={handelCvData} cvData={cvData}></SocialMedia> */}
 
                 </div>
 

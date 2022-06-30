@@ -293,7 +293,7 @@ const Tempalte1 = ({ cv }) => {
 
         </SectionLayout>
 
-        <View>
+        {/* <View>
 
           <View style={{ ...Styles.row, ...{ backgroundColor: "#D0CDCD", padding: "5px" } }}>
             <View style={{ ...Styles.col3 }}>
@@ -341,7 +341,7 @@ const Tempalte1 = ({ cv }) => {
 
 
 
-        </View>
+        </View> */}
 
 
       </View>
