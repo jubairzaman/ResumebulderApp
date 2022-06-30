@@ -7,53 +7,53 @@ const Experiance = ({ handelCvData, cvData }) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["jobTitle"] = value;
         setskillValues(newFormValues);
-        handelCvData(newFormValues,'experiences');
+        handelCvData(newFormValues, 'experiences');
 
     }
     let handleEmployerChange = (i, value) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["employer"] = value;
         setskillValues(newFormValues);
-        handelCvData(newFormValues,'experiences');
+        handelCvData(newFormValues, 'experiences');
 
     }
     let handleStartDateChange = (i, value) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["startdate"] = value;
         setskillValues(newFormValues);
-        handelCvData(newFormValues,'experiences');
+        handelCvData(newFormValues, 'experiences');
     }
     let handleEndDateChange = (i, value) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["enddate"] = value;
         setskillValues(newFormValues);
-        handelCvData(newFormValues,'experiences');
+        handelCvData(newFormValues, 'experiences');
     }
     let handleAddressChange = (i, value) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["address"] = value;
         setskillValues(newFormValues);
-        handelCvData(newFormValues,'experiences');
+        handelCvData(newFormValues, 'experiences');
 
     }
     let handleDescriptionChange = (i, value) => {
         let newFormValues = [...skillValues];
         newFormValues[i]["description"] = value;
         setskillValues(newFormValues);
-        handelCvData(newFormValues,'experiences');
+        handelCvData(newFormValues, 'experiences');
     }
 
     let addFormFields = () => {
         let newFormValues = [...skillValues, { jobTitle: "", employer: "", startdate: "", enddate: "", address: "" }];
         setskillValues(newFormValues)
-        handelCvData(newFormValues,'experiences');
+        handelCvData(newFormValues, 'experiences');
     }
 
     let removeFormFields = (i) => {
         let newFormValues = [...skillValues];
         newFormValues.splice(i, 1);
         setskillValues(newFormValues)
-        handelCvData(newFormValues,'experiences');
+        handelCvData(newFormValues, 'experiences');
     }
     return (
         <div className='border rounded-lg p-5 m-4'>

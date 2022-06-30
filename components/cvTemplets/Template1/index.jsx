@@ -227,16 +227,7 @@ const Tempalte1 = ({ cv }) => {
                 })
               }
             </View>
-            <View >
 
-              <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "rgb(14 165 233)" } }}>Language</Text>
-              {
-                Object.keys(cv.languages ?? []).map((key) => {
-
-                  return <LanguageProgressBar key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
-                })
-              }
-            </View>
           </SectionLayout.ViewLeft>
           <SectionLayout.ViewRight>
             <View >
@@ -251,6 +242,47 @@ const Tempalte1 = ({ cv }) => {
                     </View>
                     <View style={{ ...Styles.flex, ...Styles.fRow }}>
                       <Text style={{ ...{ fontSize: "10px" } }}>{exp.description}</Text>
+                    </View>
+                  </>
+                })
+              }
+            </View>
+          </SectionLayout.ViewRight>
+
+
+        </SectionLayout>
+
+        {/* 4rth Part  */}
+        <SectionLayout>
+          <SectionLayout.TitleLeft>Language</SectionLayout.TitleLeft>
+          <SectionLayout.TitleRight>Education</SectionLayout.TitleRight>
+
+          <SectionLayout.ViewLeft>
+            <View >
+
+              <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "rgb(14 165 233)" } }}>Language</Text>
+              {
+                Object.keys(cv.languages ?? []).map((key) => {
+
+                  return <LanguageProgressBar key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
+                })
+              }
+            </View>
+
+          </SectionLayout.ViewLeft>
+          <SectionLayout.ViewRight>
+            <View >
+              {
+                Object.keys(cv.education ?? []).map((key) => {
+                  let edu = cv.education[key];
+                  return <>
+                    <View style={{ ...{ marginTop: "10px" } }}>
+                      <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(edu.school, "Job Title")} at {valueText(edu.degree, "Employeer")}</Text>
+                      <Text style={{ ...{ fontSize: "10px", } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
+                      <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{edu.address}</Text>
+                    </View>
+                    <View style={{ ...Styles.flex, ...Styles.fRow }}>
+                      <Text style={{ ...{ fontSize: "10px" } }}>{edu.description}</Text>
                     </View>
                   </>
                 })
