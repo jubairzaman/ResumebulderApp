@@ -1,10 +1,11 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect } from '@react-pdf/renderer';
-import CvProgressBar from './cvTemplets/cvProgressbar';
 import Jumbotron from './cvTemplets/jumbotron';
 import { Mobile } from './cvTemplets/icons/mobile';
 import { Call } from './cvTemplets/icons/call';
 import { Mail } from './cvTemplets/icons/mail';
+import CvProgressBar2 from './cvTemplets/Templete2/cvProgressbar2';
+import LanguageProgressBar2 from './cvTemplets/Templete2/LanguageProgressBar2';
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -154,7 +155,7 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const Pdfc = ({ cv }) => {
+const Pdfc = ({ cv, heading, content }) => {
   const valueText = (value, defaultValue) => {
     if (value != null && value !== "")
       return value
@@ -169,10 +170,10 @@ const Pdfc = ({ cv }) => {
       <View style={styles.mainContainer}>
 
 
-        <View style={{ ...styles.section1, ...styles.row, ...styles.column, ...styles.alignItemsCenter }}>
+        <View style={{ ...styles.section1, ...styles.row, ...styles.column }}>
           <View style={styles.col}  >
             <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fColumn }}>
-              <Image style={{ width: "100px", height: "100px" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
+              <Image style={{ width: "100px", height: "100px", borderRadius: "50%", marginLeft: "20px", marginVertical: "20px" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
             </View>
             <View style={{ ...styles.justifyCenter, }}>
               <Text style={{ fontSize: "30px", color: "#fff" }}>{valueText(cv.firstName, "First Name")} {valueText(cv.lastName, "Last Name")}</Text>
@@ -182,47 +183,124 @@ const Pdfc = ({ cv }) => {
           </View>
           <View >
 
+            {/* personal phone email section  */}
 
-            <View style={{ ...styles.col4, ...styles.justifyCenter, ...{ paddingLeft: '', } }}>
 
-              <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "6px" } }}>
+            <View style={{ ...styles.col4, ...{ marginTop: "20px" } }}>
+
+              <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
                 <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
                   <Mobile />
-                  <Text style={{ fontSize: "10px", paddingLeft: "12px" }}>{cv.phone ?? "Phone Number"}</Text>
+                  <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.phone ?? "Phone Number"}</Text>
                 </View>
               </View>
 
-              {/* personal phone email section  */}
 
-              <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "6px" } }}>
+              <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
                 <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
                   <Call />
-                  <Text style={{ fontSize: "10px", paddingLeft: "12px" }}>{cv.email ?? "Email"}</Text>
+                  <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.email ?? "Email"}</Text>
                 </View>
               </View>
 
-              <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "6px" } }}>
+              <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
                 <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
                   <Mail />
-                  <Text style={{ fontSize: "10px", paddingLeft: "12px" }}>{cv.city ?? "Address"}</Text>
+                  <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.city ?? "Address"}</Text>
                 </View>
               </View>
             </View>
+
+          </View>
+          <View>
+
+            <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "#fff" } }}>Language</Text>
+
             {
               Object.keys(cv.skills ?? []).map((key) => {
-                return <CvProgressBar key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                return <CvProgressBar2 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+              })
+            }
+          </View>
+          <View style={{ ...{ marginTop: "20px" } }} >
+
+            <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "#fff" } }}>Language</Text>
+            {
+              Object.keys(cv.languages ?? []).map((key) => {
+
+                return <LanguageProgressBar2 key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
               })
             }
           </View>
 
-
-
         </View>
 
+
+
         <View style={styles.section2}>
-          <Jumbotron />
-          <Jumbotron />
-          <Jumbotron />
+
+          {/* Profile History  */}
+
+
+          <View style={{ padding: "15px" }}>
+
+            <View style={{ width: '100%', }}>
+              <Text style={{ color: "black" }}>{heading ?? "Profile"}</Text>
+              <Text style={{ fontSize: '10px', textAlign: "justify", lineHeight: "1.4px", paddingTop: "12px", paddingRight: "30px", color: "rgb(71 85 105)", }}>{valueText(cv.phistory, "phistory")}.</Text>
+            </View>
+          </View>
+          <View style={{ padding: "15px" }}>
+
+            <View style={{ width: '100%', }}>
+              <Text style={{ color: "black" }}>{heading ?? "Experiance"}</Text>
+              <View>
+                {
+                  Object.keys(cv.experiences ?? []).map((key) => {
+                    let exp = cv.experiences[key];
+                    return <>
+                      <View style={{ ...{ marginTop: "10px" } }}>
+                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(exp.jobTitle, "Job Title")} at {valueText(exp.employer, "Employeer")}</Text>
+                        <Text style={{ ...{ fontSize: "10px", } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{exp.address}</Text>
+                      </View>
+                      <View style={{}}>
+                        <Text style={{ ...{ fontSize: "10px" } }}>{exp.description}</Text>
+                      </View>
+                    </>
+                  })
+                }
+              </View>
+            </View>
+          </View>
+
+          <View style={{ padding: "15px" }}>
+
+            <View style={{ width: '100%', }}>
+              <Text style={{ color: "black" }}>{heading ?? "Education"}</Text>
+              <View>
+                {
+                  Object.keys(cv.education ?? []).map((key) => {
+                    let edu = cv.education[key];
+                    return <>
+                      <View style={{ ...{ marginTop: "10px" } }}>
+                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(edu.school, "Job Title")} at {valueText(edu.degree, "Employeer")}</Text>
+                        <Text style={{ ...{ fontSize: "10px", } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
+                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{edu.address}</Text>
+                      </View>
+                      <View style={{ ...{ width: "80%" } }}>
+                        <Text style={{ ...{ fontSize: "10px" } }}>{edu.description}</Text>
+                      </View>
+                    </>
+                  })
+                }
+
+              </View>
+            </View>
+          </View>
+
+
+
+
         </View>
 
 

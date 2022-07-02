@@ -3,7 +3,7 @@ import { View, Text } from '@react-pdf/renderer';
 
 
 // Create Document Component
-const CvProgressBar = ({ skillName, value }) => {
+const CvProgressBar2 = ({ skillName, value }) => {
 
     return (
         <>
@@ -12,11 +12,11 @@ const CvProgressBar = ({ skillName, value }) => {
                 <Text style={{ color: "#fff", textTransform: "capitalize", fontSize: "8px" }}>{(skillName != null && skillName !== "") ? skillName : "Skill Name"}</Text>
             </View>
             <View style={{ height: "3px", width: "80%", }}></View>
-            <View style={{ height: "4px", width: "80%", backgroundColor: "rgb(148 163 184)", }}>
-                <View style={{ height: "4px", width: (value ?? 10) + "%", backgroundColor: "rgb(30 64 175)" }}>
+            <View style={{ height: "4px", width: "80%", backgroundColor: "#BABABA", }}>
+                <View style={{ height: "4px", width: (value ?? 10) + "%", backgroundColor: "#fff" }}>
                 </View>
             </View>
         </>
     )
 };
-export default CvProgressBar;
+export default CvProgressBar2;
