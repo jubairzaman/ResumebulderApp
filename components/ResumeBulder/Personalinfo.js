@@ -1,5 +1,7 @@
 import React from 'react';
 import ImageUpload from './ImageUpload';
+import DelayedInput from './DelayedInput';
+
 
 const Personalinfo = ({ handelCvData, cvData }) => {
     return (
@@ -12,7 +14,8 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Desired Job Title
                         </span>
-                        <input value={cvData?.profession ?? ""} onChange={(e) => handelCvData(e.target['value'], 'profession')} type="text" name="Title" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="Engineer" />
+                        <DelayedInput value={cvData?.profession ?? ""} onChange={(e) => { handelCvData(e, 'profession'); }} placeholder="Engineer" ></DelayedInput>
+
                     </label>
                 </div>
                 {/* <div>
@@ -34,7 +37,7 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                     </form>
                 </div> */}
 
-                <ImageUpload onChange = { (value)=>{
+                <ImageUpload onChange={(value) => {
                     handelCvData(value, 'profileImage')
                 }}></ImageUpload>
 
@@ -43,7 +46,8 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             First Name
                         </span>
-                        <input value={cvData?.firstName ?? ""} onChange={(e) => handelCvData(e.target['value'], 'firstName')} type="text" name="Firstname" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                        <DelayedInput value={cvData?.firstName ?? ""} onChange={(e) => { handelCvData(e, 'firstName'); }} placeholder="First Name" ></DelayedInput>
+
                     </label>
                 </div>
                 <div><label className="block">

@@ -68,7 +68,8 @@ class ImageUpload extends React.Component {
         return (
             <div>
                 {this.state.file === "" ?
-                    <div className='flex'>
+                    <div className='flex flex-col'>
+                        <span>&nbsp;</span>
                         <label className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800" htmlFor="file_input">Upload file</label>
                         <input className="hidden" id="file_input" type="file" onChange={this.handleChange} ref={this.inputRef} />
                     </div> :
