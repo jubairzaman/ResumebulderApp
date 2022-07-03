@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import DelayedInput from './DelayedInput';
 
 const Education = ({ handelCvData, cvData }) => {
     const [educationValue, seteducationValue] = useState([{ school: "", degree: "", startdate: "", enddate: "", address: "" }])
@@ -88,41 +89,35 @@ const Education = ({ handelCvData, cvData }) => {
                             <div>
                                 <label class="block">
                                     <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">school</span>
-                                    <input onChange={
-                                        (e) => {
-                                            handleNameChange(index, e.target.value);
-                                            //setschool(e.target['value']);
-                                        }
-                                    } value={element.school} type="text" name="" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                                    <DelayedInput value={cvData?.school ?? ""} onChange={(e) => { handelCvData(e, 'school'); }} placeholder="School" ></DelayedInput>
+
+
+
                                 </label>
                             </div>
                             <div>
                                 <label class="block">
                                     <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">degree</span>
-                                    <input onChange={
-                                        (e) => {
-                                            handledegreeChange(index, e.target.value);
-                                            //setschool(e.target['value']);
-                                        }
-                                    } value={element.degree} type="text" name="website" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                                    <DelayedInput value={cvData?.degree ?? ""} onChange={(e) => { handelCvData(e, 'degree'); }} placeholder="Degree" ></DelayedInput>
+
+
+
                                 </label>
                             </div>
                             <div>
                                 <label class="block">
                                     <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Start And End Date</span>
+
+
+
+
+
                                     <div className='flex'>
-                                        <input onChange={
-                                            (e) => {
-                                                handleStartDateChange(index, e.target.value);
-                                                //setschool(e.target['value']);
-                                            }
-                                        } value={element.startdate} type="date" name="website" class="mt-1 mx-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
-                                        <input onChange={
-                                            (e) => {
-                                                handleEndDateChange(index, e.target.value);
-                                                //setschool(e.target['value']);
-                                            }
-                                        } value={element.enddate} type="date" name="website" class="mt-1  mx-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+
+                                        <DelayedInput value={cvData?.startdate ?? ""} type="date" onChange={(e) => { handelCvData(e, 'startdate'); }} placeholder="Startdate" ></DelayedInput>
+
+                                        <DelayedInput value={cvData?.enddate ?? ""} type="date" onChange={(e) => { handelCvData(e, 'enddate'); }} placeholder="Enddate" ></DelayedInput>
+
                                     </div>
                                 </label>
                             </div>
@@ -130,12 +125,9 @@ const Education = ({ handelCvData, cvData }) => {
                             <div>
                                 <label class="block">
                                     <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Address</span>
-                                    <input onChange={
-                                        (e) => {
-                                            handleAddressChange(index, e.target.value);
-                                            //setschool(e.target['value']);
-                                        }
-                                    } value={element.address} type="text" name="website" class="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+
+                                    <DelayedInput value={cvData?.address ?? ""} onChange={(e) => { handelCvData(e, 'address'); }} placeholder="Address" ></DelayedInput>
+
                                 </label>
                             </div>
 
@@ -145,12 +137,10 @@ const Education = ({ handelCvData, cvData }) => {
                         <div>
                             <label class="block">
                                 <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Description`</span>
-                                <input onChange={
-                                    (e) => {
-                                        handleDescriptionChange(index, e.target.value);
-                                        //setschool(e.target['value']);
-                                    }
-                                } value={element.description} type="text" name="website" class="mt-1 px-3 h-20 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+
+                                <DelayedInput value={cvData?.description ?? ""} onChange={(e) => { handelCvData(e, 'description'); }} placeholder="Description" ></DelayedInput>
+
+
                             </label>
                         </div>
 
@@ -159,7 +149,7 @@ const Education = ({ handelCvData, cvData }) => {
             ))}
             <button className="button add mx-6" type="button" onClick={() => addFormFields()}>
                 <div className='flex my-5 ' >
-                    {educationValue.length ? <h1 className='text-indigo-600'> <i class="las la-plus-circle la-lg mt-1"></i>  Add More</h1> : <h1 className='text-indigo-600'> <i class="las la-plus-circle la-lg mt-1"></i>  Add Your Skills</h1>}
+                    {educationValue.length ? <h1 className='text-indigo-600'> <i class="las la-plus-circle la-lg mt-1"></i>  Add More</h1> : <h1 className='text-indigo-600'> <i class="las la-plus-circle la-lg mt-1"></i>  Add Your Education</h1>}
                 </div>
             </button>
 

@@ -3,6 +3,7 @@ import Education from './Education';
 import Experiance from './experiance';
 import Personalinfo from './Personalinfo';
 import ProfessonalSummary from './professonalSummary';
+import Reference from './Reference';
 import Language from './Skills/Language';
 import Skillrepeater from './Skills/skillRepeater';
 import SocialMedia from './SocialMedia';
@@ -26,6 +27,8 @@ const Resumeform = ({ handelCvData, cvData }) => {
                     <Skillrepeater handelCvData={handelCvData} cvData={cvData} />
                     <Language handelCvData={handelCvData} cvData={cvData} ></Language>
                     {/* <SocialMedia handelCvData={handelCvData} cvData={cvData}></SocialMedia> */}
+                    <Reference handelCvData={handelCvData} cvData={cvData}></Reference>
+
 
                 </div>
 

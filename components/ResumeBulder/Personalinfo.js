@@ -54,14 +54,20 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                         Last Name
                     </span>
-                    <input value={cvData?.lastName ?? ""} onChange={(e) => handelCvData(e.target['value'], 'lastName')} type="text" name="lastName" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+
+                    <DelayedInput value={cvData?.lastName ?? ""} onChange={(e) => { handelCvData(e, 'lastName'); }} placeholder="Last Name" ></DelayedInput>
+
+
                 </label></div>
                 <div>
                     <label className="block">
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Email
                         </span>
-                        <input value={cvData?.email ?? ""} onChange={(e) => handelCvData(e.target['value'], 'email')} type="email" name="email" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+
+                        <DelayedInput value={cvData?.email ?? ""} onChange={(e) => { handelCvData(e, 'email'); }} placeholder="email" ></DelayedInput>
+
+
                     </label>
                 </div>
                 <div>
@@ -69,7 +75,11 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Phone Number
                         </span>
-                        <input value={cvData?.phone ?? ""} onChange={(e) => handelCvData(e.target['value'], 'phone')} type="number" name="phoneNumber" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+
+                        <DelayedInput value={cvData?.phone ?? ""} onChange={(e) => { handelCvData(e, 'phone'); }} placeholder="Phone No" ></DelayedInput>
+
+
+
                     </label>
                 </div>
 
@@ -78,7 +88,10 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             City
                         </span>
-                        <input value={cvData?.city ?? ""} onChange={(e) => handelCvData(e.target['value'], 'city')} type="text" name="City" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+
+                        <DelayedInput value={cvData?.city ?? ""} onChange={(e) => { handelCvData(e, 'city'); }} placeholder="City" ></DelayedInput>
+
+
                     </label>
                 </div>
                 <div>
@@ -86,7 +99,8 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Address
                         </span>
-                        <input value={cvData?.address ?? ""} onChange={(e) => handelCvData(e.target['value'], 'address')} type="text" name="Address" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+
+                        <DelayedInput value={cvData?.address ?? ""} onChange={(e) => { handelCvData(e, 'address'); }} placeholder="Address" ></DelayedInput>
                     </label>
                 </div>
                 <div>
@@ -94,7 +108,9 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Zipcode
                         </span>
-                        <input onChange={(e) => handelCvData(e.target['value'], 'zipcode')} type="text" name="Zipcode" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                        <DelayedInput value={cvData?.zipcode ?? ""} onChange={(e) => { handelCvData(e, 'zipcode'); }} placeholder="Zipcode" ></DelayedInput>
+
+
                     </label>
                 </div>
                 <div>
@@ -102,7 +118,8 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Country
                         </span>
-                        <input onChange={(e) => handelCvData(e.target['value'], 'country')} type="text" name="Nationality" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
+                        <DelayedInput value={cvData?.country ?? ""} onChange={(e) => { handelCvData(e, 'country'); }} placeholder="country" ></DelayedInput>
+
                     </label>
                 </div>
 
@@ -111,6 +128,9 @@ const Personalinfo = ({ handelCvData, cvData }) => {
                         <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">
                             Date Of Birth
                         </span>
+
+
+
                         <input onChange={(e) => handelCvData(e.target['value'], 'dob')} type="date" name="DOB" className="mt-1 px-3 py-2 bg-white border shadow-sm border-slate-300 placeholder-slate-400 focus:outline-none focus:border-sky-500 focus:ring-sky-500 block w-full rounded-md sm:text-sm focus:ring-1" placeholder="" />
                     </label>
                 </div>
