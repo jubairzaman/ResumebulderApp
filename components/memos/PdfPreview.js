@@ -91,6 +91,20 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
     )
   }, [cvData])
 
+
+  useEffect(() => {
+    window.addEventListener(
+      'resize',
+     ()=>{
+      const collection = document.getElementsByClassName("react-pdf__Page");
+        let currentHeight = collection[0].offsetHeight;
+        if(currentHeight != downloadWrapperTop){
+          setDownloadWrapperTop(collection[0].offsetHeight)
+        }
+     }
+  );
+  },)
+
   return (
     <div className="w-full relative">
       {!initiallyLoaded ?
