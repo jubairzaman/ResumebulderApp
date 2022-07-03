@@ -18,6 +18,10 @@ const styles = StyleSheet.create({
   flex: {
     display: 'flex',
   },
+  page:{
+    paddingTop:"16px",
+    paddingBottom:"16px"
+  },
   row: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -119,7 +123,7 @@ const Tempalte1 = ({ cv }) => {
 
   return <Document>
     <Page size="A4" style={styles.page}>
-      <View style={{ ...styles.row, ...{ marginTop: "20px" } }}>
+      <View style={{ ...styles.row, }}>
         <View style={styles.col8}>
 
           <View style={styles.row}  >
