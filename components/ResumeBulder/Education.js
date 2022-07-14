@@ -60,7 +60,7 @@ const Education = ({ handelCvData, cvData }) => {
     }
     return (
         <div className='border rounded-lg p-5 m-4'>
-            <h1 className='text-md font-semibold mx-5'> <i class="las la-school  la-2x"></i>  Your Education Background</h1>
+            <h1 className='text-md font-semibold mx-5'> <i className="las la-school  la-2x"></i>  Your Education Background</h1>
             {educationValue.map((element, index) => (
                 <div className='p-5'>
                     <div className='border p-5 rounded-lg'>
@@ -80,15 +80,15 @@ const Education = ({ handelCvData, cvData }) => {
                                     () => {
                                         removeFormFields(index)
                                     }
-                                }><i class="las la-trash la-2x"></i></button>
+                                }><i className="las la-trash la-2x"></i></button>
                             </div>
                         </div>
 
 
                         <div className='grid grid-cols-2 gap-2 mt-4'>
                             <div>
-                                <label class="block">
-                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">school</span>
+                                <label className="block">
+                                    <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">school</span>
                                     <DelayedInput value={cvData?.school ?? ""} onChange={(e) => { handleNameChange(index, e); }} placeholder="School" ></DelayedInput>
 
 
@@ -96,8 +96,8 @@ const Education = ({ handelCvData, cvData }) => {
                                 </label>
                             </div>
                             <div>
-                                <label class="block">
-                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">degree</span>
+                                <label className="block">
+                                    <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">degree</span>
                                     <DelayedInput value={cvData?.degree ?? ""} onChange={(e) => { handledegreeChange(index, e); }} placeholder="Degree" ></DelayedInput>
 
 
@@ -105,8 +105,8 @@ const Education = ({ handelCvData, cvData }) => {
                                 </label>
                             </div>
                             <div>
-                                <label class="block">
-                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Start And End Date</span>
+                                <label className="block">
+                                    <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Start And End Date</span>
 
 
 
@@ -123,8 +123,8 @@ const Education = ({ handelCvData, cvData }) => {
                             </div>
 
                             <div>
-                                <label class="block">
-                                    <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Address</span>
+                                <label className="block">
+                                    <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Address</span>
 
                                     <DelayedInput value={cvData?.address ?? ""} onChange={(e) => { handleAddressChange(index, e); }} placeholder="Address" ></DelayedInput>
 
@@ -135,8 +135,8 @@ const Education = ({ handelCvData, cvData }) => {
 
                         </div>
                         <div>
-                            <label class="block">
-                                <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Description`</span>
+                            <label className="block">
+                                <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Description`</span>
 
                                 <DelayedInput value={cvData?.description ?? ""} onChange={(e) => { handleDescriptionChange(index, e); }} placeholder="Description" ></DelayedInput>
 
@@ -149,7 +149,7 @@ const Education = ({ handelCvData, cvData }) => {
             ))}
             <button className="button add mx-6" type="button" onClick={() => addFormFields()}>
                 <div className='flex my-5 ' >
-                    {educationValue.length ? <h1 className='text-indigo-600'> <i class="las la-plus-circle la-lg mt-1"></i>  Add More</h1> : <h1 className='text-indigo-600'> <i class="las la-plus-circle la-lg mt-1"></i>  Add Your Education</h1>}
+                    {educationValue.length ? <h1 className='text-indigo-600'> <i className="las la-plus-circle la-lg mt-1"></i>  Add More</h1> : <h1 className='text-indigo-600'> <i className="las la-plus-circle la-lg mt-1"></i>  Add Your Education</h1>}
                 </div>
             </button>
 
