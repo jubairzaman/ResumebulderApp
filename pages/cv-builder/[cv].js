@@ -35,9 +35,9 @@ const CvBuilder = () => {
                 <div className=''>
                     <Resumeform cvData={cvData} handelCvData={handelCvData} ></Resumeform>
                 </div>
-              
 
-                <div className='w-full relative flex justify-center bg-gray-50'>
+
+                <div className='w-full relative flex justify-center bg-gray-300'>
                     <div className="lg:fixed w-full lg:w-1/2">
                         <div className="flex flex-col justify-center items-center pt-2 md:pt-5 mb-2 relative  py-4">
                             {preview1}

@@ -70,10 +70,14 @@ const Templetesthathave = () => {
                 <Swiper {...params}
 
                 >
-                    <SwiperSlide key={1 + 's'} > <div><img className='mx-2 w-full' src='img-1.jpg'></img></div>  </SwiperSlide>
-                    <SwiperSlide key={2 + 's'}> <div><img className='mx-2 w-full' src='img-2.jpg'></img></div>  </SwiperSlide>
-                    <SwiperSlide key={3 + 's'}> <div><img className='mx-2 w-full' src='mk1.png'></img> </div></SwiperSlide>
-                    <SwiperSlide key={4 + 's'}> <div><img className='mx-2 w-full' src='mk2.png'></img></div>  </SwiperSlide>
+                    <SwiperSlide key={1 + 's'} > <div><img className='mx-2 w-full' src='cvimages/cv1.jpg'></img></div>  </SwiperSlide>
+                    <SwiperSlide key={2 + 's'}> <div><img className='mx-2 w-full' src='cvimages/cv2.jpg'></img></div>  </SwiperSlide>
+                    <SwiperSlide key={3 + 's'}> <div><img className='mx-2 w-full' src='cvimages/cv3.jpg'></img> </div></SwiperSlide>
+                    <SwiperSlide key={4 + 's'}> <div><img className='mx-2 w-full' src='cvimages/cv4.jpg'></img></div>  </SwiperSlide>
+                    <SwiperSlide key={4 + 's'}> <div><img className='mx-2 w-full' src='cvimages/cv5.jpg'></img></div>  </SwiperSlide>
+                    <SwiperSlide key={4 + 's'}> <div><img className='mx-2 w-full' src='cvimages/cv6.jpg'></img></div>  </SwiperSlide>
+                    <SwiperSlide key={4 + 's'}> <div><img className='mx-2 w-full' src='cvimages/cv7.jpg'></img></div>  </SwiperSlide>
+                    <SwiperSlide key={4 + 's'}> <div><img className='mx-2 w-full' src='cvimages/cv8.jpg'></img></div>  </SwiperSlide>
                 </Swiper>
             </div>
 

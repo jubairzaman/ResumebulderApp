@@ -170,10 +170,10 @@ const Pdfc = ({ cv, heading, content }) => {
       <View style={styles.mainContainer}>
 
 
-        <View style={{ ...styles.section1, ...styles.row, ...styles.column }}>
-          <View style={styles.col}  >
+        <View style={{ ...styles.section1, ...styles.column }}>
+          <View   >
             <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fColumn }}>
-              <Image style={{ width: "100px", height: "100px", borderRadius: "50%", marginLeft: "20px", marginVertical: "20px" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
+              <Image style={{ width: "120px", height: "120px", borderRadius: "50%", marginLeft: "20px", marginVertical: "20px" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
             </View>
             <View style={{ ...styles.justifyCenter, }}>
               <Text style={{ fontSize: "30px", color: "#fff" }}>{valueText(cv.firstName, "First Name")} {valueText(cv.lastName, "Last Name")}</Text>
@@ -181,40 +181,35 @@ const Pdfc = ({ cv, heading, content }) => {
               <Text style={{ fontSize: "10px", color: "#fff" }}>{valueText(cv.profession, "Job Title")}</Text>
             </View>
           </View>
-          <View >
 
-            {/* personal phone email section  */}
+          <View style={{ ...{ marginTop: "20px" } }}>
 
-
-            <View style={{ ...styles.col4, ...{ marginTop: "20px" } }}>
-
-              <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
-                <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
-                  <Mobile />
-                  <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.phone ?? "Phone Number"}</Text>
-                </View>
-              </View>
-
-
-              <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
-                <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
-                  <Call />
-                  <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.email ?? "Email"}</Text>
-                </View>
-              </View>
-
-              <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
-                <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
-                  <Mail />
-                  <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.city ?? "Address"}</Text>
-                </View>
+            <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
+              <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
+                <Mobile />
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.phone ?? "Phone Number"}</Text>
               </View>
             </View>
 
+
+            <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
+              <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
+                <Call />
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.email ?? "Email"}</Text>
+              </View>
+            </View>
+
+            <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
+              <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
+                <Mail />
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.city ?? "Address"}</Text>
+              </View>
+            </View>
           </View>
+
           <View>
 
-            <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "#fff" } }}>Language</Text>
+            <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "#fff" } }}>Skills</Text>
 
             {
               Object.keys(cv.skills ?? []).map((key) => {
@@ -224,7 +219,7 @@ const Pdfc = ({ cv, heading, content }) => {
           </View>
           <View style={{ ...{ marginTop: "20px" } }} >
 
-            <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "#fff" } }}>Language</Text>
+            <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "#fff" } }}>Languages</Text>
             {
               Object.keys(cv.languages ?? []).map((key) => {
 
@@ -273,6 +268,7 @@ const Pdfc = ({ cv, heading, content }) => {
             </View>
           </View>
 
+
           <View style={{ padding: "15px" }}>
 
             <View style={{ width: '100%', }}>
@@ -290,6 +286,28 @@ const Pdfc = ({ cv, heading, content }) => {
                       <View style={{ ...{ width: "80%" } }}>
                         <Text style={{ ...{ fontSize: "10px" } }}>{edu.description}</Text>
                       </View>
+                    </>
+                  })
+                }
+
+              </View>
+            </View>
+          </View>
+          <View style={{ padding: "15px" }}>
+
+            <View style={{ width: '100%', }}>
+              <Text style={{ color: "black" }}>{heading ?? "Reference"}</Text>
+              <View>
+                {
+                  Object.keys(cv.reference ?? []).map((key) => {
+                    let ref = cv.reference[key];
+                    return <>
+                      <View style={{ ...{ marginTop: "10px" } }}>
+                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(ref.rname, "rname")}</Text>
+
+                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{ref.rdetails}</Text>
+                      </View>
+
                     </>
                   })
                 }

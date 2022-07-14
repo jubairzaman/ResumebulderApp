@@ -89,7 +89,7 @@ const Education = ({ handelCvData, cvData }) => {
                             <div>
                                 <label class="block">
                                     <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">school</span>
-                                    <DelayedInput value={cvData?.school ?? ""} onChange={(e) => { handelCvData(e, 'school'); }} placeholder="School" ></DelayedInput>
+                                    <DelayedInput value={cvData?.school ?? ""} onChange={(e) => { handleNameChange(index, e); }} placeholder="School" ></DelayedInput>
 
 
 
@@ -98,7 +98,7 @@ const Education = ({ handelCvData, cvData }) => {
                             <div>
                                 <label class="block">
                                     <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">degree</span>
-                                    <DelayedInput value={cvData?.degree ?? ""} onChange={(e) => { handelCvData(e, 'degree'); }} placeholder="Degree" ></DelayedInput>
+                                    <DelayedInput value={cvData?.degree ?? ""} onChange={(e) => { handledegreeChange(index, e); }} placeholder="Degree" ></DelayedInput>
 
 
 
@@ -114,9 +114,9 @@ const Education = ({ handelCvData, cvData }) => {
 
                                     <div className='flex'>
 
-                                        <DelayedInput value={cvData?.startdate ?? ""} type="date" onChange={(e) => { handelCvData(e, 'startdate'); }} placeholder="Startdate" ></DelayedInput>
+                                        <DelayedInput value={cvData?.startdate ?? ""} type="date" onChange={(e) => { handleStartDateChange(index, e); }} placeholder="Startdate" ></DelayedInput>
 
-                                        <DelayedInput value={cvData?.enddate ?? ""} type="date" onChange={(e) => { handelCvData(e, 'enddate'); }} placeholder="Enddate" ></DelayedInput>
+                                        <DelayedInput value={cvData?.enddate ?? ""} type="date" onChange={(e) => { handleEndDateChange(index, e); }} placeholder="Enddate" ></DelayedInput>
 
                                     </div>
                                 </label>
@@ -126,7 +126,7 @@ const Education = ({ handelCvData, cvData }) => {
                                 <label class="block">
                                     <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Address</span>
 
-                                    <DelayedInput value={cvData?.address ?? ""} onChange={(e) => { handelCvData(e, 'address'); }} placeholder="Address" ></DelayedInput>
+                                    <DelayedInput value={cvData?.address ?? ""} onChange={(e) => { handleAddressChange(index, e); }} placeholder="Address" ></DelayedInput>
 
                                 </label>
                             </div>
@@ -138,7 +138,7 @@ const Education = ({ handelCvData, cvData }) => {
                             <label class="block">
                                 <span class="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Description`</span>
 
-                                <DelayedInput value={cvData?.description ?? ""} onChange={(e) => { handelCvData(e, 'description'); }} placeholder="Description" ></DelayedInput>
+                                <DelayedInput value={cvData?.description ?? ""} onChange={(e) => { handleDescriptionChange(index, e); }} placeholder="Description" ></DelayedInput>
 
 
                             </label>

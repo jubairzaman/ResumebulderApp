@@ -21,7 +21,7 @@ const Language = ({ handelCvData, cvData }) => {
         let newFormValues = [...languageValue];
         newFormValues[i]["languageName"] = value;
         setlanguageValue(newFormValues);
-        handelCvData(newFormValues,'languages');
+        handelCvData(newFormValues, 'languages');
 
 
     }
@@ -30,13 +30,13 @@ const Language = ({ handelCvData, cvData }) => {
         let newFormValues = [...languageValue];
         newFormValues[i]["expartise"] = value;
         setlanguageValue(newFormValues);
-        handelCvData(newFormValues,'languages');
+        handelCvData(newFormValues, 'languages');
 
     }
     let addFormFields = () => {
         let newFormValues = [...languageValue, { languageName: "", expartise: "0" }];
         setlanguageValue(newFormValues)
-        handelCvData(newFormValues,'languages');
+        handelCvData(newFormValues, 'languages');
 
     }
 
@@ -44,7 +44,7 @@ const Language = ({ handelCvData, cvData }) => {
         let newFormValues = [...languageValue];
         newFormValues.splice(i, 1);
         setlanguageValue(newFormValues)
-        handelCvData(newFormValues,'languages');
+        handelCvData(newFormValues, 'languages');
 
     }
 

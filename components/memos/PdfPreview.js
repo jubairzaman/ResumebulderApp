@@ -29,13 +29,13 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
     }
     setTimeout(() => {
       if (!initiallyLoaded) {
-        
+
         //
         setInitiallyLoaded(true);
-       setTimeout(()=>{
-        const collection = document.getElementsByClassName("react-pdf__Page");
-        setDownloadWrapperTop(collection[0].offsetHeight)
-       },500);
+        setTimeout(() => {
+          const collection = document.getElementsByClassName("react-pdf__Page");
+          setDownloadWrapperTop(collection[0].offsetHeight)
+        }, 500);
       }
       p1.current?.classList?.remove('hidden')
       p2.current?.classList?.add('hidden')
@@ -50,8 +50,8 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
     p1.current?.classList?.add('hidden')
     p2.current?.classList?.remove('hidden')
     if (onLoading != null) {
-      
-      
+
+
       onLoading();
     }
   }
@@ -79,6 +79,8 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
 
     if (cvId == '2') {
       return <Pdfc cv={cvData} />
+    } else if (cvId == "3") {
+      return <Tempalte1 cv={cvData} />;
     } else {
       return <Tempalte1 cv={cvData} />
     }
@@ -95,15 +97,15 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
   useEffect(() => {
     window.addEventListener(
       'resize',
-     ()=>{
-      const collection = document.getElementsByClassName("react-pdf__Page");
+      () => {
+        const collection = document.getElementsByClassName("react-pdf__Page");
         let currentHeight = collection[0].offsetHeight;
-        if(currentHeight != downloadWrapperTop){
+        if (currentHeight != downloadWrapperTop) {
           setDownloadWrapperTop(collection[0].offsetHeight)
         }
-     }
-  );
-  },)
+      }
+    );
+  })
 
   return (
     <div className="w-full relative">
@@ -141,7 +143,7 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
               </div>
 
 
-              <div style={{top:`${downloadWrapperTop}px`}} className={` ${(!initiallyLoaded || downloadWrapperTop<1)? "hidden" : ""} absolute left-0  px-2 py-3 flex items-center justify-between w-full border-t border-slate-100`}>
+              <div style={{ top: `${downloadWrapperTop}px` }} className={` ${(!initiallyLoaded || downloadWrapperTop < 1) ? "hidden" : ""} absolute left-0  px-2 py-3 flex items-center justify-between w-full border-t border-slate-100`}>
 
                 <div className="sm:flex-1 sm:flex sm:items-center sm:justify-between">
                   <div>
