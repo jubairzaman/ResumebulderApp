@@ -1,11 +1,10 @@
 import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect } from '@react-pdf/renderer';
-import Jumbotron from './cvTemplets/jumbotron';
-import { Mobile } from './cvTemplets/icons/mobile';
-import { Call } from './cvTemplets/icons/call';
-import { Mail } from './cvTemplets/icons/mail';
-import CvProgressBar2 from './cvTemplets/Templete2/cvProgressbar2';
-import LanguageProgressBar2 from './cvTemplets/Templete2/LanguageProgressBar2';
+import Jumbotron from '../../jumbotron';
+import { Mobile } from '../../icons/mobile';
+import { Call } from '../../icons/call';
+import { Mail } from '../../icons/mail';
+import CvProgressBar2 from './cvProgressbar2';
 // Create styles
 const styles = StyleSheet.create({
   page: {

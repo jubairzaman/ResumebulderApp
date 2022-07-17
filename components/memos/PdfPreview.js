@@ -2,9 +2,13 @@ import React, { useState, memo, useEffect, useRef } from "react";
 
 import { BlobProvider, PDFDownloadLink } from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
 import { Document, Page, pdfjs } from 'react-pdf';
-import Pdfc from '../../components/pdfc';
+import Pdfc from '../cvTemplets/Templates/Templete2/pdfc';
 import Tempalte1 from "../cvTemplets/Template1";
 import { ShimmerSocialPost } from "react-shimmer-effects";
+import Tempalte3 from "../cvTemplets/Templates/Templete3";
+import Tempalte4 from "../cvTemplets/Templates/Templete4";
+
+
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -78,11 +82,13 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
   const getCvTemplate = () => {
 
     if (cvId == '2') {
-      return <Pdfc cv={cvData} />
+      return <Tempalte2 cv={cvData} />
     } else if (cvId == "3") {
-      return <Tempalte1 cv={cvData} />;
+      return <Tempalte3 cv={cvData} />;
+    } else if (cvId == "4") {
+      return <Tempalte4 cv={cvData} />;
     } else {
-      return <Tempalte1 cv={cvData} />
+      return <Pdfc cv={cvData} />
     }
   }
   const [template, setTemplate] = useState(getCvTemplate());
