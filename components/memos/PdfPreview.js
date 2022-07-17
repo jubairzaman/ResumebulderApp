@@ -7,7 +7,7 @@ import Tempalte1 from "../cvTemplets/Template1";
 import { ShimmerSocialPost } from "react-shimmer-effects";
 import Tempalte3 from "../cvTemplets/Templates/Templete3";
 import Tempalte4 from "../cvTemplets/Templates/Templete4";
-import Tempalte2 from "../cvTemplets/Templates/Templete2";
+import Tempalte2 from "../cvTemplets/Templates/Templete2 ";
 
 
 
