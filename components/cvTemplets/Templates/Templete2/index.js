@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const Pdfc = ({ cv, heading, content }) => {
+const Template2 = ({ cv, heading, content }) => {
   const valueText = (value, defaultValue) => {
     if (value != null && value !== "")
       return value
@@ -327,4 +327,4 @@ const Pdfc = ({ cv, heading, content }) => {
   </Document>
 };
 
-export default Pdfc;
+export default Template2;

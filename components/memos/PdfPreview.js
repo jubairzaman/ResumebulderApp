@@ -2,11 +2,13 @@ import React, { useState, memo, useEffect, useRef } from "react";
 
 import { BlobProvider, PDFDownloadLink } from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
 import { Document, Page, pdfjs } from 'react-pdf';
-import Pdfc from '../cvTemplets/Templates/Templete2/pdfc';
+import Pdfc from '../cvTemplets/Templates/Templete2';
 import Tempalte1 from "../cvTemplets/Template1";
 import { ShimmerSocialPost } from "react-shimmer-effects";
 import Tempalte3 from "../cvTemplets/Templates/Templete3";
 import Tempalte4 from "../cvTemplets/Templates/Templete4";
+import Tempalte2 from "../cvTemplets/Templates/Templete2";
+
 
 
 
