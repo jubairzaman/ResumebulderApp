@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 
 import ClickAwayListener from '@mui/base/ClickAwayListener';
-
+//const bcrypt = require('bcrypt');
 
 export default function Modal() {
   const [showModal, setShowModal] = useState(false);
@@ -15,6 +15,10 @@ export default function Modal() {
   const show = () => {
     setShowModal(true);
   };
+
+  const hash1 = '1';
+  //const salt = bcrypt.genSaltSync(10);
+  //const hash1 = bcrypt.hashSync('1', salt);
   return (
 
 
@@ -52,7 +56,7 @@ export default function Modal() {
                   <div className="relative p-6 flex-auto ">
                     <div className="grid grid-cols-3 gap-4">
                       <div className="drop-shadow-2xl ">
-                        <Link href={"cv-builder/1"}>
+                        <Link href={"cv-builder/" + hash1}>
                           <img className='' src='cvimages/cv1.jpg'></img>
                         </Link>
                       </div>
