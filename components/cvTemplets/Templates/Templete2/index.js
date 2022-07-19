@@ -171,14 +171,20 @@ const Template2 = ({ cv, heading, content }) => {
 
         <View style={{ ...styles.section1, ...styles.column }}>
           <View   >
+
+            <View style={{ ...styles.justifyCenter, }}>
+              <Text style={{ fontSize: "30px", color: "#D2B48C" }}>{valueText(cv.firstName, "First Name")} {valueText(cv.lastName, "Last Name")}</Text>
+
+              <Text style={{ fontSize: "10px", color: "#fff", marginLeft: "2px" }}>{valueText(cv.profession, "Job Title")}</Text>
+            </View>
             <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fColumn }}>
               <Image style={{ width: "120px", height: "120px", borderRadius: "50%", marginLeft: "20px", marginVertical: "20px" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
             </View>
-            <View style={{ ...styles.justifyCenter, }}>
-              <Text style={{ fontSize: "30px", color: "#fff" }}>{valueText(cv.firstName, "First Name")} {valueText(cv.lastName, "Last Name")}</Text>
 
-              <Text style={{ fontSize: "10px", color: "#fff" }}>{valueText(cv.profession, "Job Title")}</Text>
-            </View>
+          </View>
+
+          <View>
+            <Text style={{ ...styles.textCenter, ...{ color: "#fff", fontWeight: "200px" } }}>Why Me ? </Text>
           </View>
 
           <View style={{ ...{ marginTop: "20px" } }}>
@@ -206,26 +212,6 @@ const Template2 = ({ cv, heading, content }) => {
             </View>
           </View>
 
-          <View>
-
-            <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "#fff" } }}>Skills</Text>
-
-            {
-              Object.keys(cv.skills ?? []).map((key) => {
-                return <CvProgressBar2 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
-              })
-            }
-          </View>
-          <View style={{ ...{ marginTop: "20px" } }} >
-
-            <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "#fff" } }}>Languages</Text>
-            {
-              Object.keys(cv.languages ?? []).map((key) => {
-
-                return <LanguageProgressBar2 key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
-              })
-            }
-          </View>
 
         </View>
 
@@ -239,22 +225,17 @@ const Template2 = ({ cv, heading, content }) => {
           <View style={{ padding: "15px" }}>
 
             <View style={{ width: '100%', }}>
-              <Text style={{ color: "black" }}>{heading ?? "Profile"}</Text>
-              <Text style={{ fontSize: '10px', textAlign: "justify", lineHeight: "1.4px", paddingTop: "12px", paddingRight: "30px", color: "rgb(71 85 105)", }}>{valueText(cv.phistory, "phistory")}.</Text>
-            </View>
-          </View>
-          <View style={{ padding: "15px" }}>
-
-            <View style={{ width: '100%', }}>
-              <Text style={{ color: "black" }}>{heading ?? "Experiance"}</Text>
+              <Text style={{ color: "black" }}>{heading ?? "Work Experiance"}</Text>
               <View>
                 {
                   Object.keys(cv.experiences ?? []).map((key) => {
                     let exp = cv.experiences[key];
                     return <>
                       <View style={{ ...{ marginTop: "10px" } }}>
-                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(exp.jobTitle, "Job Title")} at {valueText(exp.employer, "Employeer")}</Text>
                         <Text style={{ ...{ fontSize: "10px", } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+                        <hr></hr>
+                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(exp.jobTitle, "Job Title")} at {valueText(exp.employer, "Employeer")}</Text>
+
                         <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{exp.address}</Text>
                       </View>
                       <View style={{}}>
@@ -278,9 +259,13 @@ const Template2 = ({ cv, heading, content }) => {
                     let edu = cv.education[key];
                     return <>
                       <View style={{ ...{ marginTop: "10px" } }}>
+                        <View style={{ ...styles.flex, ...styles.fRow }}>
+                          <Text style={{ ...{ fontSize: "10px", } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
+                          <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{edu.address}</Text>
+                        </View>
                         <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(edu.school, "Job Title")} at {valueText(edu.degree, "Employeer")}</Text>
-                        <Text style={{ ...{ fontSize: "10px", } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
-                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{edu.address}</Text>
+
+
                       </View>
                       <View style={{ ...{ width: "80%" } }}>
                         <Text style={{ ...{ fontSize: "10px" } }}>{edu.description}</Text>
@@ -292,6 +277,30 @@ const Template2 = ({ cv, heading, content }) => {
               </View>
             </View>
           </View>
+
+          <View style={{ ...styles.flex }}>
+            <View>
+
+              <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "#000000" } }}>Skills</Text>
+
+              {
+                Object.keys(cv.skills ?? []).map((key) => {
+                  return <CvProgressBar2 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                })
+              }
+            </View>
+            <View style={{ ...{ marginTop: "20px" } }} >
+
+              <Text style={{ ...{ fontSize: "13px", fontWeight: "500px", marginTop: "8px", color: "#000000" } }}>Languages</Text>
+              {
+                Object.keys(cv.languages ?? []).map((key) => {
+
+                  return <LanguageProgressBar2 key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
+                })
+              }
+            </View>
+          </View>
+
           <View style={{ padding: "15px" }}>
 
             <View style={{ width: '100%', }}>
