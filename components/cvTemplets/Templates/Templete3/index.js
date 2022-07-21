@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
     maxWidth: "33.333333%",
   },
   col5: {
-    flex: "0 0 0 0 41.666667%",
+    flex: "0 0 41.666667%",
     maxWidth: "0 0 41.666667%",
   },
   col6: {
