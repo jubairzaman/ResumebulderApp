@@ -181,7 +181,7 @@ const Template2 = ({ cv, heading, content }) => {
 
             <View style={{"position":"relative", padding:"15px", backgroundColor:"blue"}}>
 
-              <View style={{borderRadius:"50%", position:"absolute", width:"60px", height:"60px", backgroundColor:"red", left: "-30px", top:"50%",transform:"translateY(-15px)" }}></View>
+              <View style={{borderRadius:"50%", position:"absolute", width:"60px", height:"60px", backgroundColor:"red", left: "-15%", top:"50%",transform:"translateY(-15%)" }}></View>
               {/* Info Container */}
               <View style={{paddingLeft:"30px"}}>
                 <Text>sdsdsd  </Text>
