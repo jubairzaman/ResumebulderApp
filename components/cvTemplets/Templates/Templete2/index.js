@@ -5,6 +5,7 @@ import { Mobile } from '../../icons/mobile';
 import { Call } from '../../icons/call';
 import { Mail } from '../../icons/mail';
 import CvProgressBar2 from './cvProgressbar2';
+import LanguageProgressBar2 from './LanguageProgressBar2';
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
   section1: {
     padding: "15px",
     width: "38%",
-    backgroundColor: "rgb(12 74 110)"
+    backgroundColor: "rgb(245,245,245)"
   },
 
   section2: {
@@ -175,7 +176,7 @@ const Template2 = ({ cv, heading, content }) => {
             <View style={{ ...styles.justifyCenter, }}>
               <Text style={{ fontSize: "30px", color: "#D2B48C" }}>{valueText(cv.firstName, "First Name")} {valueText(cv.lastName, "Last Name")}</Text>
 
-              <Text style={{ fontSize: "10px", color: "#fff", marginLeft: "2px" }}>{valueText(cv.profession, "Job Title")}</Text>
+              <Text style={{ fontSize: "10px", color: "#000000", marginLeft: "2px" }}>{valueText(cv.profession, "Job Title")}</Text>
             </View>
             <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fColumn }}>
               <Image style={{ width: "120px", height: "120px", borderRadius: "50%", marginLeft: "20px", marginVertical: "20px" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
@@ -184,7 +185,13 @@ const Template2 = ({ cv, heading, content }) => {
           </View>
 
           <View>
-            <Text style={{ ...styles.textCenter, ...{ color: "#fff", fontWeight: "200px" } }}>Why Me ? </Text>
+            <Text style={{ ...styles.textCenter, ...{ color: "#000000", fontWeight: "200px" } }}>Why Me ? </Text>
+            <View style={{ width: '100%', }}>
+
+              <Text style={{ fontSize: '10px', textAlign: "justify", lineHeight: "1.4px", paddingTop: "12px", paddingRight: "30px", color: "rgb(71 85 105)", }}>{valueText(cv.phistory, "Your Profile History here")}.</Text>
+            </View>
+
+
           </View>
 
           <View style={{ ...{ marginTop: "20px" } }}>
@@ -192,7 +199,7 @@ const Template2 = ({ cv, heading, content }) => {
             <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
               <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
                 <Mobile />
-                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.phone ?? "Phone Number"}</Text>
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>{cv.phone ?? "Phone Number"}</Text>
               </View>
             </View>
 
@@ -200,14 +207,14 @@ const Template2 = ({ cv, heading, content }) => {
             <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
               <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
                 <Call />
-                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.email ?? "Email"}</Text>
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>{cv.email ?? "Email"}</Text>
               </View>
             </View>
 
             <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
               <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
                 <Mail />
-                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#fff" }}>{cv.city ?? "Address"}</Text>
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>{cv.city ?? "Address"}</Text>
               </View>
             </View>
           </View>

@@ -14,7 +14,7 @@ const LanguageProgressBar4 = ({ languageName, value }) => {
             <View style={{ ...Styles.row, ...{ width: "100%" } }}>
                 <View style={{ ...Styles.col4 }}>
                     <View style={{ textAlign: "left", width: '100%' }}>
-                        <Text style={{ color: "#fff", textTransform: "capitalize", fontSize: "8px" }}>{(languageName != null && languageName !== "") ? languageName : "Language Name"}</Text>
+                        <Text style={{ color: "#000", textTransform: "capitalize", fontSize: "8px" }}>{(languageName != null && languageName !== "") ? languageName : "Language Name"}</Text>
                     </View>
 
                 </View>
@@ -25,7 +25,7 @@ const LanguageProgressBar4 = ({ languageName, value }) => {
                             {[...Array(5)].map((x, i) => {
                                 return <View key={i} style={{ display: "flex", backgroundColor: "#BABABA", height: "7px", width: "7px", borderRadius: "50%" }}>
                                     {i <= skillCount ?
-                                        <View key={i} style={{ backgroundColor: "#fff", height: "7px", width: "7px", borderRadius: "50%" }}></View>
+                                        <View key={i} style={{ backgroundColor: "#000000", height: "7px", width: "7px", borderRadius: "50%" }}></View>
                                         : <></>}
                                 </View>;
                                 //return <Text key={i} style={{ color: "red" }}>{i} ashas has has</Text>

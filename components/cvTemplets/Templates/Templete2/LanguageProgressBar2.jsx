@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text } from '@react-pdf/renderer';
-import Styles from '../styles';
+import Styles from '../../styles';
 
 
 // Create Document Component
