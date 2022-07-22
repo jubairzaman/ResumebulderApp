@@ -4,7 +4,7 @@ import Jumbotron from '../../jumbotron';
 import { Mobile } from '../../icons/mobile';
 import { Call } from '../../icons/call';
 import { Mail } from '../../icons/mail';
-import cvProgressbar3 from './cvProgressbar3';
+import  cvProgressbar3 from './cvProgressbar3';
 import LanguageProgressBar3 from './LanguageProgressBar3';
 // Create styles
 const styles = StyleSheet.create({
@@ -316,6 +316,7 @@ const Template3 = ({ cv, heading, content }) => {
                 {
                   Object.keys(cv.reference ?? []).map((key) => {
                     let ref = cv.reference[key];
+                    console.log(ref)
                     return <>
                       <View style={{ ...{ marginTop: "10px" } }}>
                         <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(ref.rname, "rname")}</Text>

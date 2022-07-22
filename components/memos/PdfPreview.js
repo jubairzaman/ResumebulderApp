@@ -107,7 +107,7 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
       'resize',
       () => {
         const collection = document.getElementsByClassName("react-pdf__Page");
-        let currentHeight = collection[0].offsetHeight;
+        let currentHeight = collection[0]?.offsetHeight??0;
         if (currentHeight != downloadWrapperTop) {
           setDownloadWrapperTop(collection[0].offsetHeight)
         }

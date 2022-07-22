@@ -9,28 +9,29 @@ const Reference = ({ handelCvData, cvData }) => {
         let newFormValues = [...reference];
         newFormValues[i]["rname"] = value;
         setreference(newFormValues);
-        handelCvData(newFormValues, 'experiences');
+        console.log(newFormValues)
+        handelCvData(newFormValues, 'reference');
 
     }
     let handlerdetailsChange = (i, value) => {
         let newFormValues = [...reference];
         newFormValues[i]["rdetails"] = value;
         setreference(newFormValues);
-        handelCvData(newFormValues, 'experiences');
+        handelCvData(newFormValues, 'reference');
 
     }
 
     let addFormFields = () => {
         let newFormValues = [...reference, { rname: "", rdetails: "" }];
         setreference(newFormValues)
-        handelCvData(newFormValues, 'experiences');
+        handelCvData(newFormValues, 'reference');
     }
 
     let removeFormFields = (i) => {
         let newFormValues = [...reference];
         newFormValues.splice(i, 1);
         setreference(newFormValues)
-        handelCvData(newFormValues, 'experiences');
+        handelCvData(newFormValues, 'reference');
     }
 
 
