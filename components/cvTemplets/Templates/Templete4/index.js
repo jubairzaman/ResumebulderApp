@@ -167,7 +167,7 @@ const Tempalte4 = ({ cv, heading, content }) => {
   return <Document>
     <Page size="A4" style={styles.page}>
 
-      <View style={styles.mainContainer}>
+      <View style={{...styles.mainContainer,...{padding:"25px"}}}>
 
 
         <View style={{ ...styles.section1, ...styles.column }}>

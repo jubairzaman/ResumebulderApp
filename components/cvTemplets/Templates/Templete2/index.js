@@ -6,6 +6,8 @@ import { Call } from '../../icons/call';
 import { Mail } from '../../icons/mail';
 import CvProgressBar2 from './cvProgressbar2';
 import LanguageProgressBar2 from './LanguageProgressBar2';
+import { Bluebox } from '../../icons/bluebox';
+import { fontSize } from '@mui/system';
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -167,31 +169,159 @@ const Template2 = ({ cv, heading, content }) => {
   return <Document>
     <Page size="A4" style={styles.page}>
 
-      <View style={styles.mainContainer}>
+      <View style={{...styles.mainContainer,...{padding:"20px"}}}>
 
 
         <View style={styles.row}>
 
           <View style={styles.col7}>
-            <Text>sdsdsd sdsdsd sdsdsd sdsdsd sdsdsd </Text>
+{/* profile name section  */}
+
+<View style={{ ...styles.justifyCenter,...{marginTop:"30px"} }}>
+              <Text style={{ fontSize: "35px", color: "#566573" }}>{valueText(cv.firstName, "First Name")} </Text>
+              <Text style={{ fontSize: "35px", color: "#2E86C1" }}>{valueText(cv.lastName, "Last Name")}</Text>
+
+              <Text style={{ fontSize: "10px", color: "#000000", marginLeft: "2px" }}>{valueText(cv.profession, "Job Title")}</Text>
+            </View>
+
+
+
+
+
+          {/* Work Experiance  */}
+          <View style={{...{marginTop:"30px"}  }}>
+          
+
+<View style={{ width: '100%', }}>
+<Text style={{ color: "#ABB2B9", marginBottom:"15px" ,fontSize:"15px" }}> <Bluebox/>{heading ?? "Work Experiance"}</Text>
+  
+  <View style={{marginLeft :"40px" }}>
+    {
+      Object.keys(cv.experiences ?? []).map((key) => {
+        let exp = cv.experiences[key];
+        return <>
+          <View style={{ ...{ marginTop: "10px" } }}>
+            <Text style={{ ...{ fontSize: "10px", } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+            <hr></hr>
+            <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" ,color: "#2E86C1" } }}>{valueText(exp.jobTitle, "Job Title")} at {valueText(exp.employer, "Employeer")}</Text>
+
+            <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{exp.address}</Text>
+          </View>
+          <View style={{}}>
+            <Text style={{ ...{ fontSize: "10px" } }}>{exp.description}</Text>
+          </View>
+        </>
+      })
+    }
+  </View>
+</View>
+</View>
+
+<View style={{ marginTop:"20px" }}>
+
+            <View style={{ width: '100%', }}>
+              <Text style={{ color: "#ABB2B9", fontSize:"15px" }}> <Bluebox/>{heading ?? "Education"}</Text>
+              <View style={{marginLeft :"40px" }}>
+                {
+                  Object.keys(cv.education ?? []).map((key) => {
+                    let edu = cv.education[key];
+                    return <>
+                      <View style={{ ...{ marginTop: "10px" } }}>
+                        <View style={{ ...styles.flex, ...styles.fColumn }}>
+                         
+                          <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{edu.address}</Text>
+                        </View>
+                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(edu.school, "Job Title")} at {valueText(edu.degree, "Employeer")}</Text>
+                        <Text style={{ ...{ fontSize: "10px", } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
+
+
+                      </View>
+                      <View style={{ ...{ width: "80%" } }}>
+                        <Text style={{ ...{ fontSize: "10px" } }}>{edu.description}</Text>
+                      </View>
+                    </>
+                  })
+                }
+
+              </View>
+            </View>
           </View>
 
-          <View style={{...styles.col5,...{borderLeft:"1px solid red",}}}>
+
+          {/* reference  */}
+          <View style={{ marginTop:"20px" }}>
+
+<View style={{ width: '100%', }}>
+  <Text style={{ color: "#ABB2B9" ,fontSize:"15px" }}> <Bluebox/> {heading ?? "Reference"}</Text>
+  <View  style={{marginLeft :"40px" }}>
+    {
+      Object.keys(cv.reference ?? []).map((key) => {
+        let ref = cv.reference[key];
+      
+        return <>
+          <View style={{ ...{ marginTop: "10px" } }}>
+            <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(ref.rname, "rname")}</Text>
+
+            <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{ref.rdetails}</Text>
+          </View>
+
+        </>
+      })
+    }
+
+  </View>
+</View>
+</View>
+
+          </View>
+
+          <View style={{...styles.col5,...{borderLeft:"1px solid #CFD8DC",}}}>
 
 
-            <View style={{"position":"relative", padding:"15px", backgroundColor:"blue"}}>
+            <View style={{"position":"relative", padding:"15px", }}>
 
-              <View style={{borderRadius:"50%", position:"absolute", width:"60px", height:"60px", backgroundColor:"red", left: "-15%", top:"50%",transform:"translateY(-15%)" }}></View>
+              <View style={{borderRadius:"50%", position:"absolute", width:"100px", height:"100px", backgroundColor:"gray", left: "-25%", top:"50%",transform:"translateY(-10%)" }}></View>
               {/* Info Container */}
-              <View style={{paddingLeft:"30px"}}>
-                <Text>sdsdsd  </Text>
-                <Text>sdsdsd  </Text>
-                <Text>sdsdsd  </Text>
-                <Text>sdsdsd  </Text>
-                <Text>sdsdsd  </Text>
-                <Text>sdsdsd  </Text>
-                <Text>sdsdsd  </Text>
+              <View style={{paddingLeft:"50px", marginTop:"25px"}}>
+
+              <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>Tel :  {cv.phone ?? "Phone Number"}</Text>
+              <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>Email : {cv.email ?? "Email"}</Text>
+              <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>Address : {cv.city ?? "Address"}</Text>
+                
               </View>
+            </View>
+
+            <View style={{marginLeft:"15px", marginTop:"58px"}}>
+            <Text style={{ color: "#ABB2B9" ,fontSize:"15px" }}> <Bluebox/>{heading ?? "WHO AM I?"}</Text>
+
+            <Text style={{ fontSize: '10px', textAlign: "justify", lineHeight: "1.4px", paddingTop: "12px", paddingRight: "30px", color: "rgb(71 85 105)", }}>{valueText(cv.phistory, "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...")}.</Text>
+            
+            </View>
+
+
+            <View style={{marginLeft:"15px " , marginTop:"20px"} }>
+            <Text style={{ color: "#ABB2B9" ,fontSize:"15px" }}> <Bluebox/>{heading ?? "PROFESSIONAL SKILLS"}</Text>
+
+                <View>
+
+                  
+
+                  {
+                    Object.keys(cv.skills ?? []).map((key) => {
+                      return <CvProgressBar2 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                    })
+                  }
+                </View>
+            </View>
+            <View style={{ ...{ marginTop: "20px" , marginLeft:"15px" } }} >
+
+            <Text style={{ color: "#ABB2B9" ,fontSize:"15px" }}> <Bluebox/>{heading ?? "LANGUAGE"}</Text>
+              {
+                Object.keys(cv.languages ?? []).map((key) => {
+
+                  return <LanguageProgressBar2 key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
+                })
+              }
             </View>
 
 

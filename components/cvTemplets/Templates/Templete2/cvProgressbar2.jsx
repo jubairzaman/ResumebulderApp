@@ -9,11 +9,11 @@ const CvProgressBar2 = ({ skillName, value }) => {
         <>
             <View style={{ height: "10px", width: "100%", }}></View>
             <View style={{ textAlign: "left", width: '100%' }}>
-                <Text style={{ color: "#fff", textTransform: "capitalize", fontSize: "8px" }}>{(skillName != null && skillName !== "") ? skillName : "Skill Name"}</Text>
+                <Text style={{ color: "#ABB2B9", textTransform: "capitalize", fontSize: "8px" }}>{(skillName != null && skillName !== "") ? skillName : "Skill Name"}</Text>
             </View>
             <View style={{ height: "3px", width: "80%", }}></View>
-            <View style={{ height: "4px", width: "80%", backgroundColor: "#BABABA", }}>
-                <View style={{ height: "4px", width: (value ?? 10) + "%", backgroundColor: "#fff" }}>
+            <View style={{ height: "4px", width: "80%" , backgroundColor: "#BABABA", }}>
+                <View style={{ height: "4px", width: (value ?? 10) + "%", backgroundColor: "#2E86C1" }}>
                 </View>
             </View>
         </>
