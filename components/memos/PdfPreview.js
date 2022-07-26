@@ -8,6 +8,9 @@ import { ShimmerSocialPost } from "react-shimmer-effects";
 import Tempalte3 from "../cvTemplets/Templates/Templete3";
 import Tempalte4 from "../cvTemplets/Templates/Templete4";
 import Tempalte2 from "../cvTemplets/Templates/Templete2";
+import Tempalte5 from "../cvTemplets/Templates/Templete5";
+import Tempalte6 from "../cvTemplets/Templates/Templete6";
+import Tempalte7 from "../cvTemplets/Templates/Templete7";
 
 
 
@@ -89,6 +92,14 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
       return <Tempalte3 cv={cvData} />;
     } else if (cvId == "4") {
       return <Tempalte4 cv={cvData} />;
+    } else if (cvId == "5") {
+      return <Tempalte5 cv={cvData} />;
+    } else if (cvId == "6") {
+      return <Tempalte6 cv={cvData} />;
+    } else if (cvId == "7") {
+      return <Tempalte7 cv={cvData} />;
+    } else if (cvId == "8") {
+      return <Tempalte7 cv={cvData} />;
     } else {
       return <Tempalte2 cv={cvData} />
     }

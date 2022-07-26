@@ -5,8 +5,8 @@ import { Mobile } from '../../icons/mobile';
 import { Call } from '../../icons/call';
 import { Mail } from '../../icons/mail';
 import { Address } from '../../icons/address';
-import CvProgressBar4 from './cvProgressbar4';
-import LanguageProgressBar4 from './LanguageProgressBar4';
+import CvProgressBar5 from './cvProgressbar5';
+import LanguageProgressBar5 from './LanguageProgressBar5';
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -156,7 +156,7 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const Tempalte4 = ({ cv, heading, content }) => {
+const Tempalte5 = ({ cv, heading, content }) => {
   const valueText = (value, defaultValue) => {
     if (value != null && value !== "")
       return value
@@ -231,7 +231,7 @@ const Tempalte4 = ({ cv, heading, content }) => {
 
               {
                 Object.keys(cv.skills ?? []).map((key) => {
-                  return <CvProgressBar4 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                  return <CvProgressBar5 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
                 })
               }
             </View>
@@ -241,7 +241,7 @@ const Tempalte4 = ({ cv, heading, content }) => {
               {
                 Object.keys(cv.languages ?? []).map((key) => {
 
-                  return <LanguageProgressBar4 key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
+                  return <LanguageProgressBar5 key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
                 })
               }
             </View>
@@ -353,4 +353,4 @@ const Tempalte4 = ({ cv, heading, content }) => {
 
 };
 
-export default Tempalte4;
+export default Tempalte5;
