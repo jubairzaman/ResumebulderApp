@@ -3,8 +3,10 @@ import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect } fro
 import Jumbotron from '../../jumbotron';
 import { Mobile } from '../../icons/mobile';
 import { Call } from '../../icons/call';
+import { Linkedini } from '../../icons/Linkedini';
 import { Mail } from '../../icons/mail';
 import  cvProgressbar3 from './cvProgressbar3';
+
 import LanguageProgressBar3 from './LanguageProgressBar3';
 import { Address, Email } from '../../icons/address';
 import { Workexperiancei } from '../../icons/WorkExperiance';
@@ -200,7 +202,7 @@ const Template3 = ({ cv, heading, content }) => {
 
           </View>
 
-          <View style={{ ...{ marginTop: "20px" } }}>
+          <View style={{ ...{ marginTop: "400px" } }}>
 
             <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
               <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
@@ -224,8 +226,18 @@ const Template3 = ({ cv, heading, content }) => {
                 <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>{cv.city ?? "Address"}</Text>
               </View>
             </View>
-          </View>
+            <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "10px" } }}>
+              <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
+              <Linkedini></Linkedini>
+               
+<View>
+<Text style={{ fontSize: "15px", paddingLeft: "12px", color: "#000000" ,fontWeight:"600px" }}>More Info On </Text>
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" ,fontWeight:"600px" }}>Linkedin.com/#####</Text>
+</View>
+              </View>
+            </View>
 
+          </View>
 
         </View>
 

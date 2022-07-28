@@ -101,7 +101,7 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
     } else if (cvId == "8") {
       return <Tempalte7 cv={cvData} />;
     } else {
-      return <Tempalte2 cv={cvData} />
+      return <Tempalte1 cv={cvData} />
     }
   }
   const [template, setTemplate] = useState(getCvTemplate());

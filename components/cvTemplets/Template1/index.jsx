@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
 
 
 // Create Document Component
-const Tempalte1 = ({ cv }) => {
+const Template1 = ({ cv }) => {
 
   const valueText = (value, defaultValue) => {
     if (value != null && value !== "")
@@ -359,6 +359,6 @@ const Tempalte1 = ({ cv }) => {
   </Document>
 };
 
-export default Tempalte1;
+export default Template1;
 
 

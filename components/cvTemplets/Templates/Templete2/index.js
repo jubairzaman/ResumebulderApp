@@ -231,7 +231,7 @@ const Template2 = ({ cv, heading, content }) => {
                          
                           <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{edu.address}</Text>
                         </View>
-                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(edu.school, "Job Title")} at {valueText(edu.degree, "Employeer")}</Text>
+                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(edu.school, "School")} at {valueText(edu.degree, "Degree")}</Text>
                         <Text style={{ ...{ fontSize: "10px", } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
 
 
@@ -280,7 +280,9 @@ const Template2 = ({ cv, heading, content }) => {
 
             <View style={{"position":"relative", padding:"15px", }}>
 
-              <View style={{borderRadius:"50%", position:"absolute", width:"100px", height:"100px", backgroundColor:"gray", left: "-25%", top:"50%",transform:"translateY(-10%)" }}></View>
+              <View >
+              <Image style={{borderRadius:"50%", position:"absolute", width:"100px", height:"100px", backgroundColor:"gray", left: "-35%", top:"90%",transform:"translateY(-5%)" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
+              </View>
               {/* Info Container */}
               <View style={{paddingLeft:"50px", marginTop:"25px"}}>
 
