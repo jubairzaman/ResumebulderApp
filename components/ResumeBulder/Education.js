@@ -62,7 +62,7 @@ const Education = ({ handelCvData, cvData }) => {
         <div className='border rounded-lg p-5 m-4'>
             <h1 className='text-md font-semibold mx-5'> <i className="las la-school  la-2x"></i>  Your Education Background</h1>
             {educationValue.map((element, index) => (
-                <div className='p-5'>
+                <div className='p-5' key={index}>
                     <div className='border p-5 rounded-lg'>
                         <div className='flex justify-between'>
                             <div>
