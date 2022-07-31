@@ -1,9 +1,9 @@
 
-import Pdfc from "../components/pdfc"
 import React, { useState } from 'react';
 
 import { BlobProvider} from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
 import { Document, Page,pdfjs } from 'react-pdf';
+import Tempalte2 from '../components/cvTemplets/Templates/Templete2';
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
 
@@ -24,7 +24,7 @@ export default function Pdf() {
 
   return (
     <div>
-      <BlobProvider document={<Pdfc firstName={test} />} fileName="somename.pdf">
+      <BlobProvider document={<Tempalte2 firstName={test} />} fileName="somename.pdf">
       {({ blob, url, loading, error }) => {
         setUrl(url)
         setTest("url")

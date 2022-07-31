@@ -5,9 +5,10 @@ import { Mobile } from '../../icons/mobile';
 import { Call } from '../../icons/call';
 import { Mail } from '../../icons/mail';
 import { Address } from '../../icons/address';
+import CvProgressbar71 from './cvProgressbar7';
+import LanguageProgressBar71 from './LanguageProgressBar7';
 
-import CvProgressbar7 from './cvProgressbar7';
-import LanguageProgressBar7 from './LanguageProgressBar7';
+
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -232,7 +233,7 @@ const Tempalte7 = ({ cv, heading, content }) => {
 
               {
                 Object.keys(cv.skills ?? []).map((key) => {
-                  return <CvProgressbar7 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                  return <CvProgressbar71 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
                 })
               }
             </View>
@@ -242,7 +243,7 @@ const Tempalte7 = ({ cv, heading, content }) => {
               {
                 Object.keys(cv.languages ?? []).map((key) => {
 
-                  return <LanguageProgressBar7 key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
+                  return <LanguageProgressBar71 key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
                 })
               }
             </View>

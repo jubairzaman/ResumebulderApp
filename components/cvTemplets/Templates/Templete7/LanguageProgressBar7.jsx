@@ -4,7 +4,7 @@ import Styles from '../../styles';
 
 
 // Create Document Component
-const LanguageProgressBar7 = ({ languageName, value }) => {
+const LanguageProgressBar71 = ({ languageName, value }) => {
     const skillCount = parseInt(value / 25);
 
 
@@ -47,4 +47,4 @@ const LanguageProgressBar7 = ({ languageName, value }) => {
         </>
     )
 };
-export default LanguageProgressBar7;
+export default LanguageProgressBar71;

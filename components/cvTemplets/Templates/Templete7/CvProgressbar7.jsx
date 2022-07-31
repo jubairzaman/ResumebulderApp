@@ -4,7 +4,7 @@ import Styles from '../../styles';
 
 
 // Create Document Component
-const CvProgressbar7 = ({ skillName, value }) => {
+const CvProgressbar71 = ({ skillName, value }) => {
 
     return (
         <>
@@ -21,4 +21,4 @@ const CvProgressbar7 = ({ skillName, value }) => {
         </>
     )
 };
-export default CvProgressbar7;
+export default CvProgressbar71;
