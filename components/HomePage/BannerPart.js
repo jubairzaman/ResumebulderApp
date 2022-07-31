@@ -8,9 +8,9 @@ const BannerPart = () => {
             <div className='py-36'>
                 <section className=" ">
                     <div className="p-5 text-center">
-                        <h1 className="text-6xl font-semibold">Create your winning&nbsp;
+                        <h1 className="text-6xl font-semibold">Create your winning &nbsp;
                             <span className="underline-text-resume-home-page">
-                                <span className="hero-title-gradiant">   resume</span>
+                                <span className="hero-title-gradiant"> resume</span>
                             </span>
                             <br></br>
                             in minutes Get hired fast!
