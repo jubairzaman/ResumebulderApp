@@ -8,12 +8,12 @@ const BannerPart = () => {
             <div className='py-36'>
                 <section className=" ">
                     <div className="p-5 text-center">
-                        <h1 className="text-6xl font-semibold">Create your winning &nbsp;
+                        <h1 className="text-6xl font-semibold">Create Your Winning &nbsp;
                             <span className="underline-text-resume-home-page">
-                                <span className="hero-title-gradiant"> resume</span>
+                                <span className="hero-title-gradiant"> Resume</span>
                             </span>
                             <br></br>
-                            in minutes Get hired fast!
+                            In Minutes Get Hired Fast!
                         </h1>
                         <p className="mt-6 font-2xl">Use our field-tested templates to create a resume and land your dream job.</p>
                     </div>
