@@ -305,9 +305,6 @@ const Template2 = ({ cv, heading, content }) => {
             <Text style={{ color: "#ABB2B9" ,fontSize:"15px" }}> <Bluebox/>{heading ?? "PROFESSIONAL SKILLS"}</Text>
 
                 <View>
-
-                  
-
                   {
                     Object.keys(cv.skills ?? []).map((key) => {
                       return <CvProgressBar2 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
