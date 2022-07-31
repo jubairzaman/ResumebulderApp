@@ -10,7 +10,6 @@ import Tempalte4 from "../cvTemplets/Templates/Templete4";
 import Tempalte2 from "../cvTemplets/Templates/Templete2";
 import Tempalte5 from "../cvTemplets/Templates/Templete5";
 import Tempalte6 from "../cvTemplets/Templates/Templete6";
-import Tempalte7 from "../cvTemplets/Templates/Templete7";
 
 
 
@@ -97,9 +96,9 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
     } else if (cvId == "6") {
       return <Tempalte6 cv={cvData} />;
     } else if (cvId == "7") {
-      return <Tempalte7 cv={cvData} />;
+      return <Tempalte3 cv={cvData} />;
     } else if (cvId == "8") {
-      return <Tempalte7 cv={cvData} />;
+      return <Tempalte3 cv={cvData} />;
     } else {
       return <Tempalte1 cv={cvData} />
     }

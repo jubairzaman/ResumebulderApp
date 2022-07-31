@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import Cv1 from '../components/cvTemplets/Cv1';
+
 import Resumeform from '../components/ResumeBulder/Resumeform';
 import html2canvas from 'html2canvas';
 import { jsPDF } from 'jspdf';
@@ -44,7 +44,7 @@ const Resumeinfo = () => {
             <div className='grid grid-cols-1 lg:grid-cols-2 gap-4  '>
                 <Resumeform handelCvData={handelCvData}></Resumeform>
                 <div ref={printRef}>
-                    <Cv1 cv={cv} />
+                   
                 </div>
 
             </div>
