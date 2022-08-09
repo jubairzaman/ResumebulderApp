@@ -42,7 +42,10 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
         setInitiallyLoaded(true);
         setTimeout(() => {
           const collection = document.getElementsByClassName("react-pdf__Page");
-          setDownloadWrapperTop(collection[0].offsetHeight)
+          if(collection[0] && collection[0].offsetHeight){
+            setDownloadWrapperTop(collection[0].offsetHeight)
+          }
+          
         }, 500);
       }
       p1.current?.classList?.remove('hidden')
@@ -118,8 +121,8 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
       () => {
         const collection = document.getElementsByClassName("react-pdf__Page");
         let currentHeight = collection[0]?.offsetHeight??0;
-        if (currentHeight != downloadWrapperTop) {
-          setDownloadWrapperTop(collection[0].offsetHeight)
+        if (currentHeight != downloadWrapperTop  ) {
+          setDownloadWrapperTop(currentHeight)
         }
       }
     );

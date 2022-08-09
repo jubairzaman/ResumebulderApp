@@ -16,6 +16,7 @@ export default function Home() {
   return (
     <div >
       <BannerPart></BannerPart>
+      
       <CreateYourBestresue></CreateYourBestresue>
       <Templetesthathave></Templetesthathave>
       <Itssoeasy></Itssoeasy>

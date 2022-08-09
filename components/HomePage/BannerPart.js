@@ -1,7 +1,20 @@
-import React from 'react';
+
 import Modal from '../modal'
+import Link from "next/link";
+
+import React, { useState } from "react";
 
 const BannerPart = () => {
+
+    const [showModal, setShowModal] = useState(false);
+    const handleClickAway = () => {
+
+        setShowModal(false);
+    };
+
+    const show = () => {
+        setShowModal(true);
+    };
     return (
         <div className='bg-slate-50'>
 
@@ -19,12 +32,9 @@ const BannerPart = () => {
                     </div>
                 </section>
                 <div className='flex justify-center py-10 '>
-                    <button
-                        className='rounded-lg bg-indigo-700 text-white px-10 py-5 '
-                        type="button"
-
-                    ><Modal></Modal>
-                    </button>
+                    <span className='rounded-lg bg-indigo-700 text-white px-10 py-5 '>
+                        <Modal></Modal>
+                    </span>
                 </div>
                 <div className='flex justify-center  '> <div className="w-3 h-3 mr-2 bg-green-500 rounded-full flex my-auto  "></div>
 
