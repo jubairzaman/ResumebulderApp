@@ -1,5 +1,5 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect,Font } from '@react-pdf/renderer';
 import Jumbotron from '../../jumbotron';
 import { Mobile } from '../../icons/mobile';
 import { Call } from '../../icons/call';
@@ -14,6 +14,9 @@ import { Education } from '../../icons/Education';
 import { Reference } from '../../icons/reference';
 import { Dot } from '../../icons/Dot';
 import { Skill } from '../../icons/skill';
+
+Font.register({ family: 'Roboto'});
+
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -21,7 +24,7 @@ const styles = StyleSheet.create({
 
   },
   section: {
-    margin: 10,
+    margin: 20,
     padding: 10,
     flexGrow: 1
   },
@@ -31,13 +34,13 @@ const styles = StyleSheet.create({
   },
 
   section1: {
-    padding: "15px",
-    width: "38%",
-    backgroundColor: "rgb(245,245,245)"
+   paddingLeft:"30px",
+    width: "40%",
+    backgroundColor: "rgb(241, 242, 243)"
   },
 
   section2: {
-    width: "70%",
+    width: "60%",
 
   },
 
@@ -160,6 +163,9 @@ const styles = StyleSheet.create({
     flex: "0 0 100%",
     maxWidth: "100%",
   },
+  font1:{
+    fontFamily: 'Roboto'
+  }
 });
 
 // Create Document Component
@@ -179,12 +185,12 @@ const Template3 = ({ cv, heading, content }) => {
 
 
         <View style={{ ...styles.section1, ...styles.column }}>
-          <View   >
+          <View style={{...{marginTop:"30px"}}}  >
 
             <View style={{ ...styles.justifyCenter, }}>
-              <Text style={{ fontSize: "30px", color: "#D2B48C" }}>{valueText(cv.firstName, "First Name")} {valueText(cv.lastName, "Last Name")}</Text>
+              <Text style={{ fontSize: "40px",fontWeight:'heavy', color: "#B0A273",marginLeft:"20px" }}>{valueText(cv.firstName, "First Name")} </Text>
 
-              <Text style={{ fontSize: "10px", color: "#000000", marginLeft: "2px" }}>{valueText(cv.profession, "Job Title")}</Text>
+              {/* <Text style={{ fontSize: "10px", color: "#000000", marginLeft: "2px" }}>{valueText(cv.profession, "Job Title")}</Text> */}
             </View>
             <View style={{ ...styles.flex, ...styles.justifyCenter, ...styles.fColumn }}>
               <Image style={{ width: "120px", height: "120px", borderRadius: "50%", marginLeft: "20px", marginVertical: "20px" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
@@ -193,7 +199,7 @@ const Template3 = ({ cv, heading, content }) => {
           </View>
 
           <View>
-            <Text style={{ ...styles.textCenter, ...{ color: "#000000", fontWeight: "200px" } }}>Why Me ? </Text>
+            <Text style={{ ...styles.textCenter, ...{ color: "#000000", fontWeight: "bold" } }}>Why Me ? </Text>
             <View style={{ width: '100%', }}>
 
               <Text style={{ fontSize: '10px', textAlign: "justify", lineHeight: "1.4px", paddingTop: "12px", paddingRight: "30px", color: "rgb(71 85 105)", }}>{valueText(cv.phistory, "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...")}.</Text>
