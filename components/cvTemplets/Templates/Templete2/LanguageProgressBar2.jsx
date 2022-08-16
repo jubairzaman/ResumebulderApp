@@ -25,7 +25,7 @@ const LanguageProgressBar2 = ({ languageName, value }) => {
                             {[...Array(5)].map((x, i) => {
                                 return <View key={i} style={{ display: "flex", backgroundColor: "#BABABA", height: "7px", width: "7px", borderRadius: "50%" }}>
                                     {i <= skillCount ?
-                                        <View key={i} style={{ backgroundColor: "#fff", height: "7px", width: "7px", borderRadius: "50%" }}></View>
+                                        <View key={i} style={{ backgroundColor: "#04649F", height: "7px", width: "7px", borderRadius: "50%" }}></View>
                                         : <></>}
                                 </View>;
                                 //return <Text key={i} style={{ color: "red" }}>{i} ashas has has</Text>
