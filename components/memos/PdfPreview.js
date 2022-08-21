@@ -88,22 +88,22 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
 
   const getCvTemplate = () => {
 
-    if (cvId == '2') {
+    if (cvId == '1') {
       return <Tempalte2 cv={cvData} />
-    } else if (cvId == "3") {
+    } else if (cvId == "2") {
       return <Tempalte3 cv={cvData} />;
-    } else if (cvId == "4") {
+    } else if (cvId == "3") {
       return <Tempalte4 cv={cvData} />;
-    } else if (cvId == "5") {
+    } else if (cvId == "4") {
       return <Tempalte5 cv={cvData} />;
-    } else if (cvId == "6") {
+    } else if (cvId == "5") {
       return <Tempalte6 cv={cvData} />;
+    } else if (cvId == "6") {
+      return <Tempalte3 cv={cvData} />;
     } else if (cvId == "7") {
       return <Tempalte3 cv={cvData} />;
-    } else if (cvId == "8") {
-      return <Tempalte3 cv={cvData} />;
     } else {
-      return <Tempalte1 cv={cvData} />
+      return <Tempalte2 cv={cvData} />
     }
   }
   const [template, setTemplate] = useState(getCvTemplate());

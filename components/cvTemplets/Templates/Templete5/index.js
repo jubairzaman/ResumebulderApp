@@ -191,26 +191,36 @@ const Tempalte5 = ({ cv, heading, content }) => {
 
 
 
-          <View style={{ padding: "15px" }}>
+
+
+     <View style={{ padding: "15px" }}>
 
 <View style={{ width: '100%', }}>
-<Text style={{ ...{ color: "#000000", fontWeight: "200px",fontStyle:"bold", fontSize: "14px" } }}>WORK EXPWERIANCE </Text>
-  <View>
+  <Text style={{ color: "black" ,fontSize: "15px" }}>{heading ?? "Work Experiance"}</Text>
+  <View style={{ marginTop:"10px"}}>
     {
       Object.keys(cv.experiences ?? []).map((key) => {
         let exp = cv.experiences[key];
         return <>
-          <View style={{ ...{ marginTop: "10px" } }}>
-            
+      <View style={{...styles.flex,...styles.fRow}}>
+      <View style={{marginTop:"10px"}}>
+     
+      </View>
+          <View >
+          <View style={{ ...{ marginTop: "10px"  } }}>
+            <Text style={{ ...{ fontSize: "12px" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
             <hr></hr>
-            <Text style={{ ...{ fontSize: "13px", fontStyle: "bold"  } }}>{valueText(exp.jobTitle, "Job Title")} at {valueText(exp.employer, "Employeer")}</Text>
-            <Text style={{ ...{ fontSize: "10px",color:"#ABB2B9" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+           <View style={{}}>
+            <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>{valueText(exp.jobTitle, "Job Title")} At {valueText(exp.employer, "Companey Name")},{valueText(exp.address,"Job Address")}</Text>
 
-            <Text style={{ ...{ fontSize: "8px" ,color:"#ABB2B9" } }}>{exp.address}</Text>
+            <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text>
+           </View>
           </View>
           <View style={{}}>
-            <Text style={{ ...{ fontSize: "10px",color:"#ABB2B9" } }}> {valueText(exp.description, "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+            <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF"  } }}>{valueText(exp.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
           </View>
+          </View>
+      </View>
         </>
       })
     }
@@ -218,36 +228,44 @@ const Tempalte5 = ({ cv, heading, content }) => {
 </View>
 </View>
 
-{/* EDUCATION PART   */}
 <View style={{ padding: "15px" }}>
 
 <View style={{ width: '100%', }}>
-<Text style={{ ...{ color: "#000000", fontWeight: "200px", fontSize: "14px" } }}>EDUCATION</Text>
-  <View>
+  <Text style={{ color: "black",fontSize: "15px" }}>{heading ?? "Education"}</Text>
+  <View style={{ marginTop:"10px"}}>
+
     {
       Object.keys(cv.education ?? []).map((key) => {
         let edu = cv.education[key];
         return <>
-          <View style={{ ...{ marginTop: "10px" } }}>
-            <View style={{ ...styles.flex, ...styles.fRow }}>
-              
-            </View>
-            <Text style={{ ...{ fontSize: "13px", fontStyle: "bold",color:"#ABB2B9" } }}>{valueText(edu.school, "Job Title")} at {valueText(edu.degree, "Employeer")}</Text>
-            <Text style={{ ...{ fontSize: "10px",color:"#ABB2B9" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
-              <Text style={{ ...{ fontSize: "8px",color:"#ABB2B9" } }}>{edu.address}</Text>
+      <View style={{...styles.flex,...styles.fRow}}>
+      <View style={{marginTop:"10px" }}>
+      </View>
+      <View >
+          <View style={{ ...{ marginTop: "10px"  } }}>
+            <Text style={{ ...{ fontSize: "12px" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
+            <hr></hr>
+            <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>{valueText(edu.degree, "Degree")} At {valueText(edu.school, "School Name")},{valueText(edu.address,"School Address")}</Text>
 
-
+            {/* <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text> */}
           </View>
-          <View style={{ ...{ width: "80%" } }}>
-            <Text style={{ ...{ fontSize: "10px",color:"#ABB2B9" } }}>{edu.description}</Text>
+          <View style={{}}>
+            <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF"  } }}>{valueText(edu.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
           </View>
+          </View>
+      </View>
         </>
       })
     }
-
   </View>
 </View>
 </View>
+
+
+
+
+
+
    <View style={{ padding: "15px" }}>
 
 <View style={{ width: '100%', }}>
@@ -317,9 +335,10 @@ const Tempalte5 = ({ cv, heading, content }) => {
           </View>
         
 
-
+          
 
         <View>
+       
             <Text style={{ ...{ color: "#000000", fontWeight: "500px",fontSize:"12px", marginTop:"50px" } }}>Why Me ? </Text>
             <View style={{ width: '100%', }}>
 

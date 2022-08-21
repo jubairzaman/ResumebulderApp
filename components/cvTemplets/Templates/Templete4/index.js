@@ -7,6 +7,10 @@ import { Mail } from '../../icons/mail';
 import { Address } from '../../icons/address';
 import CvProgressBar4 from './cvProgressbar4';
 import LanguageProgressBar4 from './LanguageProgressBar4';
+import { Workexperiancei } from '../../icons/WorkExperiance';
+import { Education } from '../../icons/Education';
+import { Dot } from '../../icons/Dot';
+import { Reference } from '../../icons/reference';
 // Create styles
 const styles = StyleSheet.create({
   page: {
@@ -257,89 +261,99 @@ const Tempalte4 = ({ cv, heading, content }) => {
 
 
 
-          <View style={{ padding: "15px" }}>
+        <View style={{ padding: "15px" }}>
 
-            <View style={{ width: '100%', }}>
-            <Text style={{ ...{ color: "#1E90FF", fontWeight: "200px", fontSize: "14px" } }}>WORK EXPWERIANCE </Text>
-              <View>
-                {
-                  Object.keys(cv.experiences ?? []).map((key) => {
-                    let exp = cv.experiences[key];
-                    return <>
-                      <View style={{ ...{ marginTop: "10px" } }}>
-                        
-                        <hr></hr>
-                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold"  } }}>{valueText(exp.jobTitle, "Job Title")}</Text>
-                        <Text style={{ ...{ fontSize: "10px", fontStyle: "bold" ,paddingTop:"2px",fontWeight:"bold"  } }}>At {valueText(exp.employer, "Employeer")}</Text>
-                        <Text style={{ ...{ fontSize: "8px",paddingTop:"2px" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+<View style={{ width: '100%', }}>
+  <Text style={{ color: "#1E90FF" ,fontSize: "15px" }}> <Workexperiancei></Workexperiancei> {heading ?? "Work Experiance"}</Text>
+  <View style={{ marginTop:"17px"}}>
+    {
+      Object.keys(cv.experiences ?? []).map((key) => {
+        let exp = cv.experiences[key];
+        return <>
+      <View style={{...styles.flex,...styles.fRow}}>
+      <View style={{marginTop:"10px" , marginLeft:"10px"}}>
+      <Dot></Dot>
+      </View>
+          <View style={{marginLeft:"25px"}}>
+          <View style={{ ...{ marginTop: "10px"  } }}>
+            <Text style={{ ...{ fontSize: "12px" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+            <hr></hr>
+           <View style={{}}>
+            <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>{valueText(exp.jobTitle, "Job Title")} At {valueText(exp.employer, "Companey Name")},{valueText(exp.address,"Job Address")}</Text>
 
-                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF",paddingTop:"2px" } }}>{valueText(exp.address,"Your Job Address Here")}</Text>
-                      </View>
-                      <View style={{}}>
-                        <Text style={{ ...{ fontSize: "10px",paddingTop:"3px" } }}>{valueText(exp.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
-                      </View>
-                    </>
-                  })
-                }
-              </View>
-            </View>
+            <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text>
+           </View>
           </View>
-
-{/* EDUCATION PART   */}
-          <View style={{ padding: "15px" }}>
-
-            <View style={{ width: '100%', }}>
-            <Text style={{ ...{ color: "#1E90FF", fontWeight: "200px", fontSize: "14px" } }}>EDUCATION</Text>
-              <View>
-                {
-                  Object.keys(cv.education ?? []).map((key) => {
-                    let edu = cv.education[key];
-                    return <>
-                      <View style={{ ...{ marginTop: "10px" } }}>
-                        <View style={{ ...styles.flex, ...styles.fRow }}>
-                          
-                        </View>
-                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(edu.school, "Job Title")} at {valueText(edu.degree, "Employeer")}</Text>
-                        <Text style={{ ...{ fontSize: "10px", } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
-                          <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{edu.address}</Text>
-
-
-                      </View>
-                      <View style={{ ...{ width: "80%" } }}>
-                        <Text style={{ ...{ fontSize: "10px" } }}>{edu.description}</Text>
-                      </View>
-                    </>
-                  })
-                }
-
-              </View>
-            </View>
+          <View style={{}}>
+            <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF" ,width:"80%"  } }}>{valueText(exp.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
           </View>
+          </View>
+      </View>
+        </>
+      })
+    }
+  </View>
+</View>
+</View>
+
+<View style={{ padding: "15px" }}>
+
+<View style={{ width: '100%', }}>
+  <Text style={{ color: "#1E90FF",fontSize: "15px" }}> <Education></Education> {heading ?? "Education"}</Text>
+  <View style={{ marginTop:"17px"}}>
+
+    {
+      Object.keys(cv.education ?? []).map((key) => {
+        let edu = cv.education[key];
+        return <>
+      <View style={{...styles.flex,...styles.fRow}}>
+      <View style={{marginTop:"10px" , marginLeft:"10px"}}>
+      <Dot></Dot>
+      </View>
+      <View style={{marginLeft:"25px"}}>
+          <View style={{ ...{ marginTop: "10px"  } }}>
+            <Text style={{ ...{ fontSize: "12px" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
+            <hr></hr>
+            <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>{valueText(edu.degree, "Degree")} At {valueText(edu.school, "School Name")},{valueText(edu.address,"School Address")}</Text>
+
+            {/* <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text> */}
+          </View>
+          <View style={{}}>
+            <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF" ,width:"80%"  } }}>{valueText(edu.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+          </View>
+          </View>
+      </View>
+        </>
+      })
+    }
+  </View>
+</View>
+</View>
 
           
+<View style={{ padding: "15px" , marginLeft:"8px" }}>
 
-          <View style={{ padding: "15px" }}>
+<View style={{ width: '100%', }}>
+  <Text style={{ color: "#1E90FF",fontSize: "15px" }}><Reference></Reference>{heading ?? "Reference"}</Text>
+  <View>
+    {
+      Object.keys(cv.reference ?? []).map((key) => {
+        let ref = cv.reference[key];
+        console.log(ref)
+        return <>
+        <View style={{ ...{ marginTop: "10px" , marginLeft:"40px" } }}>
+<Text style={{ ...{ fontSize: "10px", fontStyle: "bold" } }}>{valueText(ref.rname, "Reference Name")}</Text>
 
-            <View style={{ width: '100%', }}>
-            <Text style={{ ...{ color: "#1E90FF", fontWeight: "200px", fontSize: "14px" } }}>REFERENCE</Text>
-              <View>
-                {
-                  Object.keys(cv.reference ?? []).map((key) => {
-                    let ref = cv.reference[key];
-                    return <>
-                      <View style={{ ...{ marginTop: "10px" } }}>
-                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(ref.rname, "rname")}</Text>
+<Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(ref.rdetails, "His Details")}</Text>
+</View>
 
-                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{ref.rdetails}</Text>
-                      </View>
+        </>
+      })
+    }
 
-                    </>
-                  })
-                }
-
-              </View>
-            </View>
-          </View>
+  </View>
+</View>
+</View>
 
 
 

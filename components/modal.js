@@ -41,7 +41,7 @@ export default function Modal() {
                   {/*header*/}
                   <div className="flex items-start justify-between p-5 border-b border-solid border-slate-200 rounded-t">
                     <h3 className="text-xl text-black font-semibold">
-                      Pick your template to start . . .
+                      Pick your template to start ... 
                     </h3>
                     <button
                       className="p-1 ml-auto bg-transparent border-0 text-black opacity-5 float-right text-3xl leading-none font-semibold outline-none focus:outline-none"
@@ -67,7 +67,7 @@ export default function Modal() {
                       </div>
                       <div className="drop-shadow-2xl">
                         <Link href={"cv-builder/3"}>
-                          <img className='' src='cvimages/cv3.jpg'></img>
+                          <img className='' src='cvimages/cv6.jpg'></img>
                         </Link>
                       </div>
                       <div className="drop-shadow-2xl">
@@ -82,7 +82,7 @@ export default function Modal() {
                         <img className='' src='cvimages/cv5.jpg'></img>
                       </Link></div>
                       <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
-                        <img className='' src='cvimages/cv7.jpg'></img>
+                        <img className='' src='cvimages/cv6.jpg '></img>
                       </Link></div>
                       <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
                         <img className='' src='cvimages/cv8.jpg'></img>
