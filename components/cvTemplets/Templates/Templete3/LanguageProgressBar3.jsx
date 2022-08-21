@@ -14,7 +14,7 @@ const LanguageProgressBar3 = ({ languageName, value }) => {
             <View style={{ ...Styles.row, ...{ width: "100%" } }}>
                 <View style={{ ...Styles.col4 }}>
                     <View style={{ textAlign: "left", width: '100%' }}>
-                        <Text style={{ color: "#fff", textTransform: "capitalize", fontSize: "8px" }}>{(languageName != null && languageName !== "") ? languageName : "Language Name"}</Text>
+                        <Text style={{ color: "#000000", textTransform: "capitalize", fontSize: "8px" }}>{(languageName != null && languageName !== "") ? languageName : "Language Name"}</Text>
                     </View>
 
                 </View>

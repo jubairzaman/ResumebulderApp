@@ -269,13 +269,14 @@ const Tempalte4 = ({ cv, heading, content }) => {
                       <View style={{ ...{ marginTop: "10px" } }}>
                         
                         <hr></hr>
-                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold"  } }}>{valueText(exp.jobTitle, "Job Title")} at {valueText(exp.employer, "Employeer")}</Text>
-                        <Text style={{ ...{ fontSize: "10px", } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+                        <Text style={{ ...{ fontSize: "13px", fontStyle: "bold"  } }}>{valueText(exp.jobTitle, "Job Title")}</Text>
+                        <Text style={{ ...{ fontSize: "10px", fontStyle: "bold" ,paddingTop:"2px",fontWeight:"bold"  } }}>At {valueText(exp.employer, "Employeer")}</Text>
+                        <Text style={{ ...{ fontSize: "8px",paddingTop:"2px" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
 
-                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{exp.address}</Text>
+                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF",paddingTop:"2px" } }}>{valueText(exp.address,"Your Job Address Here")}</Text>
                       </View>
                       <View style={{}}>
-                        <Text style={{ ...{ fontSize: "10px" } }}> {valueText(exp.description, "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+                        <Text style={{ ...{ fontSize: "10px",paddingTop:"3px" } }}>{valueText(exp.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
                       </View>
                     </>
                   })
