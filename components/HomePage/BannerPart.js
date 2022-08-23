@@ -75,30 +75,30 @@ const BannerPart = () => {
                       </div>
                       <div className="hover:transition-all drop-shadow-2xl">
                         <Link href={"cv-builder/2"}>
-                          <img className='' src='cvimages/cv6.jpg'></img>
+                          <img className='' src='cvimages/cv7.jpg'></img>
                         </Link>
                       </div>
                       <div className="drop-shadow-2xl">
                         <Link href={"cv-builder/3"}>
-                          <img className='' src='cvimages/cv3.jpg'></img>
+                          <img className='' src='cvimages/cv8.jpg'></img>
                         </Link>
                       </div>
                       <div className="drop-shadow-2xl">
                         <Link href={"cv-builder/4"}>
-                          <img className='' src='cvimages/cv2.jpg'></img>
+                          <img className='' src='cvimages/cv3.jpg'></img>
                         </Link>
                       </div>
                       <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
                         <img className='' src='cvimages/cv4.jpg'></img>
                       </Link></div>
                       <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
+                        <img className='' src='cvimages/cv6.jpg'></img>
+                      </Link></div>
+                      <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
                         <img className='' src='cvimages/cv5.jpg'></img>
                       </Link></div>
                       <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
-                        <img className='' src='cvimages/cv7.jpg'></img>
-                      </Link></div>
-                      <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
-                        <img className='' src='cvimages/cv8.jpg'></img>
+                        <img className='' src='cvimages/cv2.jpg'></img>
                       </Link></div>
                     </div>
                   </div>
