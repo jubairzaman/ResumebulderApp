@@ -35,12 +35,12 @@ const SingleCvCard = ({ cvData, refresh }) => {
         <div>
             <div className="grid grid-cols-2 gap-2">
                 <div>
-                    <img className='object-cover w-full  shadow-lg' src={"img-" + cvData.templateId + ".jpg"}></img>
+                    <img className='object-cover w-full  shadow-lg' src="cvimages/cv6.jpg" ></img>
                 </div>
 
                 <div className="grid grid-rows-6 grid-flow-col ">
 
-                    <h1 className='text-md '>UNTITLED_11.06.2 <i className="las la-pen la-1x text-indigo-500"></i> </h1>
+                    <h1 className='text-md '>UNTITLED_11.06.2 {cvData.templateId}<i className="las la-pen la-1x text-indigo-500"></i> </h1>
                     <h1 className='text-sm '>June 26, 2022 1:06 PM</h1>
 
                     <Link href={"cv-builder/edit/" + cvData.id}>
