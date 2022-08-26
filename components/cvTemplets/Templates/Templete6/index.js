@@ -357,8 +357,8 @@ const Tempalte6 = ({ cv, heading, content }) => {
           Object.keys(cv.reference ?? []).map((key) => {
             let ref = cv.reference[key];
             return <>
-              <View style={{ ...{ marginTop: "10px" } }}>
-                <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(ref.rname, "rname")}</Text>
+              <View style={{ ...{ marginTop: "5px" ,marginLeft:"25px" } }}>
+                <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(ref.rname, "Your Reference Name Here ")}</Text>
 
                 <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF"  } }}>{ref.rdetails}</Text>
               </View>

@@ -179,7 +179,7 @@ const Tempalte4 = ({ cv, heading, content }) => {
           <View   >
 
             <View style={{ ...styles.justifyCenter, }}>
-              <Text style={{ fontSize: "30px", color: "#000000" }}>{valueText(cv.firstName, "First Name")} {valueText(cv.lastName, "Last Name")}</Text>
+              <Text style={{ fontSize: "20px", color: "#000000" }}>{valueText(cv.firstName, "First Name")} {valueText(cv.lastName, "Last Name")}</Text>
 
               <Text style={{ fontSize: "10px", color: "#000000", marginLeft: "2px" }}>{valueText(cv.profession, "Job Title")}</Text>
             </View>

@@ -180,8 +180,8 @@ const Tempalte5 = ({ cv, heading, content }) => {
             </View>
 
             <View style={{ ...styles.justifyCenter, }}>
-              <Text style={{ fontSize: "30px", color: "#000000" }}>{valueText(cv.firstName, "First Name")} </Text>
-              <Text style={{ fontSize: "30px", color: "#000000" }}>{valueText(cv.lastName, "Last Name")}</Text>
+              <Text style={{ fontSize: "25px", color: "#000000" }}>{valueText(cv.firstName, "First Name")} </Text>
+              <Text style={{ fontSize: "25px", color: "#000000" ,width:"80%"}}>{valueText(cv.lastName, "Last Name")}</Text>
 
               <Text style={{ fontSize: "10px", color: "#ABB2B9", marginLeft: "2px" }}>{valueText(cv.profession, "Job Title")}</Text>
             </View>
@@ -217,7 +217,7 @@ const Tempalte5 = ({ cv, heading, content }) => {
            </View>
           </View>
           <View style={{}}>
-            <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF"  } }}>{valueText(exp.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+            <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF",width:"80%"   } }}>{valueText(exp.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
           </View>
           </View>
       </View>
@@ -250,7 +250,7 @@ const Tempalte5 = ({ cv, heading, content }) => {
             {/* <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text> */}
           </View>
           <View style={{}}>
-            <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF"  } }}>{valueText(edu.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+            <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF",width:"80%"   } }}>{valueText(edu.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
           </View>
           </View>
       </View>
