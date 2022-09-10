@@ -3,13 +3,17 @@ import React, { useState, memo, useEffect, useRef } from "react";
 import { BlobProvider, PDFDownloadLink } from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
 import { Document, Page, pdfjs } from 'react-pdf';
 
-import Tempalte1 from "../cvTemplets/Template1";
+
 import { ShimmerSocialPost } from "react-shimmer-effects";
 import Tempalte3 from "../cvTemplets/Templates/Templete3";
 import Tempalte4 from "../cvTemplets/Templates/Templete4";
 import Tempalte2 from "../cvTemplets/Templates/Templete2";
 import Tempalte5 from "../cvTemplets/Templates/Templete5";
 import Tempalte6 from "../cvTemplets/Templates/Templete6";
+import Template7 from "../cvTemplets/Templates/Templete7";
+import Tempalte8 from "../cvTemplets/Templates/Templete8";
+import Tempalte9 from "../cvTemplets/Templates/Templete9";
+
 
 
 
@@ -99,9 +103,11 @@ const PdfPreview = ({ templateId, cvData, onLoading, onLoaded, update }) => {
     } else if (cvId == "5") {
       return <Tempalte6 cv={cvData} />;
     } else if (cvId == "6") {
-      return <Tempalte3 cv={cvData} />;
+      return <Template7 cv={cvData} />;
     } else if (cvId == "7") {
-      return <Tempalte3 cv={cvData} />;
+      return <Tempalte8 cv={cvData} />;
+    } else if (cvId == "8") {
+      return <Tempalte9 cv={cvData} />;
     } else {
       return <Tempalte2 cv={cvData} />
     }

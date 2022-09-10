@@ -3,8 +3,9 @@ import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect } fro
 
 
 import { BlueDot } from '../../icons/BlueDot';
-import CvProgressbar81 from './CvProgressbar8';
-import LanguageProgressBar81 from './LanguageProgressBar8';
+import CvProgressbar91 from './CvProgressbar8';
+import LanguageProgressBar91 from './LanguageProgressBar8';
+
 
 // Create styles
 const styles = StyleSheet.create({
@@ -155,7 +156,7 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const Tempalte8 = ({ cv, heading, content }) => {
+const Tempalte9 = ({ cv, heading, content }) => {
   const valueText = (value, defaultValue) => {
     if (value != null && value !== "")
       return value
@@ -232,7 +233,7 @@ const Tempalte8 = ({ cv, heading, content }) => {
 
               {
                 Object.keys(cv.skills ?? []).map((key) => {
-                  return <CvProgressbar81 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                  return <CvProgressbar91 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
                 })
               }
             </View>
@@ -242,7 +243,7 @@ const Tempalte8 = ({ cv, heading, content }) => {
               {
                 Object.keys(cv.languages ?? []).map((key) => {
 
-                  return <LanguageProgressBar81 key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
+                  return <LanguageProgressBar91 key={key} languageName={valueText(cv.languages[key].languageName, "Language Name")} value={cv.languages[key].expartise ?? 0} />
                 })
               }
             </View>
@@ -356,4 +357,4 @@ const Tempalte8 = ({ cv, heading, content }) => {
 
 };
 
-export default Tempalte8;
+export default Tempalte9;
