@@ -1,4 +1,4 @@
-import React, { useState, memo, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 import { BlobProvider, PDFDownloadLink } from "@react-pdf/renderer/lib/react-pdf.browser.cjs.js"
 import { Document, Page, pdfjs } from 'react-pdf';
