@@ -4,18 +4,18 @@ import Styles from '../../styles';
 
 
 // Create Document Component
-const CvProgressbar81 = ({ skillName, value }) => {
+const CvProgressbar91 = ({ skillName, value }) => {
 
     return (
         <>
             <View style={{ display: "flex", flexDirection: "row", marginTop:"17px" ,width:"80%"}}>
         
         <View style={{ textAlign: "left", width: '100%',marginLeft:'1px' }}>
-            <Text style={{ color: "#0D6EFD", textTransform: "capitalize", fontSize: "8px" }}>{(skillName != null && skillName !== "") ? skillName : "Skill Name"}</Text>
+            <Text style={{ color: "#000", textTransform: "capitalize", fontSize: "8px" }}>{(skillName != null && skillName !== "") ? skillName : "Skill Name"}</Text>
         </View>
         
-        <View style={{ height: "6px", width: "80%" , backgroundColor: "#9EC5FE", borderRadius:"5px"}}>
-            <View style={{ height: "6px", width: (value ?? 10) + "%", backgroundColor: "#0D6EFD", borderRadius:"5px" }}>
+        <View style={{ height: "6px", width: "80%" , backgroundColor: "#ECECEC", borderRadius:"5px"}}>
+            <View style={{ height: "6px", width: (value ?? 10) + "%", backgroundColor: "#000", borderRadius:"5px" }}>
             </View>
         </View>
 
@@ -24,4 +24,4 @@ const CvProgressbar81 = ({ skillName, value }) => {
         </>
     )
 };
-export default CvProgressbar81;
+export default CvProgressbar91;

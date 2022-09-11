@@ -2,14 +2,13 @@ import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect } from '@react-pdf/renderer';
 
 
-import { BlueDot } from '../../icons/BlueDot';
-import CvProgressbar91 from './CvProgressbar8';
-import LanguageProgressBar91 from './LanguageProgressBar8';
-import { display } from '@mui/system';
-import { Dot } from '../../icons/Dot';
+
+
 import { Call } from '../../icons/call';
 import { Mail } from '../../icons/mail';
 import { Address } from '../../icons/address';
+import CvProgressbar10 from './CvProgressbar10';
+import { BlueDot } from '../../icons/BlueDot';
 
 
 // Create styles
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
 });
 
 // Create Document Component
-const Tempalte9 = ({ cv, heading, content }) => {
+const Tempalte10 = ({ cv, heading, content }) => {
   const valueText = (value, defaultValue) => {
     if (value != null && value !== "")
       return value
@@ -173,13 +172,13 @@ const Tempalte9 = ({ cv, heading, content }) => {
   return <Document>
     <Page size="A4" style={styles.page}>
 
-   <View style={{...styles.flex,...styles.fColumn ,...{padding:"30px"}}}>
+   <View style={{...styles.flex,...styles.fColumn ,...{padding:"30px" , backgroundColor:"#000"}}}>
 
    <View style={{ ...styles.justifyCenter,...{paddingBottom:"40px" ,paddingTop:"10px"} }}>
-              <Text style={{ fontSize: "25px", color: "#000" }}>{valueText(cv.firstName, "First Name")} <Text style={{ fontSize: "20px", color: "#000" }}>{valueText(cv.lastName, "Last Name")}</Text></Text>
+              <Text style={{ fontSize: "25px", color: "#fff" }}>{valueText(cv.firstName, "First Name")} <Text style={{ fontSize: "20px", color: "#fff" }}>{valueText(cv.lastName, "Last Name")}</Text></Text>
               
 
-              <Text style={{ fontSize: "10px", color: "#000000", marginLeft: "2px" ,marginTop:"7px" }}>{valueText(cv.profession, "Job Title")}</Text>
+              <Text style={{ fontSize: "10px", color: "#fff", marginLeft: "2px" ,marginTop:"7px" }}>{valueText(cv.profession, "Job Title")}</Text>
             </View>
 
 
@@ -194,7 +193,7 @@ const Tempalte9 = ({ cv, heading, content }) => {
                       <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
                         <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
                       
-                          <Text style={{ fontSize: "10px",  color: "#000000" }}> <Call/> {cv.phone ?? "Phone Number"}</Text>
+                          <Text style={{ fontSize: "10px",  color: "#fff" }}><BlueDot></BlueDot> {cv.phone ?? "Phone Number"}</Text>
                         </View>
                       </View>
 
@@ -202,14 +201,14 @@ const Tempalte9 = ({ cv, heading, content }) => {
                       <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
                         <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
                         
-                          <Text style={{ fontSize: "10px",  color: "#000000" }}> <Mail/> {cv.email ?? "Email"}</Text>
+                          <Text style={{ fontSize: "10px",  color: "#fff" }}><BlueDot></BlueDot>  {cv.email ?? "Email"}</Text>
                         </View>
                       </View>
 
                       <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
                         <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
                       
-                          <Text style={{ fontSize: "10px",  color: "#000000" }}> <Address/> {cv.city ?? "Address"}</Text>
+                          <Text style={{ fontSize: "10px",  color: "#fff" }}><BlueDot></BlueDot>  {cv.city ?? "Address"}</Text>
                         </View>
                       </View>
                 </View> 
@@ -224,8 +223,8 @@ const Tempalte9 = ({ cv, heading, content }) => {
                                   <Text style={{color:"#00FFF0"}}>Experince</Text>
                                 </View>
 
-                                <View style={{...{position:'absolute' , top:"-5px", left:"-5px" ,backgroundColor:"#000" ,width:"100%",padding:"2px"}}}>
-                                  <Text style={{...{color:"#fff"}}} >Experince</Text>
+                                <View style={{...{position:'absolute' , top:"-5px", left:"-5px" ,backgroundColor:"#fff" ,width:"100%",padding:"2px"}}}>
+                                  <Text style={{...{color:"#000"}}} >Experince</Text>
                                 </View>
 
                           </View>
@@ -250,17 +249,17 @@ const Tempalte9 = ({ cv, heading, content }) => {
                                                         <View style={{ ...{ marginTop: "5px"  } }}>
                                                         
 
-                                                          <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px" ,color:"#000"   } }}>{valueText(exp.jobTitle, "Job Title")} </Text>
-                                                          <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>At {valueText(exp.employer, "Companey Name")},{valueText(exp.address,"Job Address")}</Text>
+                                                          <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px" ,color:"#fff"   } }}>{valueText(exp.jobTitle, "Job Title")} </Text>
+                                                          <Text style={{ ...{ color:"#fff", fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>At {valueText(exp.employer, "Companey Name")},{valueText(exp.address,"Job Address")}</Text>
                                                           <hr></hr>
                                                         <View style={{}}>
                                                           
-                                                        <Text style={{ ...{ fontSize: "8px" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
-                                                          <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text>
+                                                        <Text style={{ ...{ fontSize: "8px", color:"#fff" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+                                                        
                                                         </View>
                                                         </View>
                                                         <View style={{}}>
-                                                          <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF"  } }}>{valueText(exp.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+                                                          <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color:"#fff"  } }}>{valueText(exp.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
                                                         </View>
                                                         </View>
                                                     </View>
@@ -276,7 +275,7 @@ const Tempalte9 = ({ cv, heading, content }) => {
 
 
 
-                    <View style={{...styles.row ,...{borderTop:"1px solid #000" ,paddingTop:"20px",paddingBottom:"10px"}}}>
+                    <View style={{...styles.row ,...{borderTop:"1px solid #fff" ,paddingTop:"20px",paddingBottom:"10px"}}}>
                         <View style={{...styles.col3 ,...styles.flex,...styles.fColumn,...styles.justifyStart}}>
                           <View style={{...{position:'relative'}}}>
     
@@ -284,8 +283,8 @@ const Tempalte9 = ({ cv, heading, content }) => {
                                   <Text style={{color:"#FFF500"}}>Skills</Text>
                                 </View>
 
-                                <View style={{...{position:'absolute' , top:"-5px", left:"-5px" ,backgroundColor:"#000" ,width:"50%",padding:"2px"}}}>
-                                  <Text style={{...{color:"#fff"}}} >Skills</Text>
+                                <View style={{...{position:'absolute' , top:"-5px", left:"-5px" ,backgroundColor:"#fff" ,width:"50%",padding:"2px"}}}>
+                                  <Text style={{...{color:"#000"}}} >Skills</Text>
                                 </View>
 
                           </View>
@@ -297,7 +296,7 @@ const Tempalte9 = ({ cv, heading, content }) => {
 
                                             {
                                               Object.keys(cv.skills ?? []).map((key) => {
-                                                return <CvProgressbar91 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                                                return <CvProgressbar10 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
                                               })
                                             }
                                           </View>
@@ -316,7 +315,7 @@ const Tempalte9 = ({ cv, heading, content }) => {
 
 
 
-                    <View style={{...styles.row,...{borderTop:"1px solid #000" ,paddingTop:"20px"}}}>
+                    <View style={{...styles.row,...{borderTop:"1px solid #fff" ,paddingTop:"20px"}}}>
                         <View style={{...styles.col3 ,...styles.flex,...styles.fColumn,...styles.justifyStart}}>
                           <View style={{...{position:'relative' }}}>
     
@@ -324,8 +323,8 @@ const Tempalte9 = ({ cv, heading, content }) => {
                                   <Text style={{color:"#54FF00"}}>Education</Text>
                                 </View>
 
-                                <View style={{...{position:'absolute' , top:"-5px", left:"-5px" ,backgroundColor:"#000" ,width:"100%",padding:"2px"}}}>
-                                  <Text style={{...{color:"#fff"}}} >Education</Text>
+                                <View style={{...{position:'absolute' , top:"-5px", left:"-5px" ,backgroundColor:"#fff" ,width:"100%",padding:"2px"}}}>
+                                  <Text style={{...{color:"#000"}}} >Education</Text>
                                 </View>
 
                           </View>
@@ -348,14 +347,14 @@ const Tempalte9 = ({ cv, heading, content }) => {
                                                   </View>
                                                   <View >
                                                       <View style={{ ...{ marginTop: "10px"  } }}>
-                                                        <Text style={{ ...{ fontSize: "12px" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
+                                                        <Text style={{ ...{ color:"#fff", fontSize: "12px" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
                                                         <hr></hr>
-                                                        <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>{valueText(edu.degree, "Degree")} At {valueText(edu.school, "School Name")},{valueText(edu.address,"School Address")}</Text>
+                                                        <Text style={{ ...{ color:"#fff", fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>{valueText(edu.degree, "Degree")} At {valueText(edu.school, "School Name")},{valueText(edu.address,"School Address")}</Text>
 
                                                         {/* <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text> */}
                                                       </View>
                                                       <View style={{}}>
-                                                        <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF"  } }}>{valueText(edu.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+                                                        <Text style={{ ...{ color:"#fff", fontSize: "10px" , paddingTop:"3px"   } }}>{valueText(edu.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
                                                       </View>
                                                       </View>
                                                   </View>
@@ -384,4 +383,4 @@ const Tempalte9 = ({ cv, heading, content }) => {
 
 };
 
-export default Tempalte9;
+export default Tempalte10;
