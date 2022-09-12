@@ -69,7 +69,7 @@ const BannerPart = () => {
                   <div className="relative p-6 flex-auto ">
                     <div className="grid grid-cols-3 gap-4">
                       <div className="drop-shadow-2xl ">
-                        <Link href={"cv-builder/" + hash1}>
+                        <Link href={"cv-builder/1"}>
                           <img className='' src='cvimages/cv1.jpg'></img>
                         </Link>
                       </div>
@@ -88,17 +88,20 @@ const BannerPart = () => {
                           <img className='' src='cvimages/cv3.jpg'></img>
                         </Link>
                       </div>
-                      <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
+                      <div className="drop-shadow-2xl"><Link href={"cv-builder/5"}>
                         <img className='' src='cvimages/cv4.jpg'></img>
                       </Link></div>
-                      <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
-                        <img className='' src='cvimages/cv6.jpg'></img>
+                      <div className="drop-shadow-2xl"><Link href={"cv-builder/6"}>
+                        <img className='' src='cvimages/cv12.png'></img>
                       </Link></div>
-                      <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
-                        <img className='' src='cvimages/cv5.jpg'></img>
+                      <div className="drop-shadow-2xl"><Link href={"cv-builder/7"}>
+                        <img className='' src='cvimages/cv11.png'></img>
                       </Link></div>
-                      <div className="drop-shadow-2xl"><Link href={"cv-builder/1"}>
-                        <img className='' src='cvimages/cv2.jpg'></img>
+                      <div className="drop-shadow-2xl"><Link href={"cv-builder/8"}>
+                        <img className='' src='cvimages/cv13.png'></img>
+                      </Link></div>
+                      <div className="drop-shadow-2xl"><Link href={"cv-builder/9"}>
+                        <img className='' src='cvimages/cv14.png'></img>
                       </Link></div>
                     </div>
                   </div>
