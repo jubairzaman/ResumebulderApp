@@ -12,10 +12,10 @@ import { Dot } from '../../icons/Dot';
 
 // Create styles
 const styles = StyleSheet.create({
-  title:{
-    fontFamily:"Roboto",
-    fontSize: "35px", 
-    color: "#04649F"  
+  title: {
+    fontFamily: "Roboto",
+    fontSize: "35px",
+    color: "#04649F"
   },
   page: {
     flexDirection: 'row',
@@ -29,7 +29,7 @@ const styles = StyleSheet.create({
 
   mainContainer: {
     flexDirection: 'row',
-    
+
   },
 
   section1: {
@@ -182,15 +182,15 @@ const Template2 = ({ cv, heading, content }) => {
   return <Document>
     <Page size="A4" style={styles.page}>
 
-      <View style={{...styles.mainContainer,...{padding:"30px",borderTop:'8px solid #04649F '}}}>
+      <View style={{ ...styles.mainContainer, ...{ padding: "30px", borderTop: '8px solid #04649F ' } }}>
 
 
         <View style={styles.row}>
 
           <View style={styles.col7}>
-{/* profile name section  */}
+            {/* profile name section  */}
 
-            <View style={{ ...styles.justifyCenter,...{marginTop:"30px"} }}>
+            <View style={{ ...styles.justifyCenter, ...{ marginTop: "30px" } }}>
               <Text style={{ fontSize: "35px", color: "#566573" }}>{valueText(cv.firstName, "First Name")}  </Text>
               <Text style={{ fontSize: "35px", color: "#04649F" }}>{valueText(cv.lastName, "Last Name")}  </Text>
 
@@ -202,146 +202,146 @@ const Template2 = ({ cv, heading, content }) => {
 
 
 
-          {/* Work Experiance  */}
-          <View style={{...{marginTop:"30px"}  }}>
-          
-
-    <View style={{ width: '100%', }}>
-      <Text style={{ color: "#ABB2B9", marginBottom:"10px" ,fontSize:"15px" }}> <Bluebox/>{heading ?? "Work Experiance"}</Text>
-  
-              <View style={{ }}>
-                {
-                  Object.keys(cv.experiences ?? []).map((key) => {
-                    let exp = cv.experiences[key];
-                    return <>
-                    <View style={{...styles.flex,...styles.fRow}}>
-                  <View style={{marginTop:"8px" , marginLeft:"5px"}}>
-                  <Dot></Dot>
-                  </View>
-                      <View style={{marginLeft:"20px"}}>
-                      <View style={{ ...{ marginTop: "8px"  } }}>
-                        <Text style={{ ...{ fontSize: "12px" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
-                        <hr></hr>
-                       <View style={{}}>
-                        <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px" ,color:"#04649F"  } }}>{valueText(exp.jobTitle, "Job Title")} At {valueText(exp.employer, "Companey Name")},{valueText(exp.address,"Job Address")}</Text>
-
-                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text>
-                       </View>
-                      </View>
-                      <View style={{}}>
-                        <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF",width:"80%" } }}>{valueText(exp.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
-                      </View>
-                      </View>
-                  </View>
-                    </>
-                  })
-                }
-              </View>
-</View>
-</View>
-
-<View style={{ marginTop:"20px" }}>
-
-            <View style={{ width: '100%', }}>
-              <Text style={{ color: "#ABB2B9", fontSize:"15px" }}> <Bluebox/>{heading ?? "Education"}</Text>
-              <View style={{}}>
-                {
-                  Object.keys(cv.education ?? []).map((key) => {
-                    let edu = cv.education[key];
-                    return <>
-                    <View style={{...styles.flex,...styles.fRow}}>
-                  <View style={{marginTop:"10px" , marginLeft:"5px"}}>
-                  <Dot></Dot>
-                  </View>
-                  <View style={{marginLeft:"20px"}}>
-                      <View style={{ ...{ marginTop: "10px"  } }}>
-                        <Text style={{ ...{ fontSize: "12px" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
-                        <hr></hr>
-                        <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>{valueText(edu.degree, "Degree")} At {valueText(edu.school, "School Name")},{valueText(edu.address,"School Address")}</Text>
-
-                        {/* <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text> */}
-                      </View>
-                      <View style={{}}>
-                        <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF" ,width:"80%"  } }}>{valueText(edu.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
-                      </View>
-                      </View>
-                  </View>
-                    </>
-                  })
-                }
-
-              </View>
-            </View>
-          </View>
+            {/* Work Experiance  */}
+            <View style={{ ...{ marginTop: "30px" } }}>
 
 
-          {/* reference  */}
-          <View style={{ marginTop:"20px" }}>
+              <View style={{ width: '100%', }}>
+                <Text style={{ color: "#ABB2B9", marginBottom: "10px", fontSize: "15px" }}> <Bluebox />{heading ?? "Work Experiance"}</Text>
 
-<View style={{ width: '100%', }}>
-  <Text style={{ color: "#ABB2B9" ,fontSize:"15px" }}> <Bluebox/> {heading ?? "Reference"}</Text>
-  <View  style={{marginLeft :"40px" }}>
-    {
-      Object.keys(cv.reference ?? []).map((key) => {
-        let ref = cv.reference[key];
-      
-        return <>
-          <View style={{ ...{ marginTop: "10px" } }}>
-            <Text style={{ ...{ fontSize: "10px", fontStyle: "bold" } }}>{valueText(ref.rname, "Reference Name")}</Text>
-
-            <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(ref.rdetails, "His Details")}</Text>
-          </View>
-
-        </>
-      })
-    }
-
-  </View>
-</View>
-</View>
-
-          </View>
-
-          <View style={{...styles.col5,...{borderLeft:"1px solid #CFD8DC",}}}>
-
-
-            <View style={{"position":"relative", padding:"15px", }}>
-
-              <View >
-              <Image style={{borderRadius:"50%", position:"absolute", width:"100px", height:"100px", backgroundColor:"gray", left: "-35%", top:"90%",transform:"translateY(-5%)" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
-              </View>
-              {/* Info Container */}
-              <View style={{paddingLeft:"50px", marginTop:"25px"}}>
-
-              <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>Tel : {valueText(cv.phone ?? "Phone Number")}</Text>
-              <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>Email : {valueText(cv.email ?? "Your Email")}</Text>
-              <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>Address : {valueText(cv.city ?? "Your Address")}</Text>
-                
-              </View>
-            </View>
-
-            <View style={{marginLeft:"15px", marginTop:"58px"}}>
-            <Text style={{ color: "#ABB2B9" ,fontSize:"15px" }}> <Bluebox/>{heading ?? "WHO AM I?"}</Text>
-
-            <Text style={{ fontSize: '10px', textAlign: "justify", lineHeight: "1.4px", paddingTop: "12px", paddingRight: "30px", color: "rgb(71 85 105)", }}>{valueText(cv.phistory, "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...")}.</Text>
-            
-            </View>
-
-
-            <View style={{marginLeft:"15px " , marginTop:"20px"} }>
-            <Text style={{ color: "#ABB2B9" ,fontSize:"15px" ,marginBottom:"10px" }}> <Bluebox/>{heading ?? "Professional Skills"}</Text>
-
-                <View>
+                <View style={{}}>
                   {
-                    Object.keys(cv.skills ?? []).map((key) => {
-                      return <CvProgressBar2 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                    Object.keys(cv.experiences ?? []).map((key) => {
+                      let exp = cv.experiences[key];
+                      return <>
+                        <View style={{ ...styles.flex, ...styles.fRow }} wrap={false}>
+                          <View style={{ marginTop: "8px", marginLeft: "5px" }}>
+                            <Dot></Dot>
+                          </View>
+                          <View style={{ marginLeft: "20px" }}>
+                            <View style={{ ...{ marginTop: "8px" } }}>
+                              <Text style={{ ...{ fontSize: "12px" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+                              <hr></hr>
+                              <View style={{}}>
+                                <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop: "2px", color: "#04649F" } }}>{valueText(exp.jobTitle, "Job Title")} At {valueText(exp.employer, "Companey Name")},{valueText(exp.address, "Job Address")}</Text>
+
+                                <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address, "Your Job Address Here")}</Text>
+                              </View>
+                            </View>
+                            <View style={{}}>
+                              <Text style={{ ...{ fontSize: "10px", paddingTop: "3px", color: "#AFAFAF", width: "80%" } }}>{valueText(exp.description, "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+                            </View>
+                          </View>
+                        </View>
+                      </>
                     })
                   }
                 </View>
+              </View>
             </View>
-            <View style={{ ...{ marginTop: "20px" , marginLeft:"15px" } }} >
 
-            <Text style={{ color: "#ABB2B9" ,fontSize:"15px" }}> <Bluebox/>{heading ?? "LANGUAGE"}</Text>
+            <View style={{ marginTop: "20px" }}>
+
+              <View style={{ width: '100%', }}>
+                <Text style={{ color: "#ABB2B9", fontSize: "15px" }}> <Bluebox />{heading ?? "Education"}</Text>
+                <View style={{}}>
+                  {
+                    Object.keys(cv.education ?? []).map((key) => {
+                      let edu = cv.education[key];
+                      return <>
+                        <View style={{ ...styles.flex, ...styles.fRow, ...{marginTop:"15px"} }} wrap={false}>
+                          <View style={{ marginTop: "10px", marginLeft: "5px" }}>
+                            <Dot></Dot>
+                          </View>
+                          <View style={{ marginLeft: "20px" }}>
+                            <View style={{ ...{ marginTop: "10px" } }}>
+                              <Text style={{ ...{ fontSize: "12px" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
+                              <hr></hr>
+                              <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop: "2px" } }}>{valueText(edu.degree, "Degree")} At {valueText(edu.school, "School Name")},{valueText(edu.address, "School Address")}</Text>
+
+                              {/* <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text> */}
+                            </View>
+                            <View style={{}}>
+                              <Text style={{ ...{ fontSize: "10px", paddingTop: "3px", color: "#AFAFAF", width: "80%" } }}>{valueText(edu.description, "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+                            </View>
+                          </View>
+                        </View>
+                      </>
+                    })
+                  }
+
+                </View>
+              </View>
+            </View>
+
+
+            {/* reference  */}
+            <View style={{ marginTop: "20px" }}>
+
+              <View style={{ width: '100%', }} wrap={false}>
+                <Text style={{ color: "#ABB2B9", fontSize: "15px" }}> <Bluebox /> {heading ?? "Reference"}</Text>
+                <View style={{ marginLeft: "40px" }}>
+                  {
+                    Object.keys(cv.reference ?? []).map((key) => {
+                      let ref = cv.reference[key];
+
+                      return <>
+                        <View style={{ ...{ marginTop: "10px" } }} wrap={false}>
+                          <Text style={{ ...{ fontSize: "10px", fontStyle: "bold" } }}>{valueText(ref.rname, "Reference Name")}</Text>
+
+                          <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(ref.rdetails, "His Details")}</Text>
+                        </View>
+
+                      </>
+                    })
+                  }
+
+                </View>
+              </View>
+            </View>
+
+          </View>
+
+          <View style={{ ...styles.col5, ...{ borderLeft: "1px solid #CFD8DC", } }}>
+
+
+            <View style={{ "position": "relative", padding: "15px", }}>
+
+              <View >
+                <Image style={{ borderRadius: "50%", position: "absolute", width: "100px", height: "100px", backgroundColor: "gray", left: "-35%", top: "90%", transform: "translateY(-5%)" }} src={(cv.profileImage != null && cv.profileImage !== "") ? cv.profileImage : "/cvpimg.png"} alt="Profile Image"></Image>
+              </View>
+              {/* Info Container */}
+              <View style={{ paddingLeft: "50px", marginTop: "25px" }}>
+
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>Tel : {valueText(cv.phone ?? "Phone Number")}</Text>
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>Email : {valueText(cv.email ?? "Your Email")}</Text>
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>Address : {valueText(cv.city ?? "Your Address")}</Text>
+
+              </View>
+            </View>
+
+            <View style={{ marginLeft: "15px", marginTop: "58px" }}>
+              <Text style={{ color: "#ABB2B9", fontSize: "15px" }}> <Bluebox />{heading ?? "WHO AM I?"}</Text>
+
+              <Text style={{ fontSize: '10px', textAlign: "justify", lineHeight: "1.4px", paddingTop: "12px", paddingRight: "30px", color: "rgb(71 85 105)", }}>{valueText(cv.phistory, "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain...")}.</Text>
+
+            </View>
+
+
+            <View style={{ marginLeft: "15px ", marginTop: "20px" }}>
+              <Text style={{ color: "#ABB2B9", fontSize: "15px", marginBottom: "10px" }}> <Bluebox />{heading ?? "Professional Skills"}</Text>
+
+              <View>
+                {
+                  Object.keys(cv.skills ?? []).map((key) => {
+                    return <CvProgressBar2 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                  })
+                }
+              </View>
+            </View>
+            <View style={{ ...{ marginTop: "20px", marginLeft: "15px" } }} >
+
+              <Text style={{ color: "#ABB2B9", fontSize: "15px" }}> <Bluebox />{heading ?? "LANGUAGE"}</Text>
               {
                 Object.keys(cv.languages ?? []).map((key) => {
 
@@ -353,8 +353,8 @@ const Template2 = ({ cv, heading, content }) => {
 
 
 
-            
-            
+
+
           </View>
 
         </View>
