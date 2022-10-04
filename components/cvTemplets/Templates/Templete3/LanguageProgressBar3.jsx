@@ -19,7 +19,7 @@ const LanguageProgressBar3 = ({ languageName, value }) => {
 
                 </View>
                 <View style={{ ...Styles.col8 }}>
-                    <View style={{ height: "3px", width: "80%", marginTop: "4px", marginLeft: "80px" }}>
+                    <View style={{ height: "3px", width: "60%", marginTop: "4px", marginLeft: "80px" }}>
                         <View style={{ display: "flex", flexDirection: "row", justifyContent: "space-between", alignItems: "center", alignContent: "center" }}>
 
                             {[...Array(5)].map((x, i) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect,Font } from '@react-pdf/renderer';
+import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect, Font } from '@react-pdf/renderer';
 import Jumbotron from '../../jumbotron';
 import { Mobile } from '../../icons/mobile';
 import { Call } from '../../icons/call';
@@ -16,7 +16,7 @@ import { Dot } from '../../icons/Dot';
 import { Skill } from '../../icons/skill';
 import CvProgressbar31 from './cvProgressbar3';
 
-Font.register({ family: 'Roboto'});
+Font.register({ family: 'Roboto' });
 
 // Create styles
 const styles = StyleSheet.create({
@@ -35,15 +35,15 @@ const styles = StyleSheet.create({
   },
 
   section1: {
-   paddingLeft:"30px",
+    paddingLeft: "30px",
     width: "40%",
     backgroundColor: "rgb(241, 242, 243)"
   },
 
   section2: {
     width: "60%",
-  
-    paddingRight:"30px"
+
+    paddingRight: "30px"
 
   },
 
@@ -166,7 +166,7 @@ const styles = StyleSheet.create({
     flex: "0 0 100%",
     maxWidth: "100%",
   },
-  font1:{
+  font1: {
     fontFamily: 'Roboto'
   }
 });
@@ -188,10 +188,10 @@ const Template3 = ({ cv, heading, content }) => {
 
 
         <View style={{ ...styles.section1, ...styles.column }}>
-          <View style={{...{marginTop:"30px"}}}  >
+          <View style={{ ...{ marginTop: "30px" } }}  >
 
             <View style={{ ...styles.justifyCenter, }}>
-              <Text style={{ fontSize: "40px",fontWeight:'heavy', color: "#B0A273",marginLeft:"20px" }}>{valueText(cv.firstName, "First Name")} </Text>
+              <Text style={{ fontSize: "40px", fontWeight: 'heavy', color: "#B0A273", marginLeft: "20px" }}>{valueText(cv.firstName, "First Name")} </Text>
 
               {/* <Text style={{ fontSize: "10px", color: "#000000", marginLeft: "2px" }}>{valueText(cv.profession, "Job Title")}</Text> */}
             </View>
@@ -215,7 +215,7 @@ const Template3 = ({ cv, heading, content }) => {
 
             <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
               <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
-              <Call />
+                <Call />
                 <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>{cv.phone ?? "Phone Number"}</Text>
               </View>
             </View>
@@ -223,7 +223,7 @@ const Template3 = ({ cv, heading, content }) => {
 
             <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
               <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
-                
+
                 <Mail></Mail>
                 <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>{cv.email ?? "Email"}</Text>
               </View>
@@ -231,18 +231,18 @@ const Template3 = ({ cv, heading, content }) => {
 
             <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "3px" } }}>
               <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
-               <Address></Address>
-                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>{cv.city ??"Address"}</Text>
+                <Address></Address>
+                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" }}>{cv.city ?? "Address"}</Text>
               </View>
             </View>
-            <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical:"7px" } }}>
+            <View style={{ ...styles.flex, ...styles.justifyStart, ...styles.fRow, ...{ marginVertical: "7px" } }}>
               <View style={{ ...styles.flex, ...styles.fRow, ...styles.alignCenter, }}>
-              <Linkedini></Linkedini>
-               
-<View>
-<Text style={{ fontSize: "15px", paddingLeft: "12px", color: "#000000" ,fontWeight:"600px" }}>More Info On </Text>
-                <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000" ,fontWeight:"600px" }}>Linkedin.com/#####</Text>
-</View>
+                <Linkedini></Linkedini>
+
+                <View>
+                  <Text style={{ fontSize: "15px", paddingLeft: "12px", color: "#000000", fontWeight: "600px" }}>More Info On </Text>
+                  <Text style={{ fontSize: "10px", paddingLeft: "12px", color: "#000000", fontWeight: "600px" }}>Linkedin.com/#####</Text>
+                </View>
               </View>
             </View>
 
@@ -260,31 +260,31 @@ const Template3 = ({ cv, heading, content }) => {
           <View style={{ padding: "15px" }}>
 
             <View style={{ width: '100%', }}>
-              <Text style={{ color: "black" ,fontSize: "15px" }}> <Workexperiancei></Workexperiancei> {heading ?? "Work Experiance"}</Text>
-              <View style={{ marginTop:"17px"}}>
+              <Text style={{ color: "black", fontSize: "15px" }}> <Workexperiancei></Workexperiancei> {heading ?? "Work Experiance"}</Text>
+              <View style={{ marginTop: "17px" }}>
                 {
                   Object.keys(cv.experiences ?? []).map((key) => {
                     let exp = cv.experiences[key];
                     return <>
-                  <View style={{...styles.flex,...styles.fRow}}>
-                  <View style={{marginTop:"10px" , marginLeft:"10px"}}>
-                  <Dot></Dot>
-                  </View>
-                      <View style={{marginLeft:"25px"}}>
-                      <View style={{ ...{ marginTop: "10px"  } }}>
-                        <Text style={{ ...{ fontSize: "12px" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
-                        <hr></hr>
-                       <View style={{}}>
-                        <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>{valueText(exp.jobTitle, "Job Title")} At {valueText(exp.employer, "Companey Name")},{valueText(exp.address,"Job Address")}</Text>
+                      <View style={{ ...styles.flex, ...styles.fRow }} wrap={false}>
+                        <View style={{ marginTop: "10px", marginLeft: "10px" }}>
+                          <Dot></Dot>
+                        </View>
+                        <View style={{ marginLeft: "25px" }}>
+                          <View style={{ ...{ marginTop: "10px" } }}>
+                            <Text style={{ ...{ fontSize: "12px" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
+                            <hr></hr>
+                            <View style={{}}>
+                              <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop: "2px" } }}>{valueText(exp.jobTitle, "Job Title")} At {valueText(exp.employer, "Companey Name")},{valueText(exp.address, "Job Address")}</Text>
 
-                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text>
-                       </View>
+                              <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address, "Your Job Address Here")}</Text>
+                            </View>
+                          </View>
+                          <View style={{}}>
+                            <Text style={{ ...{ fontSize: "10px", paddingTop: "3px", color: "#AFAFAF" } }}>{valueText(exp.description, "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+                          </View>
+                        </View>
                       </View>
-                      <View style={{}}>
-                        <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF"  } }}>{valueText(exp.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
-                      </View>
-                      </View>
-                  </View>
                     </>
                   })
                 }
@@ -294,31 +294,31 @@ const Template3 = ({ cv, heading, content }) => {
 
           <View style={{ padding: "15px" }}>
 
-          <View style={{ width: '100%', }}>
-              <Text style={{ color: "black",fontSize: "15px" }}> <Education></Education> {heading ?? "Education"}</Text>
-              <View style={{ marginTop:"17px"}}>
+            <View style={{ width: '100%', }}>
+              <Text style={{ color: "black", fontSize: "15px" }}> <Education></Education> {heading ?? "Education"}</Text>
+              <View style={{ marginTop: "17px" }}>
 
                 {
                   Object.keys(cv.education ?? []).map((key) => {
                     let edu = cv.education[key];
                     return <>
-                  <View style={{...styles.flex,...styles.fRow}}>
-                  <View style={{marginTop:"10px" , marginLeft:"10px"}}>
-                  <Dot></Dot>
-                  </View>
-                  <View style={{marginLeft:"25px"}}>
-                      <View style={{ ...{ marginTop: "10px"  } }}>
-                        <Text style={{ ...{ fontSize: "12px" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
-                        <hr></hr>
-                        <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop:"2px"   } }}>{valueText(edu.degree, "Degree")} At {valueText(edu.school, "School Name")},{valueText(edu.address,"School Address")}</Text>
+                      <View style={{ ...styles.flex, ...styles.fRow }} wrap={false}>
+                        <View style={{ marginTop: "10px", marginLeft: "10px" }}>
+                          <Dot></Dot>
+                        </View>
+                        <View style={{ marginLeft: "25px" }}>
+                          <View style={{ ...{ marginTop: "10px" } }}>
+                            <Text style={{ ...{ fontSize: "12px" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
+                            <hr></hr>
+                            <Text style={{ ...{ fontSize: "10px", fontStyle: "bold", paddingTop: "2px" } }}>{valueText(edu.degree, "Degree")} At {valueText(edu.school, "School Name")},{valueText(edu.address, "School Address")}</Text>
 
-                        {/* <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text> */}
+                            {/* <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(exp.address,"Your Job Address Here")}</Text> */}
+                          </View>
+                          <View style={{}}>
+                            <Text style={{ ...{ fontSize: "10px", paddingTop: "3px", color: "#AFAFAF" } }}>{valueText(edu.description, "There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
+                          </View>
+                        </View>
                       </View>
-                      <View style={{}}>
-                        <Text style={{ ...{ fontSize: "10px" , paddingTop:"3px" ,color: "#AFAFAF"  } }}>{valueText(edu.description,"There is no one who loves pain itself, who seeks after it and wants to have it, simply because it is pain")}</Text>
-                      </View>
-                      </View>
-                  </View>
                     </>
                   })
                 }
@@ -327,22 +327,22 @@ const Template3 = ({ cv, heading, content }) => {
           </View>
 
 
-         
 
-          <View style={{padding:"20px"}} >
-            <View >
 
-            <Text style={{ color: "black",fontSize: "15px", marginBottom:"10px" }}><Skill></Skill> {heading ?? "Skills"}</Text>
+          <View style={{ padding: "20px" }} >
+            <View wrap={false}  >
+
+              <Text style={{ color: "black", fontSize: "15px", marginBottom: "10px" }}><Skill></Skill> {heading ?? "Skills"}</Text>
 
               {
                 Object.keys(cv.skills ?? []).map((key) => {
-                  return <CvProgressbar31 key={key} skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
+                  return <CvProgressbar31 key={key}  skillName={valueText(cv.skills[key].skillName, "Skill Name")} value={cv.skills[key].expartise ?? 0} />
                 })
               }
             </View>
-            <View  >
+            <View  wrap={false} >
 
-            <Text style={{ color: "black",fontSize: "15px" }}><Skill></Skill> {heading ?? "Language"}</Text>
+              <Text style={{ color: "black", fontSize: "15px", marginTop:"10px" }}><Skill></Skill> {heading ?? "Language"}</Text>
               {
                 Object.keys(cv.languages ?? []).map((key) => {
 
@@ -368,23 +368,23 @@ const Template3 = ({ cv, heading, content }) => {
 
 
 
-          
 
-          <View style={{ padding: "15px" , marginLeft:"8px" }}>
+
+          <View style={{ padding: "15px", marginLeft: "8px" , marginTop:"10px" }} wrap={false}>
 
             <View style={{ width: '100%', }}>
-              <Text style={{ color: "black",fontSize: "15px" }}><Reference></Reference>{heading ?? "Reference"}</Text>
+              <Text style={{ color: "black", fontSize: "15px" }}><Reference></Reference>{heading ?? "Reference"}</Text>
               <View>
                 {
                   Object.keys(cv.reference ?? []).map((key) => {
                     let ref = cv.reference[key];
                     console.log(ref)
                     return <>
-                    <View style={{ ...{ marginTop: "10px" , marginLeft:"15px" } }}>
-            <Text style={{ ...{ fontSize: "10px", fontStyle: "bold" } }}>{valueText(ref.rname, "Reference Name")}</Text>
+                      <View style={{ ...{ marginTop: "10px", marginLeft: "15px" } }} wrap={false}>
+                        <Text style={{ ...{ fontSize: "10px", fontStyle: "bold" } }}>{valueText(ref.rname, "Reference Name")}</Text>
 
-            <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(ref.rdetails, "His Details")}</Text>
-          </View>
+                        <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{valueText(ref.rdetails, "His Details")}</Text>
+                      </View>
 
                     </>
                   })
