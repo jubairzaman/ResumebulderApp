@@ -298,7 +298,7 @@ const Tempalte8 = ({ cv, heading, content }) => {
                 {
                   Object.keys(cv.education ?? []).map((key) => {
                     let edu = cv.education[key];
-                    return <View  wrap={false}>
+                    return <> <View  wrap={false}>
                       <View style={{ ...{ marginTop: "15px" } }} >
                         <View style={{ ...styles.flex, ...styles.fRow }}>
                           
@@ -314,6 +314,7 @@ const Tempalte8 = ({ cv, heading, content }) => {
                         <Text style={{ ...{ fontSize: "10px",marginTop:"3px" } }}>{valueText(edu.description,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere molestie ullamcorper donec phasellus scelerisque congue et in. Laoreet habitant lacus, enim duis amet libero. Interdum pretium at magna netus nunc. A maecenas id quisque imperdiet non, nunc. Montes, aliquam fermentum molestie enim facilisis. Vitae pharetra.")}</Text>
                       </View>
                     </View>
+                    </>
                   })
                 }
 

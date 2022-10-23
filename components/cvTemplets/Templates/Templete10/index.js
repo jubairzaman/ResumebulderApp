@@ -340,7 +340,7 @@ const Tempalte10 = ({ cv, heading, content }) => {
                         {
                           Object.keys(cv.education ?? []).map((key) => {
                             let edu = cv.education[key];
-                            return <View wrap={false}>
+                            return <><View wrap={false}>
                               <View style={{ ...styles.flex, ...styles.fRow }}>
                                 <View style={{ marginTop: "10px", marginLeft: "10px" }}>
 
@@ -359,6 +359,7 @@ const Tempalte10 = ({ cv, heading, content }) => {
                                 </View>
                               </View>
                             </View>
+                            </>
                           })
                         }
                       </View>
