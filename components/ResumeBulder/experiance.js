@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import DelayedInput from './DelayedInput';
+import DatePicker from "react-datepicker";
 
 const Experiance = ({ handelCvData, cvData }) => {
     const [experienceValue, setexperienceValue] = useState([{ jobTitle: "", employer: "", startdate: "", enddate: "", address: "" }])
@@ -114,7 +115,21 @@ const Experiance = ({ handelCvData, cvData }) => {
                                 <label className="block">
                                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Start Date</span>
 
-                                    <DelayedInput value={cvData?.startdate ?? ""} type="date" onChange={(e) => { handleStartDateChange(index, e); }} placeholder="Start Date" ></DelayedInput>
+                                    <div>
+                                        <DatePicker
+                                        className='dateicker'
+                                            dateFormat="MM/yyyy"
+                                            showMonthYearPicker
+                                            placeholderText='Start Date'
+                                            showFullMonthYearPicker
+                                            shouldCloseOnSelect={true}
+                                            selected={Date.parse(cvData?.startdate)}
+                                            onChange={(e) => {
+                                                handleStartDateChange(index, e.getMonth()+"/"+e.getFullYear()); 
+                                                console.log(typeof(e));
+                                            }}
+                                        />
+                                        </div>
 
 
 
@@ -127,7 +142,21 @@ const Experiance = ({ handelCvData, cvData }) => {
 
 
 
-                                    <DelayedInput value={cvData?.enddate ?? ""} type="date" onChange={(e) => { handleEndDateChange(index, e); }} placeholder="Enddate" ></DelayedInput>
+                                    <div>
+                                        <DatePicker
+                                        className='dateicker'
+                                            dateFormat="MM/yyyy"
+                                            placeholderText='End Date'
+                                            showMonthYearPicker
+                                            showFullMonthYearPicker
+                                            shouldCloseOnSelect={true}
+                                            selected={Date.parse(cvData?.startdate)}
+                                            onChange={(e) => {
+                                                handleEndDateChange(index, e.getMonth()+"/"+e.getFullYear()); 
+                                                console.log(typeof(e));
+                                            }}
+                                        />
+                                        </div>
 
 
 

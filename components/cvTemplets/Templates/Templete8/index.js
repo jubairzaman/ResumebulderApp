@@ -2,6 +2,7 @@ import React from 'react';
 import { Document, Page, Text, View, StyleSheet, Image, Svg, Path, G, Rect } from '@react-pdf/renderer';
 
 
+
 import { BlueDot } from '../../icons/BlueDot';
 import CvProgressbar81 from './CvProgressbar8';
 import LanguageProgressBar81 from './LanguageProgressBar8';
@@ -267,7 +268,7 @@ const Tempalte8 = ({ cv, heading, content }) => {
                   Object.keys(cv.experiences ?? []).map((key) => {
                     let exp = cv.experiences[key];
                     return <>
-                      <View style={{ ...{ marginTop: "15px" } }}>
+                      <View style={{ ...{ marginTop: "15px" } }} wrap={false}>
                         
                         <hr></hr>
                         <Text style={{ ...{ fontSize: "10px", color:"#9EC5FE" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
@@ -296,8 +297,8 @@ const Tempalte8 = ({ cv, heading, content }) => {
                   Object.keys(cv.education ?? []).map((key) => {
                     let edu = cv.education[key];
                     return <>
-                      <View style={{ ...{ marginTop: "15px" } }}>
-                        <View style={{ ...styles.flex, ...styles.fRow }}>
+                      <View style={{ ...{ marginTop: "15px" } }} wrap={false}>
+                        <View style={{ ...styles.flex, ...styles.fRow }}  wrap={false} >
                           
                         </View>
                         <Text style={{ ...{ fontSize: "10px",color:"#9EC5FE" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
@@ -320,16 +321,16 @@ const Tempalte8 = ({ cv, heading, content }) => {
 
           
 
-          <View style={{ padding: "15px" }}>
+          <View style={{ padding: "15px", marginTop:"10px" }} wrap={false}>
 
             <View style={{ width: '100%', }}>
-            <Text style={{ ...{ color: "#0D6EFD", fontWeight: "200px", fontSize: "14px" } }}>REFERENCE</Text>
+            <Text style={{ ...{ color: "#0D6EFD", fontWeight: "200px", fontSize: "14px"  } }}>REFERENCE</Text>
               <View>
                 {
                   Object.keys(cv.reference ?? []).map((key) => {
                     let ref = cv.reference[key];
                     return <>
-                      <View style={{ ...{ marginTop: "10px" } }}>
+                      <View style={{ ...{ marginTop: "10px" } }} wrap={false}>
                         <Text style={{ ...{ fontSize: "13px", fontStyle: "bold" } }}>{valueText(ref.rname, "rname")}</Text>
 
                         <Text style={{ ...{ fontSize: "8px", color: "#AFAFAF" } }}>{ref.rdetails}</Text>

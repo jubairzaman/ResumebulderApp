@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+import DatePicker from "react-datepicker";
+
 import DelayedInput from './DelayedInput';
 
 const Education = ({ handelCvData, cvData }) => {
@@ -105,7 +107,8 @@ const Education = ({ handelCvData, cvData }) => {
                                 </label>
                             </div>
                             <div>
-                                <label className="block">
+                                <label className="block" onClick={e => e.preventDefault()}>
+
                                     <span className="after:content-['*'] after:ml-0.5 after:text-red-500 block text-sm font-medium text-slate-700">Start And End Date</span>
 
 
@@ -114,9 +117,40 @@ const Education = ({ handelCvData, cvData }) => {
 
                                     <div className='flex'>
 
-                                        <DelayedInput value={cvData?.startdate ?? ""} type="date" onChange={(e) => { handleStartDateChange(index, e); }} placeholder="Startdate" ></DelayedInput>
 
-                                        <DelayedInput value={cvData?.enddate ?? ""} type="date" onChange={(e) => { handleEndDateChange(index, e); }} placeholder="Enddate" ></DelayedInput>
+                                    <div>
+                                        <DatePicker
+                                        className='dateicker'
+                                            dateFormat="MM/yyyy"
+                                            showMonthYearPicker
+                                            placeholderText='Start Date'
+                                            showFullMonthYearPicker
+                                            shouldCloseOnSelect={true}
+                                            selected={Date.parse(cvData?.startdate)}
+                                            onChange={(e) => {
+                                                handleStartDateChange(index, e.getMonth()+"/"+e.getFullYear()); 
+                                                console.log(typeof(e));
+                                            }}
+                                        />
+                                        </div>
+                                        <div>
+                                        <DatePicker
+                                        className='dateicker'
+                                            dateFormat="MM/yyyy"
+                                            placeholderText='End Date'
+                                            showMonthYearPicker
+                                            showFullMonthYearPicker
+                                            shouldCloseOnSelect={true}
+                                            selected={Date.parse(cvData?.startdate)}
+                                            onChange={(e) => {
+                                                handleEndDateChange(index, e.getMonth()+"/"+e.getFullYear()); 
+                                                console.log(typeof(e));
+                                            }}
+                                        />
+                                        </div>
+
+
+                                        
 
                                     </div>
                                 </label>

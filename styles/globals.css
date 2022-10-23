@@ -1,6 +1,13 @@
+@import "react-datepicker/dist/react-datepicker.css";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@import 'react-datepicker/dist/react-datepicker-cssmodules.css';
+
+
+
+
 
 html,
 body {
@@ -67,4 +74,14 @@ a {
 }
 .react-pdf__Document{
   height: 80vh;
+}
+
+.dateicker{
+  margin-top: 3px;
+  width: 90%;
+  border: 1px solid #CBD5E1;
+  border-radius: 5px;
+  height: 100%;
+  padding: 7px;
+  
 }
