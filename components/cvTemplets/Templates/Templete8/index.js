@@ -268,7 +268,8 @@ const Tempalte8 = ({ cv, heading, content }) => {
                   Object.keys(cv.experiences ?? []).map((key) => {
                     let exp = cv.experiences[key];
                     return <>
-                      <View style={{ ...{ marginTop: "15px" } }} wrap={false}>
+                      <View wrap={false} >
+                      <View style={{ ...{ marginTop: "15px" } }} >
                         
                         <hr></hr>
                         <Text style={{ ...{ fontSize: "10px", color:"#9EC5FE" } }}>{valueText(exp.startdate, "Start Date")}- {valueText(exp.enddate, "End Date")}</Text>
@@ -279,6 +280,7 @@ const Tempalte8 = ({ cv, heading, content }) => {
                       </View>
                       <View style={{}}>
                         <Text style={{ ...{ fontSize: "10px",marginTop:"3px" } }}> {valueText(exp.description,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere molestie ullamcorper donec phasellus scelerisque congue et in. Laoreet habitant lacus, enim duis amet libero. Interdum pretium at magna netus nunc. A maecenas id quisque imperdiet non, nunc. Montes, aliquam fermentum molestie enim facilisis. Vitae pharetra.")}</Text>
+                      </View>
                       </View>
                     </>
                   })
@@ -296,9 +298,9 @@ const Tempalte8 = ({ cv, heading, content }) => {
                 {
                   Object.keys(cv.education ?? []).map((key) => {
                     let edu = cv.education[key];
-                    return <>
-                      <View style={{ ...{ marginTop: "15px" } }} wrap={false}>
-                        <View style={{ ...styles.flex, ...styles.fRow }}  wrap={false} >
+                    return <View  wrap={false}>
+                      <View style={{ ...{ marginTop: "15px" } }} >
+                        <View style={{ ...styles.flex, ...styles.fRow }}>
                           
                         </View>
                         <Text style={{ ...{ fontSize: "10px",color:"#9EC5FE" } }}>{valueText(edu.startdate, "Start Date")}- {valueText(edu.enddate, "End Date")}</Text>
@@ -311,7 +313,7 @@ const Tempalte8 = ({ cv, heading, content }) => {
                       <View style={{ ...{ width: "80%" } }}>
                         <Text style={{ ...{ fontSize: "10px",marginTop:"3px" } }}>{valueText(edu.description,"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Posuere molestie ullamcorper donec phasellus scelerisque congue et in. Laoreet habitant lacus, enim duis amet libero. Interdum pretium at magna netus nunc. A maecenas id quisque imperdiet non, nunc. Montes, aliquam fermentum molestie enim facilisis. Vitae pharetra.")}</Text>
                       </View>
-                    </>
+                    </View>
                   })
                 }
 
